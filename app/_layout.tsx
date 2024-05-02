@@ -1,7 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { SplashScreen, Stack, Tabs } from 'expo-router'; // Import Tabs
+import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { Image, Text, View, useColorScheme, StyleSheet } from 'react-native';
 
@@ -41,6 +41,22 @@ function RootLayoutNav() {
       <Stack>
         <Stack.Screen
           name='(tabs)'
+          options={{
+            headerStyle: { backgroundColor: '#005BB8' },
+            headerTintColor: '#FFFFFF',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+            headerTitle: (props) => (
+              <View style={styles.navbarContainer}>
+                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Text style={styles.navbarTitle}>My Announcements</Text>
+              </View>
+            ),
+          }}
+        />
+        <Stack.Screen
+          name='Test'
           options={{
             headerStyle: { backgroundColor: '#005BB8' },
             headerTintColor: '#FFFFFF',

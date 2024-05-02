@@ -24,11 +24,11 @@ export default function TabLayout() {
           title: 'General',
           tabBarIcon: ({ color }) => <TabBarIcon name='book' color={color} />,
           headerRight: () => (
-            <Link href='/general' asChild>
+            <Link href='(tabs)' asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
-                    name='info-circle'
+                    name='arrow-left'
                     size={25}
                     color={Colors[colorScheme ?? 'light'].text}
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
@@ -45,7 +45,7 @@ export default function TabLayout() {
           title: 'Temps Réel',
           tabBarIcon: ({ color }) => <TabBarIcon name='clock-o' color={color} />,
           headerRight: () => (
-            <Link href='/realTime' asChild>
+            <Link href='(tabs)' asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
@@ -66,7 +66,7 @@ export default function TabLayout() {
           title: 'Urgent',
           tabBarIcon: ({ color }) => <TabBarIcon name='exclamation-circle' color={color} />,
           headerRight: () => (
-            <Link href='/urgent' asChild>
+            <Link href='(tabs)' asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
@@ -87,7 +87,7 @@ export default function TabLayout() {
           title: 'Favorite',
           tabBarIcon: ({ color }) => <TabBarIcon name='star' color={color} />,
           headerRight: () => (
-            <Link href='/urgent' asChild>
+            <Link href='(tabs)' asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome

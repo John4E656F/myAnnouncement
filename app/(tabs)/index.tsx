@@ -1,6 +1,5 @@
 import { Image, Pressable, Text, View, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
-import { Entypo } from '@expo/vector-icons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string; size: number }) {

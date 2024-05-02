@@ -1,0 +1,40 @@
+{
+  "categories": {
+    "general": [
+      {
+        "title": "Désaccouplement avec intercirculation - Au depart et apres chaque 'noeud' pendant le parcours",
+        "french": "​Chers voyageurs, bienvenue dans le train vers […]. Ce train s'arrête à […]. À […] ce train sera scindé. Le numéro de votre voiture se trouve au-dessus de chaque porte intérieure / sur les écrans d'information. Les voitures portant le(s) numéro(s) […], en tête / en queue du train, continuent vers […] / sont limitées à […]. Pendant le parcours, vous pouvez vous rendre dans les voitures appropriées. À […] vous pouvez uniquement le faire par le quai. Vous disposerez du temps nécessaire.",
+        "dutch": "​Beste reizigers, welkom in de trein naar […]. Deze trein stopt (nog) in […]. In […] wordt deze trein gesplitst. U vindt het nummer van uw rijtuig boven elke binnendeur / op de informatieschermen. De rijtuigen met nummer(s) […] vooraan/achteraan in de trein rijden verder naar […] / rijden niet verder dan […]. U kunt zich doorheen de trein naar het juiste rijtuig begeven. In […] kan dit enkel via het perron.",
+        "german": "Liebe Reisende, willkommen im Zug nach […]. Dieser Zug hält (noch) in […]. In […] wird dieser Zug aufgeteilt. Die Nummer Ihres Wagens finden Sie über jeder Innentür / auf den Informationsbildschirmen. Die Wagen mit der (den) Nummer(n) […] vorne im Zug / hinten im Zug, fahren weiter nach […] / fahren nicht weiter als […]. Während der Fahrt können Sie durch den Zug in die richtigen Wagen wechseln. In (...) ist dies nur über den Bahnsteig möglich.",
+        "english": "Dear passengers, welcome in the train to [...]. This train stops in […]. In […] this train will be split. You will find the number of your car above each interior door / on the information screens. The cars with number (s) […] at the front/at the back of the train continue to […] / do not go any further than […]. You can go through the train to the right carriage. In […] this is only possible via the platform.",
+        "favorite": false,
+        "icon": "train",
+        "link": "gen-1"
+      },
+      {
+        "title": "Désaccouplement avec intercirculation - Avant arrivée à la gare de désaccouplement",
+        "french": "Chers voyageurs, dans quelques instants nous arrivons à [...]. Attention, notre train y sera scindé. Les voitures  en tête / en queue du train, continuent vers […] s'arrêtant encore à […], […]/ sont limitées à […]. Si vous devez encore changer de voiture, vous disposez du temps nécessaire pour le faire par le quai.",
+        "dutch": "Beste reizigers, zo dadelijk komen we aan in […]. Opgelet, onze trein wordt hier gesplitst. De rijtuigen vooraan/achteraan in de trein rijden verder naar […] en stoppen nog in […],[…] / rijden niet verder dan […]. Indien u nog van rijtuig moet veranderen hebt u voldoende tijd om dit via het perron te doen.",
+        "german": "Liebe Reisende, bald werden wir in […] ankommen. Ihre Aufmerksamkeit bitte, unser Zug wird hier geteilt. Die Wagen mit der (den) Nummer(n) […] vorne im Zug / hinten im Zug, fahren weiter nach […] und halten in […], […] / fahren nicht weiter als […]. Wenn Sie den Wagen noch wechseln müssen, haben Sie genügend Zeit, dies über den Bahnsteig zu tun.",
+        "english": "Dear passengers, soon we will arrive in […]. Your attention please, our train will split here. The cars with number (s) […] at the front/at the back of the train continue to […] stopping in […], […] / do not go any further than […]. If you still have to change carriages, you have enough time to do this via the platform.",
+        "favorite": false,
+        "icon": "train",
+        "link": "gen-2"
+      }
+    ],
+    "urgent": [
+      {
+        "title": "Item 1",
+        "favorite": false
+      },
+      {
+        "title": "Item 2",
+        "favorite": false
+      },
+      {
+        "title": "Item 3",
+        "favorite": false
+      }
+    ]
+  }
+}
