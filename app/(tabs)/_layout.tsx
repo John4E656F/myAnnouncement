@@ -1,12 +1,9 @@
+// _layout.tsx
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Pressable, useColorScheme } from 'react-native';
-
 import Colors from '../../constants/Colors';
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
 }
@@ -20,13 +17,14 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
       }}
     >
+      <Tabs.Screen name='index' options={{ headerShown: false, tabBarIcon: ({ color }) => <TabBarIcon name='home' color={color} /> }} />
       <Tabs.Screen
-        name='index'
+        name='general'
         options={{
-          title: 'Generator',
-          tabBarIcon: ({ color }) => <TabBarIcon name='lock' color={color} />,
+          title: 'General',
+          tabBarIcon: ({ color }) => <TabBarIcon name='book' color={color} />,
           headerRight: () => (
-            <Link href='/modal' asChild>
+            <Link href='/general' asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
@@ -41,14 +39,55 @@ export default function TabLayout() {
           ),
         }}
       />
-      {/* The error is likely originating from the following `Tabs.Screen` */}
       <Tabs.Screen
-        name='custom'
+        name='realTime'
         options={{
-          title: 'Custom Generator',
-          tabBarIcon: ({ color }) => <TabBarIcon name='laptop' color={color} />,
+          title: 'Temps Réel',
+          tabBarIcon: ({ color }) => <TabBarIcon name='clock-o' color={color} />,
           headerRight: () => (
-            <Link href='/modal' asChild>
+            <Link href='/realTime' asChild>
+              <Pressable>
+                {({ pressed }) => (
+                  <FontAwesome
+                    name='info-circle'
+                    size={25}
+                    color={Colors[colorScheme ?? 'light'].text}
+                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                  />
+                )}
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='urgent'
+        options={{
+          title: 'Urgent',
+          tabBarIcon: ({ color }) => <TabBarIcon name='exclamation-circle' color={color} />,
+          headerRight: () => (
+            <Link href='/urgent' asChild>
+              <Pressable>
+                {({ pressed }) => (
+                  <FontAwesome
+                    name='info-circle'
+                    size={25}
+                    color={Colors[colorScheme ?? 'light'].text}
+                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                  />
+                )}
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='favorite'
+        options={{
+          title: 'Favorite',
+          tabBarIcon: ({ color }) => <TabBarIcon name='star' color={color} />,
+          headerRight: () => (
+            <Link href='/urgent' asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
