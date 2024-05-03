@@ -8,8 +8,7 @@
         "german": "Liebe Reisende, willkommen im Zug nach […]. Dieser Zug hält (noch) in […]. In […] wird dieser Zug aufgeteilt. Die Nummer Ihres Wagens finden Sie über jeder Innentür / auf den Informationsbildschirmen. Die Wagen mit der (den) Nummer(n) […] vorne im Zug / hinten im Zug, fahren weiter nach […] / fahren nicht weiter als […]. Während der Fahrt können Sie durch den Zug in die richtigen Wagen wechseln. In (...) ist dies nur über den Bahnsteig möglich.",
         "english": "Dear passengers, welcome in the train to [...]. This train stops in […]. In […] this train will be split. You will find the number of your car above each interior door / on the information screens. The cars with number (s) […] at the front/at the back of the train continue to […] / do not go any further than […]. You can go through the train to the right carriage. In […] this is only possible via the platform.",
         "favorite": false,
-        "icon": "train",
-        "link": "gen-1"
+        "icon": "train"
       },
       {
         "title": "Désaccouplement avec intercirculation - Avant arrivée à la gare de désaccouplement",
@@ -18,8 +17,250 @@
         "german": "Liebe Reisende, bald werden wir in […] ankommen. Ihre Aufmerksamkeit bitte, unser Zug wird hier geteilt. Die Wagen mit der (den) Nummer(n) […] vorne im Zug / hinten im Zug, fahren weiter nach […] und halten in […], […] / fahren nicht weiter als […]. Wenn Sie den Wagen noch wechseln müssen, haben Sie genügend Zeit, dies über den Bahnsteig zu tun.",
         "english": "Dear passengers, soon we will arrive in […]. Your attention please, our train will split here. The cars with number (s) […] at the front/at the back of the train continue to […] stopping in […], […] / do not go any further than […]. If you still have to change carriages, you have enough time to do this via the platform.",
         "favorite": false,
-        "icon": "train",
-        "link": "gen-2"
+        "icon": "train"
+      },
+      {
+        "title": "Désaccouplement sans intercirculation - Au départ et après chaque 'noeud' pendant le parcours",
+        "french": "​Chers voyageurs, bienvenue dans le train vers […] Ce train s'arrête à […]. À […] ce train sera scindé. Le numéro de votre voiture se trouve au-dessus de chaque porte intérieure/sur les écrans d'information. Les voitures portant le numéro […] / les numéros […] et […], en tête/en queue du train, continuent vers […] ​/ sont limitées à […]. À […] vous disposerez du temps nécessaire pour changer de voiture.",
+        "dutch": "​Beste reizigers ,Welkom in de trein naar […]. Deze trein stopt (nog) in […]. In […] wordt deze trein gesplitst. U vindt het nummer van uw rijtuig boven elke binnendeur/ op de informatieschermen. De rijtuigen met nummer(s) […] vooraan / achteraan in de trein rijden verder naar […] / rijden niet verder dan […]. Bij aankomst in […] kunt u het juiste rijtuig bereiken via het perron. U hebt hiervoor voldoende tijd.",
+        "german": "Liebe Reisende, Willkommen im Zug nach […]. Dieser Zug hält (noch) in […]. In [… [Teilungsstation]] wird dieser Zug aufgeteilt. Die Nummer Ihres Wagens finden Sie über jeder Innentür / auf den Informationsbildschirmen. Der (Die) Wagen mit der (den) Nummer(n) […] vorne im Zug / hinten im Zug fahren weiter […] / fahren nicht weiter als […]. Wenn wir in […] ankommen, können Sie über den Bahnsteig den richtigen Wagen erreichen. Sie haben dafür genug Zeit.",
+        "english": "This train stops in […]. In […] this train will be split. You will find the number of your car above each interior door / on the information screens. The car with number (s) […] at the front / at the back of the train continue to […] / do not go any further than […]. When you arrive in […] you can reach the correct car via the platform. You should have enough time.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Désaccouplement sans intercirculation - Avant arrivée à la gare de désaccouplement",
+        "french": "Chers voyageurs, dans quelques instants nous arrivons à […]. Attention, notre train y sera scindé. Les voitures  en tête / en queue du train, continuent vers […] s'arrêtant encore à […], […]/ sont limitées à […]. Si vous devez encore changer de voiture, vous disposez du temps nécessaire pour le faire par le quai.",
+        "dutch": "Beste reizigers, Zo dadelijk komen we aan in […]. Opgelet, onze trein wordt hier gesplitst. De rijtuigen vooraan/achteraan in de trein rijden verder naar […] en stoppen nog in […],[…] / rijden niet verder dan […]. Indien u nog van rijtuig moet veranderen hebt u hiervoor voldoende tijd om dit via het perron te doen.",
+        "german": "​Liebe Reisende, bald werden wir in […] ankommen. Ihre Aufmerksamkeit bitte, unser Zug ist hier aufgeteilt. Die Wagen  vorne im Zug / hinten im Zug, fahren weiter nach […] und halten in […], […] / fahren nicht weiter als […]. Wenn Sie den Wagen noch wechseln müssen, haben Sie genügend Zeit, dies über den Bahnsteig zu tun.",
+        "english": "Dear passengers, Soon we will arrive in […]. Your attention please, in […] our train is first coupled to another train. This will take a few moments. Only after this procedure, you will be able to open the exit doors.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Accouplement GF",
+        "french": "Chers voyageurs, nous arrivons à […]. Attention, à […] notre train sera d'abord accouplé à un autre train. Vous ne pourrez ouvrir les portes qu'après cette opération qui sera de courte durée.",
+        "dutch": "Beste reizigers, we komen zo dadeljk aan in [...]. Opgelet, in […] wordt onze trein eerst met een andere trein gekoppeld. Dit neemt niet veel tijd in beslag. Pas daarna kunt u de deuren openen en uitstappen.",
+        "german": "​Liebe Reisende, bald werden wir in […] ankommen. Ihre Aufmerksamkeit bitte, in […] wird unser Zug zuerst mit einem anderen Zug gekoppelt. Das braucht nicht viel Zeit. Nu danach können Sie die Türen öffnen und den Zug verlassen.",
+        "english": "Dear passengers, we will shortly arrive in […]. Your attention please, in […] our train is first coupled to another train. This will take a few moments. Only after this procedure, you will be able to open the exit doors.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Départ + passage dans le train",
+        "french": "​Chers voyageurs,\nBienvenue dans le train vers [...]. Ce train s'arrêtera à [...], [...], [...].\nJe passerai / Mon collègue et moi passerons dans le train d'ici peu. Si vous avez des questions n'hésitez pas.\nNous vous souhaitons / Je vous souhaite un agréable voyage.\nÀ tout à l'heure.",
+        "dutch": "Beste reizigers,\nWelkom in de trein naar [...], deze trein stopt in [...], [...], [...].\nIk kom / Mijn collega en ik komen zodadelijk bij u langs. Mocht u vragen hebben, aarzel niet ons aan te spreken.\nWe wensen / Ik wens u verder een aangename reis.\nTot zo.",
+        "german": "​Liebe Reisende,\nwillkommen im Zug nach [...]. Dieser Zug hält noch in [...], [...], [...].\nIch werde / Mein Kollege und ich werden zogleich durch den Zug gehen. Wenn sie Fragen haben, wir sind zu Ihrer Verfügung.\nWir wünschen / Ich wünsche Ihnen eine angenehme Reise.\nWir sehen uns gleich.",
+        "english": "​Dear passengers,\nWelcome in the train to [...]. This train calls at [...], [...], [...].\nI will / My colleague and I will be moving through the train shortly. If ever you have any questions, please do not hesitate.\nI wish you / We wish you a pleasant journey.\nSee you shortly.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Brussels-Airport - Zaventem / Aéroport - portiques d'àccès",
+        "french": "Chers voyageurs,\nNous arrivons en gare de Brussels Airport - Zaventem.\nVeuillez conserver votre titre de transport.\nVous en aurez besoin pour pouvoir quitter la gare par les portiques.",
+        "dutch": "Beste reizigers,\nWij komen aan in het station van Brussels Airport - Zaventem.\nHou uw vervoerbewijs goed bij.\nU heeft het nodig om het station te verlaten via de toegangspoortjes.",
+        "german": "Liebe Reisende,\nwir kommen an im Bahnhof Brussels Airport-Zaventem.\nBitte behalten Sie Ihr Ticket.\nSie benötigen es, um den Bahnhof über die Zugangsschranken verlassen zu können.",
+        "english": "Dear travellers,\nWe are arriving at Brussels Airport - Zaventem station.\nPlease keep your train ticket with you.\nYou will need it to leave the station through the access gates.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Nightjet vers l'Allemagne : Bienvenue à bord",
+        "french": "Chers voyageurs,\nBienvenue à bord du Nightjet à destination de (…)\nL’équipe à bord se tient à votre entière disposition durant tout le voyage.\nNous vous souhaitons un agréable voyage.",
+        "dutch": "Beste reizigers,\nWelkom aan boord van de Nightjet met bestemming (…)\nHet personeel aan boord van de trein staat ter uwer beschikking gedurende de hele reis.\nWe wensen u een aangename reis.",
+        "german": "​Liebe Reisende,\nWillkommen an Bord des Nightjets nach (…)\nDas Bordpersonal Ihnen während der gesamten Reise zur Verfügung.\nWir wünschen Ihnen eine gute Reise.",
+        "english": "Dear travellers,\nWelcome aboard the Nightjet towards (...).\nThe staff on board the train will be at your disposal throughout the journey.\nWe wish you a pleasant journey.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Nightjet: arrivée à Aix-la-Chapelle",
+        "french": "Beste reizigers,\nOver enkele ogenblikken komen wij aan in Aken.\nWe wensen de reizigers die ons hier verlaten nog een fijne avond en danken u dat u met Nightjet hebt gereisd.\nGelieve voor aansluitende treinen de schermen in het station te raadplegen.",
+        "dutch": "Chers voyageurs,\nDans quelques instants nous arrivons à Aix-la-Chapelle.\nNous vous  souhaitons une agréable soirée à tous les voyageurs qui nous quittent ici et vous remercions d’avoir voyagé avec le Nightjet.\nPour vos correspondances, veuillez consulter les écrans en gare.",
+        "german": "Liebe Reisende,\nIn wenigen Augenblicken werden wir in Aachen ankommen.\nWir wünschen allen Reisenden, die uns hier verlassen, einen guten Abend und danken Ihnen für Ihre Reise mit Nightjet.\nBitte informieren Sie sich auf den Bildschirmen im Bahnhof über Anschlusszüge.",
+        "english": "Dear travellers,\nIn a few moments we will arrive in Aachen.\nWe wish travellers leaving us here a good evening and thank you for travelling with Nightjet.\nPlease check the screens in the station for connecting trains.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Nightjet vers Bruxelles: Bienvenue à bord",
+        "french": "​Chers voyageurs,\nVous vous trouvez à bord du Nightjet à destination de Bruxelles Midi.\nNous ferons encore arrêt à Liège Guillemins, Bruxelles Nord et Bruxelles Midi, notre gare terminus.",
+        "dutch": "Beste reizigers,\nU bevindt zich aan boord van de Nightjet met bestemming Brussel Zuid.\nOnze trein stopt nog in Luik Guillemins, Brussel Noord en Brussel Zuid, onze eindbestemming.",
+        "german": "​Liebe Reisende,\nSie befinden sich an Bord des Nightjets mit Ziel Brüssel Süd.\nUnser Zug hält noch in Lüttich-Guillemins, Brüssel Nord und Brüssel Süd, unserem Endziel.",
+        "english": "​Dear travellers,\nYou are on board the Nightjet towards Brussels South.\nOur train stops at Liege Guillemins, Brussels North and Brussels Midi, our final destination.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Nightjet vers Bruxelles: Arrivée à Liège-Guillemins / Bruxelles-Nord",
+        "french": "Chers voyageurs, Dans quelques minutes nous arrivons à Liège-Guillemins/ Bruxelles-Nord. A Liège-Guillemins vous avez des trains au départ vers (voir les correspondances). Nous vous souhaitons une agréable journée et vous remercions d'avoir voyagé avec le Nightjet",
+        "dutch": "Beste reizigers, Over enkele ogenblikken komen wij aan in Luik-Guillemins/ Brussel-Noord. In Luik-Guillemins hebt u vertrekkende treinen naar (voir les correspondances). We wensen u nog een fijne dag en danken u dat u met de Nightjet hebt gereisd.",
+        "german": "Liebe Reisende, In wenigen Augenblicken erreichen wir Lüttich-Guillemins/Brüssel Nord. In Lüttich-Guillemins haben Sie Anschlusszüge nach (voir les correspondances). Wir wünschen Ihnen noch einen schönen Tag und danken Ihnen für Ihre Reise mit Nightjet.",
+        "english": "Dear travellers, In a few moments we will arrive at Liege-Guillemins/ Brussels North. At Liege-Guillemins you will have departing trains to (voir les correspondances). We wish you a great day and thank you for travelling on Nightjet.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Nightjet vers Bruxelles: arrivée à Bruxelles-Midi",
+        "french": "Chers voyageurs, Dans quelques instants nous arrivons à Bruxelles-Midi, gare terminus. Veuillez vous assurer de ne rien oublier dans le train. Nous vous souhaitons encore une agréable journée et vous remercions d'avoir voyagé avec le Nightjet. Pour vos correspondances, veuillez consulter les écrans en gare.",
+        "dutch": "Beste reizigers, Over enkele ogenblikken komen wij aan in onze eindbestemming, Brussel-Zuid.Gelieve na te zien dat u niets vergeet in de trein. We wensen u nog een fijne dag toe en danken dat u met de Nightjet hebt gereisd. Gelieve voor aansluitende treinen de schermen in het station te raadplegen.",
+        "german": "Liebe Reisende, In wenigen Augenblicken erreichen wir unser Endziel, Brüssel-Midi. Bitte achten Sie darauf, dass Sie nichts im Zug vergessen haben. Ich wünsche Ihnen einen schönen Tag und danke Ihnen für Ihre Reise mit Nightjet. Für Anschlusszüge sehen Sie bitte auf den Bildschirmen im Bahnhof nach.",
+        "english": "Dear travellers, In a few moments we will arrive at our final destination, Brussels-Midi. Please check that you do not forget anything on the train. Have a nice day and thank you for travelling on Nightjet. For connecting trains, please check the screens in the station.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Arrivée - Terminus Anver Central après minuit",
+        "french": "A annoncer en cas d'arrivée après minuit. Chers voyageurs, dans quelques instants, nous arriverons à Anvers Central, gare terminus de ce train. Assurez-vous de ne rien oublier dans le train. Vous pouvez sortir du train par le côté droit/gauche dans le sens de la marche. Chers voyageurs, à votre arrivée, vous ne pouvez quitter la gare que par la sortie 'Pelikaan' sur le quai avant. Nous vous souhaitons encore une bonne soirée.",
+        "dutch": "Aan te kondigen bij aankomst na middernacht. Beste reizigers, zo dadelijk komen we aan in Antwerpen Centraal, eindbestemming van deze trein. Kijk bij het uitstappen goed na of u niets vergeten bent. U kunt de trein verlaten via de rechter-/linkerkant in de rijrichting. Beste reizigers bij aankomst kunt u het station enkel verlaten via de uitgang 'Pelikaan' ter hoogte van het voorperron. We wensen u verder nog een goede avond.",
+        "german": "Liebe Reisende, wir werden bald in Antwerpen Zentral ankommen, der Endstation dieses Zuges. Überprüfen Sie vor dem Aussteigen sorgfältig, dass Sie nichts vergessen haben. Sie können den Zug auf der rechten/linken Seite in Fahrtrichtung verlassen. Liebe Reisende, bei der Ankunft können Sie den Bahnhof nur über den Ausgang 'Pelikaan' am vorderen Bahnsteig verlassen. Wir wünschen Ihnen noch einen schönen Abend.",
+        "english": "Dear passengers, in a few moment we will arrive in Antwerp Central, final destination of this train. When getting out, carefully check if you didn't forget anything. You can exit the train from the right/left side in the direction of travel. Dear passengers, on arrival you can only leave the station via the 'Pelikaan' exit at the front platform. We wish you a good evening.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Départ - Train avec peu d'arrêts (au 1er départ et après chaque gros 'noeud' pendant le parcours)",
+        "french": "Chers voyageurs, bienvenue dans le train vers […] + zie extra/ voir extra. Ce train s'arrête à […]. Je passerai / Mon collègue et moi passerons dans le train d'ici peu, n'hésitez pas à me / nous parler si vous avez une question. Je vous souhaite / Nous vous souhaitons un agréable voyage.",
+        "dutch": "Beste reizigers, welkom in de trein naar […]. + zie extra/ voir extra. Deze trein stopt (nog) in […]. Ik kom / mijn collega en ik komen straks door de trein, aarzel niet om me / ons aan te spreken als u een vragen hebt. Ik wens / Wij wensen u een aangename reis.",
+        "german": "Liebe Reisende, willkommen im Zug nach […]. + zie extra/ voir extra. Dieser Zug hält (noch) in […]. Ich werde / Mein Kollege später durch den Zug kommen, zögern Sie nicht, mit mir / mit uns zu sprechen, wenn Sie Fragen haben. Ich wünsche / Wir wünschen Ihnen eine gute Reise.",
+        "english": "Dear passengers, welcome in the train to [...]. + zie extra/ voir extra. This trains calls at […]. I / My colleague and I will come through the train in a moment, don't hesitate to speak to me / us if you have a question. I / We wish you a pleasant journey.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Départ - Train avec beaucoup d'arrêts '1er départ et après chaque gros 'noeud' pendant le parcours)",
+        "french": "Chers voyageurs, bienvenue dans le train vers […] + zie extra/ voir extra. Les premiers arrêts sont […]. Je passerai / Mon collègue et moi passerons dans le train d'ici peu, n'hésitez pas à me / nous parler si vous avez une question. Je vous souhaite / Nous vous souhaitons un agréable voyage.",
+        "dutch": "Beste reizigers, welkom in de trein naar […]. + zie extra/ voir extra. De eerstvolgende haltes zijn […]. Ik kom / mijn collega en ik komen straks door de trein, aarzel niet om me / ons aan te spreken als u een vragen hebt. Ik wens / Wij wensen u een aangename reis.",
+        "german": "Liebe Reisende, willkommen im Zug nach […]. + zie extra/ voir extra. Die nächsten Haltestellen sind […]. Ich werde / Mein Kollege später durch den Zug kommen, zögern Sie nicht, mit mir / mit uns zu sprechen, wenn Sie Fragen haben. Ich wünsche / Wir wünschen Ihnen eine gute Reise.",
+        "english": "Dear passengers, welcome in the train to [...] . + zie extra/ voir extra. This trains calls at […]. The first stops are […]. I / My colleague and I will come through the train in a moment, don't hesitate to speak to me / us if you have a question. I / We wish you a pleasant journey.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Arrivée",
+        "french": "Chers voyageurs, dans quelques instants, nous arriverons à […]. + zie extra/ voir extra",
+        "dutch": "Beste reizigers, zo dadelijk komen we aan in […]. + zie extra/ voir extra",
+        "german": "Liebe Reisende, bald werden wir in […] ankommen. + zie extra/ voir extra",
+        "english": "Dear passengers, in a few minutes we will arrive n […]. + zie extra/ voir extra",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Arrivée - noeud",
+        "french": "Chers voyageurs, dans quelques instants, nous arriverons à […]. Ce train s’arrête à […] et […] et continuera ensuite vers […[gare terminus]]. Premier arrêt: […]. + zie extra/ voir extra",
+        "dutch": "Beste reizigers, zo dadelijk komen we aan in […]. Deze trein stopt in […] en […] en rijdt daarna verder naar […[eindbestemming]]. Volgende halte: […]. + zie extra/ voir extra",
+        "german": "Liebe Reisende, bald werden wir in […] ankommen. Dieser Zug hält in […] und […] und fährt dann weiter bis [… [Endziel]]. Nächster Halt: […]. + zie extra/ voir extra",
+        "english": "Dear passengers, in a few moments, we will arrive in […]. This train stops in […] and […] and will then continue towards [… [terminus station]]. First stop : […]. + zie extra/ voir extra ",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Arrivée - terminus",
+        "french": "Chers voyageurs, dans quelques instants, nous arriverons à […], gare terminus de ce train. + zie extra/ voir extra",
+        "dutch": "Beste reizigers, zo dadelijk komen we aan in […], eindbestemming van deze trein. + zie extra/ voir extra",
+        "german": "Liebe Reisende, wir werden bald in […] ankommen, der Endstation dieses Zuges. + zie extra/ voir extra",
+        "english": "Dear passengers, in a few moment we will arrive in […], final destination of this train. + zie extra/ voir extra",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Arrivée - Terminus dernier train zone Bruxelles",
+        "french": "A annoncer à l'arrivée avec le dernier train. Chers voyageurs, dans un instant nous arriverons dans la zone de Bruxelles, nous nous arrêterons à [...], [...] et [...], gare terminus de ce train. + zie extra / voir extra. A l'arrivée, veuillez vous diriger immédiatement vers la sortie, les gares seront fermées peu après l'arrivée. Nous vous souhaitons encore une bonne soirée. Prochain arrêt [...]",
+        "dutch": "Aan te kondigen bij aankomst met de laatste trein. Beste reizigers, zo dadelijk komen we aan in zone Brussel, We stoppen in […], […] en […], eindbestemming van deze trein. + zie extra / voir extra. Gelieve u bij aankomst onmiddellijk naar de uitgang te begeven, de stations zullen kort na aankomst gesloten worden. We wensen u verder nog een goede avond. Eerstvolgende halte […]",
+        "german": "Liebe Reisende, gleich werden wir in der Zone Brüssel ankommen, wir halten in [...], [...] und [...], Endstation dieses Zuges. + zie extra / voir extra. Bei Ankunft begeben Sie sich bitte sofort zum Ausgang, die Bahnhöfe werden kurz nach der Ankunft geschlossen. Wir wünschen Ihnen noch einen schönen Abend. Nächster Halt [...]",
+        "english": "Dear passengers, soon we will arrive in zone Brussels, We stop in [...], [...] and [...], final destination of this train. + zie extra / voir extra. Upon arrival, please make your way to the exit immediately, the stations will be closed shortly after arrival. We further wish you a nice evening. Next stop [...]",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Toilettes / WC disponibles",
+        "french": "Chers voyageurs, certaines toilettes du train sont hors service. D'autres toilettes se trouvent en tête / au milieu / en queue du train.",
+        "dutch": "Beste reizigers, sommige toiletten van onze trein zijn buiten dienst. Er bevinden zich nog toiletten vooraan/ in het midden van / achteraan de trein.",
+        "german": "Liebe Reisende, einige Toiletten in unserem Zug sind außer Betrieb. Es gibt immer noch Toiletten an der Vorderseite, in der Mitte und am Ende des Zuges.",
+        "english": "Dear passengers, some toilets on our train are out of service. There are remaining toilets at the front/middle/back of the train.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Bagage au bon endroit",
+        "french": "Chers voyageurs, Il y a beaucoup de monde dans notre train aujourd'hui. Merci de placer vos bagages au-dessus / en-dessous des (ou entre les) places assises.",
+        "dutch": "Beste reizigers, Het is vandaag erg druk in onze trein. Gelieve uw bagage weg te zetten boven/ onder (of tussen) de zitplaatsen.",
+        "german": "Liebe Reisende, heute ist es in unserem Zug sehr voll. Vielen Dank, dass Sie Ihr Gepäck über/unter (oder zwishen) den Sitzen aufbewahren.",
+        "english": "Dear passengers, It's pretty busy in our train today. Please place your luggage above/below (or under) below the seats.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Correspondance",
+        "french": "Chers voyageurs, Dans quelques instants, nous arriverons à […]. Pour les amateurs de musique/les sportifs/les voyageurs qui se rendent à [nom de l'évenement, site touristique, etc], vous pouvez continuer votre voyage avec le train IC/S/L vers [...] qui partira de la voie [...], Amusez-vous bien à [nom de l'événement, du lieu touristique, ...] !",
+        "dutch": "Beste reizigers, Zo dadelijk komen we aan in […]. Voor de festivalgangers/sportievelingen/reizigers naar [naam evenement, toeristische plek, ...], jullie kunnen jullie reis verderzetten met de IC-/L-/S-trein naar [...] die vertrekt van spoor [...]. Wij komen aan op spoor [...]. Veel plezier op/in [naam evenement, toeristische plek, ...]!",
+        "german": "Liebe Reisende, Bald werden wir in […] ankommen. Für Festivalbesucher/ Sportbegeisterte/Reisende nach [nom de l'évenement, site touristique, etc] Sie können mit dem IC-/L-/S-Zug nach [...] ab Gleis [...] weiterfahren. Wir kommen an auf Gleis [...]. Viel Spaß bei/an [nom de l'événement, du lieu touristique, ...] !",
+        "english": "Dear passengers, Shortly we'll be arriving at […] station. For festival-goers/sports enthusiasts/travellers to [naam evenement, toeristische plek, ...]!, you can continue your journey on the IC-/L-/S train to [...] departing from track [...]. Have fun at/in [naam evenement, toeristische plek, ...]!",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Correspondance internationale zone Bruxelles",
+        "french": "A annoncer à l'arrivée dans la zone de Bruxelles.\n\nChers voyageurs,\nDans un instant, nous arrivons dans la zone de Bruxelles. Nous nous arrêterons à [...], [...] et [...] (et continuerons ensuite jusqu'à [...]).\nSi vous continuez votre voyage en train international, le départ se fait de Bruxelles Midi. Vous pouvez aussi prendre le train ICE en gare de Bruxelles-Nord.",
+        "dutch": "Aan te kondigen bij aankomst in zone Brussel.\n\nBeste reizigers,\nZo dadelijk komen we aan in zone Brussel. We stoppen in […], […] en […] en rijden dan verder naar […].\nReist u verder met een internationale trein, deze vertrekken vanuit Brussel Zuid. De ICE trein kan u ook in Brussel Noord nemen.",
+        "german": "Liebe Reisende,\nIn Kürze werden wir in der Zone Brüssel ankommen. Wir werden in [...], [...] und [...] halten und dann weiter fahren nach [...].\nWenn Sie mit internationalen Zügen weiterreisen, diese fahren in Brüssel Süd ab. Den ICE können Sie auch in Brüssel Nord nehmen.",
+        "english": "Dear travellers,\nIn a moment, we will arrive in zone Brussels. We will stop in [...], [...] and [...] and then continue to [...].\nIf you travel further by international train, they leave from Brussels Midi. The ICE train also leaves from Brussels North.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Extra - bienvenue",
+        "french": "Bonjour chers voyageurs [...*]\n\n*Mon nom est [...], je suis votre accompagnateur de train pendant (une partie de) ce voyage\n\n*Tout d'abord [joyeux noel/ mes meilleurs voeux pour la nouvelle année, bonne fête des mères à toutes les mamans ...] !\n\n*Je vous souhaite un agréable voyage !",
+        "dutch": "*Goeiemorgen / Goeienamiddag / Goeienavond beste reizigers, [...*]\n\n*Mijn naam is [...], ik ben uw treinbegeleider tijdens (een deel van) deze reis\n\n*Eerst en vooral [wens ik u een zalig kerstfeest!/ mijn beste wensen voor het nieuwe jaar!, prettige moederdag aan alle mama's...]\n\n*Ik wens u verder een aangename reis!",
+        "german": "*Guten Morgen / Guten Nachmittag / Guten Abend liebe Reisende, [...*]\n\n*Mein Name ist [...], ich bin Ihr Zugführer während (eines Teils) dieser Reise.\n\n*Zu allererst [wünsche ich Ihnen ein frohes Weihnachtsfest / meine besten Wünsche für das neue Jahr, einen schönen Muttertag für alle Mütter ...].\n\n*Ich wünsche Ihnen weiterhin eine angenehme Reise!",
+        "english": "*Good morning / Good afternoon / Good evening dear passengers, [...*]\n\n*My name is [...], I will be your train attendant during (part of) this journey\n\n*First of all foremost [I wish you a Merry Christmas!/ my best wishes for the New Year!, Happy Mother's Day to all mums...]\n\n*I further wish you a pleasant journey!",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Extra - pendant le trajet",
+        "french": "(pour les passagers malvoyants ou PMR, etc.) *Vous pouvez sortir du train par le côté droit/gauche dans le sens de la marche.\n\n(à l'arrivée dans une grande gare, gare où débarquent de nombreux voyageurs...) *Pour les voyageurs qui nous quittent ici, je vous souhaite encore une [bonne journée, bon week-end, bonne soirée...].",
+        "dutch": "(voor slechtziende reizigers of PMR enz) *U kunt de trein verlaten via de rechter-/linkerkant in de rijrichting.\n\n(bij aankomst in een groot station, station waar vele reizigers uitstappen...) *Voor reizigers die ons hier verlaten, ik wens u nog een [prettige dag, mooi weekend, fijne avond...]",
+        "german": "(pour les passagers malvoyants ou PMR, etc.) *Sie können den Zug über die rechte/linke Seite in Fahrtrichtung verlassen.\n\n(à l'arrivée dans une grande gare, gare où débarquent de nombreux voyageurs...) *Fahrgäste die uns hier verlassen, wünsche ich noch einen [schönen Tag, schönes Wochenende, schönen Abend...].",
+        "english": "(voor slechtziende reizigers of PMR enz) *You can exit the train via the right/left side in the direction of travel.\n\n(bij aankomst in een groot station, station waar vele reizigers uitstappen...) *For travellers leaving us here, I further wish you a [nice day, nice weekend, nice evening...].",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Extra - au revoir",
+        "french": "*Wij komen aan op spoor [...]. U kunt de trein verlaten via de rechter/linkerkant in de rijrichting.​\n*Ik wens u verder nog een prettige/aangename dag / avond / nog een fijn weekend!\n\n*Ik wens u verder nog een aangename reis!\n\n*Veel plezier in / op [naam evenement, toeristische plek, ...]\n\n*Kijkt u voor het uitstappen even na of u niks vergeten bent.",
+        "dutch": "*Nous arrivons à la voie [...]. Vous pouvez sortir du train par le côté droit/gauche dans le sens de la marche.\n*Je vous souhaite une belle/agréable journée/soirée/un bon week-end !\n\n*Je vous souhaite un bon voyage !\n\n*Amusez-vous bien à [nom de l'événement, du site touristique, ...].\n\n*Merci de vérifier que vous n'avez rien oublié avant de descendre.",
+        "german": "*Wir kommen an auf Gleis [...]. Sie können den Zug auf der rechten/linken Seite in Fahrtrichtung​ verlassen.\n*Ich wünsche Ihnen einen schönen/angenehmen Tag/Abend/ein tolles Wochenende!\n\n*Ich wünsche Ihnen eine angenehme Reise!\n\n*Viel Spaß in/bei [Name der Veranstaltung, Sehenswürdigkeit, ...].\n*Bitte überprüfen Sie, ob Sie nichts vergessen haben, bevor Sie uns verlassen.",
+        "english": "*We arrive on platform [...]. You can exit the train from the right/left side in direction of travel.​\n*I wish you a nice/pleasant day/evening/great weekend!\n\n*I wish you a pleasant journey!\nHave fun in / at [name of event, tourist site, ...].\n\n*Please check that you haven't forgotten anything before getting off the train.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Place assises disponibles / Répartition dans la train",
+        "french": "Chers voyageurs,\nIl reste des places assises disponibles tout à l'avant / tout à l'arrière du train.",
+        "dutch": "Beste reizigers,\nEr zijn nog vrije zitplaatsen vooraan/in het midden van/achteraan de trein.",
+        "german": "Liebe Reisende,\nEs gibt noch freie Sitzplätze im vorderen, mittleren und hinteren Teil des Zuges.",
+        "english": "Dear passengers,\nThere are still free seats at the front/middle/rear of the train.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Composition réduite",
+        "french": "Chers voyageurs,\nNotre train circule aujourd'hui avec moins de voitures que prévu, nous vous prions de nous en excuser.",
+        "dutch": "Beste reizigers,\nOnze trein rijdt vandaag met minder rijtuigen dan voorzien, onze excuses hiervoor.",
+        "german": "Liebe Reisende,\nUnser Zug fährt heute mit weniger Wagen als geplant, wir bitten dies zu entschuldigen.",
+        "english": "Dear travellers,\nToday our train is running with fewer carriages than planned, Please accept our apologies.",
+        "favorite": false,
+        "icon": "train"
+      },
+      {
+        "title": "Déclassement",
+        "french": "Chers voyageurs, votre attention svp!\nExceptionnellement, les voyageurs munis d'un titre de transport de 2e classe peuvent prendre place en 1re classe en tête / au milieu / en queue du train.\n(Cette disposition est d'application jusqu'à la gare de [...]).",
+        "dutch": "Beste reizigers, even uw aandacht aub!\nUitzonderlijk mogen reizigers met een vervoerbewijs 2e klas plaatsnemen in het eersteklasrijtuig vooraan / In het midden van / achteraan de trein (en dit tot het station [...]).",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nAusnahmsweise dürfen Fahrgäste mit einem Ticket der 2. Klasse einen Sitzplatz in der 1. Klasse an der Spitze / in der Mitte / am Ende des Zuges einnehmen.\n(Dies gilt bis zum Bahnhof [...]).",
+        "english": "Dear passengers, your attention please!\nExceptionally, passengers with a second class ticket may take seats in first class at the front / centre / back of the train.\n(This measure applies until [...] station).",
+        "favorite": false,
+        "icon": "train"
       }
     ],
     "urgent": [

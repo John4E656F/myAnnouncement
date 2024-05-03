@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar, View, StyleSheet } from 'react-native';
 import { ListItem } from '../../components/List';
-import DefaultData from '../../constants/DefaultData.json'; // Import the JSON data
+import DefaultData from '../../constants/DefaultData.json';
 
 export default function Page() {
   const generalData = DefaultData.categories.general;
@@ -9,9 +9,9 @@ export default function Page() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.container}>
+      <ScrollView>
         {generalData.map((item, index) => (
-          <ListItem key={`general-${index}`} title={item.title} link={`Test`} icon='train' />
+          <ListItem key={`general-${index}`} title={item.title} link={`announce/${index}`} category='general' icon='train' />
         ))}
       </ScrollView>
     </SafeAreaView>

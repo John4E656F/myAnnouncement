@@ -39,38 +39,7 @@ function RootLayoutNav() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen
-          name='(tabs)'
-          options={{
-            headerStyle: { backgroundColor: '#005BB8' },
-            headerTintColor: '#FFFFFF',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-            headerTitle: (props) => (
-              <View style={styles.navbarContainer}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
-              </View>
-            ),
-          }}
-        />
-        <Stack.Screen
-          name='announce'
-          options={{
-            headerStyle: { backgroundColor: '#005BB8' },
-            headerTintColor: '#FFFFFF',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-            headerTitle: (props) => (
-              <View style={styles.navbarContainer}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
-              </View>
-            ),
-          }}
-        />
+        <Stack.Screen name='[id]/index' options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );

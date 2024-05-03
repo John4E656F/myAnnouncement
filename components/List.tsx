@@ -8,11 +8,11 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['nam
   return <FontAwesome style={{ marginBottom: -3 }} {...props} />;
 }
 
-export function ListItem({ link, icon, title }: ListProps) {
+export function ListItem({ link, icon, title, category }: ListProps) {
   console.log(`/${link}`);
 
   return (
-    <Link href={`/${link}`} asChild style={styles.link}>
+    <Link href={{ pathname: `/${link}`, params: { cat: category } }} asChild style={styles.link}>
       <Pressable style={styles.buttonItemContainer}>
         <TabBarIcon name={icon} color='black' size={50} />
         <Text style={styles.title}>{title}</Text>

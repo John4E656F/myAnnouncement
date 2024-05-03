@@ -4,4 +4,5 @@ export interface ListProps {
   link: string;
   icon: React.ComponentProps<typeof FontAwesome>['name'];
   title: string;
+  category: string;
 }
