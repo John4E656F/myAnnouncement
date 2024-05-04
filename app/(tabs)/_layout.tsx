@@ -11,15 +11,15 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#025AB8',
+        tabBarActiveTintColor: '#2f95dc',
       }}
     >
-      <Tabs.Screen name='index' options={{ headerShown: false, tabBarIcon: ({ color }) => <TabBarIcon name='home' color={color} /> }} />
+      <Tabs.Screen name='Index' options={{ headerShown: false, tabBarIcon: ({ color }) => <TabBarIcon name='home' color='#2f95dc' /> }} />
       <Tabs.Screen
         name='general'
         options={{
           title: 'General',
-          tabBarIcon: ({ color }) => <TabBarIcon name='book' color='black' />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='book' color='#2f95dc' />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
               <Pressable>
@@ -33,7 +33,7 @@ export default function TabLayout() {
         name='realTime'
         options={{
           title: 'Temps Réel',
-          tabBarIcon: ({ color }) => <TabBarIcon name='clock-o' color='blue' />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='clock-o' color='#2f95dc' />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
               <Pressable>
@@ -47,7 +47,7 @@ export default function TabLayout() {
         name='urgent'
         options={{
           title: 'Urgent',
-          tabBarIcon: ({ color }) => <TabBarIcon name='exclamation-circle' color='blue' />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='exclamation-circle' color='#2f95dc' />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
               <Pressable>
