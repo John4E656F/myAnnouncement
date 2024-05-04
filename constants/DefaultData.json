@@ -8,7 +8,7 @@
         "german": "Liebe Reisende, willkommen im Zug nach […]. Dieser Zug hält (noch) in […]. In […] wird dieser Zug aufgeteilt. Die Nummer Ihres Wagens finden Sie über jeder Innentür / auf den Informationsbildschirmen. Die Wagen mit der (den) Nummer(n) […] vorne im Zug / hinten im Zug, fahren weiter nach […] / fahren nicht weiter als […]. Während der Fahrt können Sie durch den Zug in die richtigen Wagen wechseln. In (...) ist dies nur über den Bahnsteig möglich.",
         "english": "Dear passengers, welcome in the train to [...]. This train stops in […]. In […] this train will be split. You will find the number of your car above each interior door / on the information screens. The cars with number (s) […] at the front/at the back of the train continue to […] / do not go any further than […]. You can go through the train to the right carriage. In […] this is only possible via the platform.",
         "favorite": false,
-        "icon": "train"
+        "icon": "desaccouplement"
       },
       {
         "title": "Désaccouplement avec intercirculation - Avant arrivée à la gare de désaccouplement",
@@ -17,7 +17,7 @@
         "german": "Liebe Reisende, bald werden wir in […] ankommen. Ihre Aufmerksamkeit bitte, unser Zug wird hier geteilt. Die Wagen mit der (den) Nummer(n) […] vorne im Zug / hinten im Zug, fahren weiter nach […] und halten in […], […] / fahren nicht weiter als […]. Wenn Sie den Wagen noch wechseln müssen, haben Sie genügend Zeit, dies über den Bahnsteig zu tun.",
         "english": "Dear passengers, soon we will arrive in […]. Your attention please, our train will split here. The cars with number (s) […] at the front/at the back of the train continue to […] stopping in […], […] / do not go any further than […]. If you still have to change carriages, you have enough time to do this via the platform.",
         "favorite": false,
-        "icon": "train"
+        "icon": "desaccouplement"
       },
       {
         "title": "Désaccouplement sans intercirculation - Au départ et après chaque 'noeud' pendant le parcours",
@@ -26,7 +26,7 @@
         "german": "Liebe Reisende, Willkommen im Zug nach […]. Dieser Zug hält (noch) in […]. In [… [Teilungsstation]] wird dieser Zug aufgeteilt. Die Nummer Ihres Wagens finden Sie über jeder Innentür / auf den Informationsbildschirmen. Der (Die) Wagen mit der (den) Nummer(n) […] vorne im Zug / hinten im Zug fahren weiter […] / fahren nicht weiter als […]. Wenn wir in […] ankommen, können Sie über den Bahnsteig den richtigen Wagen erreichen. Sie haben dafür genug Zeit.",
         "english": "This train stops in […]. In […] this train will be split. You will find the number of your car above each interior door / on the information screens. The car with number (s) […] at the front / at the back of the train continue to […] / do not go any further than […]. When you arrive in […] you can reach the correct car via the platform. You should have enough time.",
         "favorite": false,
-        "icon": "train"
+        "icon": "desaccouplement"
       },
       {
         "title": "Désaccouplement sans intercirculation - Avant arrivée à la gare de désaccouplement",
@@ -35,7 +35,7 @@
         "german": "​Liebe Reisende, bald werden wir in […] ankommen. Ihre Aufmerksamkeit bitte, unser Zug ist hier aufgeteilt. Die Wagen  vorne im Zug / hinten im Zug, fahren weiter nach […] und halten in […], […] / fahren nicht weiter als […]. Wenn Sie den Wagen noch wechseln müssen, haben Sie genügend Zeit, dies über den Bahnsteig zu tun.",
         "english": "Dear passengers, Soon we will arrive in […]. Your attention please, in […] our train is first coupled to another train. This will take a few moments. Only after this procedure, you will be able to open the exit doors.",
         "favorite": false,
-        "icon": "train"
+        "icon": "desaccouplement"
       },
       {
         "title": "Accouplement GF",
@@ -44,7 +44,7 @@
         "german": "​Liebe Reisende, bald werden wir in […] ankommen. Ihre Aufmerksamkeit bitte, in […] wird unser Zug zuerst mit einem anderen Zug gekoppelt. Das braucht nicht viel Zeit. Nu danach können Sie die Türen öffnen und den Zug verlassen.",
         "english": "Dear passengers, we will shortly arrive in […]. Your attention please, in […] our train is first coupled to another train. This will take a few moments. Only after this procedure, you will be able to open the exit doors.",
         "favorite": false,
-        "icon": "train"
+        "icon": "accouplement"
       },
       {
         "title": "Départ + passage dans le train",
@@ -53,7 +53,7 @@
         "german": "​Liebe Reisende,\nwillkommen im Zug nach [...]. Dieser Zug hält noch in [...], [...], [...].\nIch werde / Mein Kollege und ich werden zogleich durch den Zug gehen. Wenn sie Fragen haben, wir sind zu Ihrer Verfügung.\nWir wünschen / Ich wünsche Ihnen eine angenehme Reise.\nWir sehen uns gleich.",
         "english": "​Dear passengers,\nWelcome in the train to [...]. This train calls at [...], [...], [...].\nI will / My colleague and I will be moving through the train shortly. If ever you have any questions, please do not hesitate.\nI wish you / We wish you a pleasant journey.\nSee you shortly.",
         "favorite": false,
-        "icon": "train"
+        "icon": "agent"
       },
       {
         "title": "Brussels-Airport - Zaventem / Aéroport - portiques d'àccès",
@@ -62,7 +62,7 @@
         "german": "Liebe Reisende,\nwir kommen an im Bahnhof Brussels Airport-Zaventem.\nBitte behalten Sie Ihr Ticket.\nSie benötigen es, um den Bahnhof über die Zugangsschranken verlassen zu können.",
         "english": "Dear travellers,\nWe are arriving at Brussels Airport - Zaventem station.\nPlease keep your train ticket with you.\nYou will need it to leave the station through the access gates.",
         "favorite": false,
-        "icon": "train"
+        "icon": "airport"
       },
       {
         "title": "Nightjet vers l'Allemagne : Bienvenue à bord",
@@ -71,7 +71,7 @@
         "german": "​Liebe Reisende,\nWillkommen an Bord des Nightjets nach (…)\nDas Bordpersonal Ihnen während der gesamten Reise zur Verfügung.\nWir wünschen Ihnen eine gute Reise.",
         "english": "Dear travellers,\nWelcome aboard the Nightjet towards (...).\nThe staff on board the train will be at your disposal throughout the journey.\nWe wish you a pleasant journey.",
         "favorite": false,
-        "icon": "train"
+        "icon": "nightjet"
       },
       {
         "title": "Nightjet: arrivée à Aix-la-Chapelle",
@@ -80,7 +80,7 @@
         "german": "Liebe Reisende,\nIn wenigen Augenblicken werden wir in Aachen ankommen.\nWir wünschen allen Reisenden, die uns hier verlassen, einen guten Abend und danken Ihnen für Ihre Reise mit Nightjet.\nBitte informieren Sie sich auf den Bildschirmen im Bahnhof über Anschlusszüge.",
         "english": "Dear travellers,\nIn a few moments we will arrive in Aachen.\nWe wish travellers leaving us here a good evening and thank you for travelling with Nightjet.\nPlease check the screens in the station for connecting trains.",
         "favorite": false,
-        "icon": "train"
+        "icon": "nightjet"
       },
       {
         "title": "Nightjet vers Bruxelles: Bienvenue à bord",
@@ -89,7 +89,7 @@
         "german": "​Liebe Reisende,\nSie befinden sich an Bord des Nightjets mit Ziel Brüssel Süd.\nUnser Zug hält noch in Lüttich-Guillemins, Brüssel Nord und Brüssel Süd, unserem Endziel.",
         "english": "​Dear travellers,\nYou are on board the Nightjet towards Brussels South.\nOur train stops at Liege Guillemins, Brussels North and Brussels Midi, our final destination.",
         "favorite": false,
-        "icon": "train"
+        "icon": "nightjet"
       },
       {
         "title": "Nightjet vers Bruxelles: Arrivée à Liège-Guillemins / Bruxelles-Nord",
@@ -98,7 +98,7 @@
         "german": "Liebe Reisende, In wenigen Augenblicken erreichen wir Lüttich-Guillemins/Brüssel Nord. In Lüttich-Guillemins haben Sie Anschlusszüge nach (voir les correspondances). Wir wünschen Ihnen noch einen schönen Tag und danken Ihnen für Ihre Reise mit Nightjet.",
         "english": "Dear travellers, In a few moments we will arrive at Liege-Guillemins/ Brussels North. At Liege-Guillemins you will have departing trains to (voir les correspondances). We wish you a great day and thank you for travelling on Nightjet.",
         "favorite": false,
-        "icon": "train"
+        "icon": "nightjet"
       },
       {
         "title": "Nightjet vers Bruxelles: arrivée à Bruxelles-Midi",
@@ -107,7 +107,7 @@
         "german": "Liebe Reisende, In wenigen Augenblicken erreichen wir unser Endziel, Brüssel-Midi. Bitte achten Sie darauf, dass Sie nichts im Zug vergessen haben. Ich wünsche Ihnen einen schönen Tag und danke Ihnen für Ihre Reise mit Nightjet. Für Anschlusszüge sehen Sie bitte auf den Bildschirmen im Bahnhof nach.",
         "english": "Dear travellers, In a few moments we will arrive at our final destination, Brussels-Midi. Please check that you do not forget anything on the train. Have a nice day and thank you for travelling on Nightjet. For connecting trains, please check the screens in the station.",
         "favorite": false,
-        "icon": "train"
+        "icon": "nightjet"
       },
       {
         "title": "Arrivée - Terminus Anver Central après minuit",
@@ -116,7 +116,7 @@
         "german": "Liebe Reisende, wir werden bald in Antwerpen Zentral ankommen, der Endstation dieses Zuges. Überprüfen Sie vor dem Aussteigen sorgfältig, dass Sie nichts vergessen haben. Sie können den Zug auf der rechten/linken Seite in Fahrtrichtung verlassen. Liebe Reisende, bei der Ankunft können Sie den Bahnhof nur über den Ausgang 'Pelikaan' am vorderen Bahnsteig verlassen. Wir wünschen Ihnen noch einen schönen Abend.",
         "english": "Dear passengers, in a few moment we will arrive in Antwerp Central, final destination of this train. When getting out, carefully check if you didn't forget anything. You can exit the train from the right/left side in the direction of travel. Dear passengers, on arrival you can only leave the station via the 'Pelikaan' exit at the front platform. We wish you a good evening.",
         "favorite": false,
-        "icon": "train"
+        "icon": "arrive"
       },
       {
         "title": "Départ - Train avec peu d'arrêts (au 1er départ et après chaque gros 'noeud' pendant le parcours)",
@@ -125,7 +125,7 @@
         "german": "Liebe Reisende, willkommen im Zug nach […]. + zie extra/ voir extra. Dieser Zug hält (noch) in […]. Ich werde / Mein Kollege später durch den Zug kommen, zögern Sie nicht, mit mir / mit uns zu sprechen, wenn Sie Fragen haben. Ich wünsche / Wir wünschen Ihnen eine gute Reise.",
         "english": "Dear passengers, welcome in the train to [...]. + zie extra/ voir extra. This trains calls at […]. I / My colleague and I will come through the train in a moment, don't hesitate to speak to me / us if you have a question. I / We wish you a pleasant journey.",
         "favorite": false,
-        "icon": "train"
+        "icon": "depart"
       },
       {
         "title": "Départ - Train avec beaucoup d'arrêts '1er départ et après chaque gros 'noeud' pendant le parcours)",
@@ -134,7 +134,7 @@
         "german": "Liebe Reisende, willkommen im Zug nach […]. + zie extra/ voir extra. Die nächsten Haltestellen sind […]. Ich werde / Mein Kollege später durch den Zug kommen, zögern Sie nicht, mit mir / mit uns zu sprechen, wenn Sie Fragen haben. Ich wünsche / Wir wünschen Ihnen eine gute Reise.",
         "english": "Dear passengers, welcome in the train to [...] . + zie extra/ voir extra. This trains calls at […]. The first stops are […]. I / My colleague and I will come through the train in a moment, don't hesitate to speak to me / us if you have a question. I / We wish you a pleasant journey.",
         "favorite": false,
-        "icon": "train"
+        "icon": "depart"
       },
       {
         "title": "Arrivée",
@@ -143,7 +143,7 @@
         "german": "Liebe Reisende, bald werden wir in […] ankommen. + zie extra/ voir extra",
         "english": "Dear passengers, in a few minutes we will arrive n […]. + zie extra/ voir extra",
         "favorite": false,
-        "icon": "train"
+        "icon": "arrive"
       },
       {
         "title": "Arrivée - noeud",
@@ -152,7 +152,7 @@
         "german": "Liebe Reisende, bald werden wir in […] ankommen. Dieser Zug hält in […] und […] und fährt dann weiter bis [… [Endziel]]. Nächster Halt: […]. + zie extra/ voir extra",
         "english": "Dear passengers, in a few moments, we will arrive in […]. This train stops in […] and […] and will then continue towards [… [terminus station]]. First stop : […]. + zie extra/ voir extra ",
         "favorite": false,
-        "icon": "train"
+        "icon": "arrive"
       },
       {
         "title": "Arrivée - terminus",
@@ -161,7 +161,7 @@
         "german": "Liebe Reisende, wir werden bald in […] ankommen, der Endstation dieses Zuges. + zie extra/ voir extra",
         "english": "Dear passengers, in a few moment we will arrive in […], final destination of this train. + zie extra/ voir extra",
         "favorite": false,
-        "icon": "train"
+        "icon": "arrive"
       },
       {
         "title": "Arrivée - Terminus dernier train zone Bruxelles",
@@ -170,7 +170,7 @@
         "german": "Liebe Reisende, gleich werden wir in der Zone Brüssel ankommen, wir halten in [...], [...] und [...], Endstation dieses Zuges. + zie extra / voir extra. Bei Ankunft begeben Sie sich bitte sofort zum Ausgang, die Bahnhöfe werden kurz nach der Ankunft geschlossen. Wir wünschen Ihnen noch einen schönen Abend. Nächster Halt [...]",
         "english": "Dear passengers, soon we will arrive in zone Brussels, We stop in [...], [...] and [...], final destination of this train. + zie extra / voir extra. Upon arrival, please make your way to the exit immediately, the stations will be closed shortly after arrival. We further wish you a nice evening. Next stop [...]",
         "favorite": false,
-        "icon": "train"
+        "icon": "arrive"
       },
       {
         "title": "Toilettes / WC disponibles",
@@ -179,7 +179,7 @@
         "german": "Liebe Reisende, einige Toiletten in unserem Zug sind außer Betrieb. Es gibt immer noch Toiletten an der Vorderseite, in der Mitte und am Ende des Zuges.",
         "english": "Dear passengers, some toilets on our train are out of service. There are remaining toilets at the front/middle/back of the train.",
         "favorite": false,
-        "icon": "train"
+        "icon": "wc"
       },
       {
         "title": "Bagage au bon endroit",
@@ -188,7 +188,7 @@
         "german": "Liebe Reisende, heute ist es in unserem Zug sehr voll. Vielen Dank, dass Sie Ihr Gepäck über/unter (oder zwishen) den Sitzen aufbewahren.",
         "english": "Dear passengers, It's pretty busy in our train today. Please place your luggage above/below (or under) below the seats.",
         "favorite": false,
-        "icon": "train"
+        "icon": "bagage"
       },
       {
         "title": "Correspondance",
@@ -197,7 +197,7 @@
         "german": "Liebe Reisende, Bald werden wir in […] ankommen. Für Festivalbesucher/ Sportbegeisterte/Reisende nach [nom de l'évenement, site touristique, etc] Sie können mit dem IC-/L-/S-Zug nach [...] ab Gleis [...] weiterfahren. Wir kommen an auf Gleis [...]. Viel Spaß bei/an [nom de l'événement, du lieu touristique, ...] !",
         "english": "Dear passengers, Shortly we'll be arriving at […] station. For festival-goers/sports enthusiasts/travellers to [naam evenement, toeristische plek, ...]!, you can continue your journey on the IC-/L-/S train to [...] departing from track [...]. Have fun at/in [naam evenement, toeristische plek, ...]!",
         "favorite": false,
-        "icon": "train"
+        "icon": "correspondance"
       },
       {
         "title": "Correspondance internationale zone Bruxelles",
@@ -206,7 +206,7 @@
         "german": "Liebe Reisende,\nIn Kürze werden wir in der Zone Brüssel ankommen. Wir werden in [...], [...] und [...] halten und dann weiter fahren nach [...].\nWenn Sie mit internationalen Zügen weiterreisen, diese fahren in Brüssel Süd ab. Den ICE können Sie auch in Brüssel Nord nehmen.",
         "english": "Dear travellers,\nIn a moment, we will arrive in zone Brussels. We will stop in [...], [...] and [...] and then continue to [...].\nIf you travel further by international train, they leave from Brussels Midi. The ICE train also leaves from Brussels North.",
         "favorite": false,
-        "icon": "train"
+        "icon": "correspondance"
       },
       {
         "title": "Extra - bienvenue",
@@ -215,7 +215,7 @@
         "german": "*Guten Morgen / Guten Nachmittag / Guten Abend liebe Reisende, [...*]\n\n*Mein Name ist [...], ich bin Ihr Zugführer während (eines Teils) dieser Reise.\n\n*Zu allererst [wünsche ich Ihnen ein frohes Weihnachtsfest / meine besten Wünsche für das neue Jahr, einen schönen Muttertag für alle Mütter ...].\n\n*Ich wünsche Ihnen weiterhin eine angenehme Reise!",
         "english": "*Good morning / Good afternoon / Good evening dear passengers, [...*]\n\n*My name is [...], I will be your train attendant during (part of) this journey\n\n*First of all foremost [I wish you a Merry Christmas!/ my best wishes for the New Year!, Happy Mother's Day to all mums...]\n\n*I further wish you a pleasant journey!",
         "favorite": false,
-        "icon": "train"
+        "icon": "extra"
       },
       {
         "title": "Extra - pendant le trajet",
@@ -224,7 +224,7 @@
         "german": "(pour les passagers malvoyants ou PMR, etc.) *Sie können den Zug über die rechte/linke Seite in Fahrtrichtung verlassen.\n\n(à l'arrivée dans une grande gare, gare où débarquent de nombreux voyageurs...) *Fahrgäste die uns hier verlassen, wünsche ich noch einen [schönen Tag, schönes Wochenende, schönen Abend...].",
         "english": "(voor slechtziende reizigers of PMR enz) *You can exit the train via the right/left side in the direction of travel.\n\n(bij aankomst in een groot station, station waar vele reizigers uitstappen...) *For travellers leaving us here, I further wish you a [nice day, nice weekend, nice evening...].",
         "favorite": false,
-        "icon": "train"
+        "icon": "extra"
       },
       {
         "title": "Extra - au revoir",
@@ -233,7 +233,7 @@
         "german": "*Wir kommen an auf Gleis [...]. Sie können den Zug auf der rechten/linken Seite in Fahrtrichtung​ verlassen.\n*Ich wünsche Ihnen einen schönen/angenehmen Tag/Abend/ein tolles Wochenende!\n\n*Ich wünsche Ihnen eine angenehme Reise!\n\n*Viel Spaß in/bei [Name der Veranstaltung, Sehenswürdigkeit, ...].\n*Bitte überprüfen Sie, ob Sie nichts vergessen haben, bevor Sie uns verlassen.",
         "english": "*We arrive on platform [...]. You can exit the train from the right/left side in direction of travel.​\n*I wish you a nice/pleasant day/evening/great weekend!\n\n*I wish you a pleasant journey!\nHave fun in / at [name of event, tourist site, ...].\n\n*Please check that you haven't forgotten anything before getting off the train.",
         "favorite": false,
-        "icon": "train"
+        "icon": "extra"
       },
       {
         "title": "Place assises disponibles / Répartition dans la train",
@@ -242,7 +242,7 @@
         "german": "Liebe Reisende,\nEs gibt noch freie Sitzplätze im vorderen, mittleren und hinteren Teil des Zuges.",
         "english": "Dear passengers,\nThere are still free seats at the front/middle/rear of the train.",
         "favorite": false,
-        "icon": "train"
+        "icon": "assise"
       },
       {
         "title": "Composition réduite",
@@ -251,7 +251,7 @@
         "german": "Liebe Reisende,\nUnser Zug fährt heute mit weniger Wagen als geplant, wir bitten dies zu entschuldigen.",
         "english": "Dear travellers,\nToday our train is running with fewer carriages than planned, Please accept our apologies.",
         "favorite": false,
-        "icon": "train"
+        "icon": "comporeduite"
       },
       {
         "title": "Déclassement",
@@ -260,21 +260,497 @@
         "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nAusnahmsweise dürfen Fahrgäste mit einem Ticket der 2. Klasse einen Sitzplatz in der 1. Klasse an der Spitze / in der Mitte / am Ende des Zuges einnehmen.\n(Dies gilt bis zum Bahnhof [...]).",
         "english": "Dear passengers, your attention please!\nExceptionally, passengers with a second class ticket may take seats in first class at the front / centre / back of the train.\n(This measure applies until [...] station).",
         "favorite": false,
-        "icon": "train"
+        "icon": "declass"
+      }
+    ],
+    "realTime": [
+      {
+        "title": "Vitesse réduite - Cause inconnue 1ere annonce",
+        "french": "Chers voyageurs, votre attention s'il vous plaît !\nNous roulons actuellement à une vitesse réduite. Je me renseigne sur la cause et vous informerai dès que possible.",
+        "dutch": "​Beste reizigers, even uw aandacht a.u.b!\nWij rijden momenteel met een beperkte snelheid. Ik informeer me over de oorzaak en breng u zo snel mogelijk op de hoogte.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWir fahren mit reduzierter Geschwindigkeit. Ich erkundige mich nach der Ursache und werde Sie so schnell wie möglich informieren.",
+        "english": "Dear passengers, your attention please!\nWe are currently driving at a reduced speed. I will inquire about the cause and will inform you as soon as possible.",
+        "favorite": false,
+        "icon": "slow"
+      },
+      {
+        "title": "Vitesse réduite - Cause connue 1ere annonce",
+        "french": "Chers voyageurs, votre attention svp !\nEn raison [...*]\n  * d'un accident\n  * d'un obstacle dans la voie\n  * de personnes dans la voie\n  * d'un mouvement social\n  * de travaux d'infrastructure\n  * des conditions climatiques​\n  * d'un trafic perturbé\n  * d'un vol de cuivre\n  * ... (autres raison)\nPour des raisons techniques\n\nNous roulons à vitesse réduite. Nous vous tiendrons informés",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nDoor [...*]\n  * een ongeval\n  * een obstakel op het spoor\n  * personen in het spoor\n  * een sociale actie\n  * Infrastructuurwekzaamheden\n  * weeromstandigen\n  * verstoord treinverkeer\n  * koperdiefstal\n  ... (andere reden)\nOm technische redenen\n\nRijden we met een beperkte snelheid. We houden u op de hoogte.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWegen [...*]\n  * eines Unfalls\n  * eines Hindernisses auf dem Gleis\n  * Personen in den Gleisen\n  * einer sozialen Bewegung\n  * Infrastrukturarbeiten\n  * der klimatischen Bedingungen\n  * einer Verkehrsstörung\n  * eines Kupferdiebstahls\n  ... (andere reden, autre raison)\nAus technischen Gründen\n\nFahren wir mit reduzierter Geschwindigkeit. Wir werden Sie weiter informieren.",
+        "english": "Dear passengers, your attention please!\nDue to [...*]\n  * an accident\n  * the presence of an obstacle on the tracks\n  * the presence of people on the tracks\n  * a social movement\n  * infrastructure works\n  * weather conditions​\n  * disrupted traffic\n  * a copper wire theft\n  ... (andere reden, autre raison)\nFor technical reasons\n\nWe are proceeding at reduced speed. We will keep you informed.",
+        "favorite": false,
+        "icon": "slow"
+      },
+      {
+        "title": "Train limité",
+        "french": "Chers voyageurs, votre attention svp!\nEn raison [...*]\n  * d'un accident\n  * d'un obstacle dans la voie\n  * d'un mouvement social\n  * de travaux d'infrastructure\n  * des conditions climatiques\n  * d'un trafic perturbé\n  * d'un vol de cuivre\n  * Pour des raisons techniques\n\nNotre train n'ira pas plus loin que […]\nN'hésitez pas de me demander tout renseignement nécessaire lors de lors de mon passage dans le train.",
+        "dutch": "​Beste reizigers, even uw aandacht a.u.b!\nDoor [...*]\n  * een ongeval\n  * een aanrijding\n  * een obstakel op het spoor\n  * personen nabij het spoor\n  * een spontane werkonderbreking\n  * Infrastructuurwekzaamheden\n  * weeromstandigen\n  * verstoord treinverkeer\n  * slechte weersomstandigheiden\n  * koperdiefstal\n  ... (andere reden)\n\nOm technische redenen\n\nRijdt onze trein niet verder dan [...].\nAarzel niet om me om informatie te vragen wanneer ik in de trein langskom.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWegen [...*]\n  * eines Unfalls\n  * eines Hindernisses auf dem Gleis\n  * einer sozialen Bewegung\n  * Infrastrukturarbeiten\n  * der klimatischen Bedingungen\n  * einer Verkehrsstörung\n  * eines Kupferdiebstahls\n  * ... (andere reden, autre raison)\n\nAus technischen Gründen\n\nWird unser Zug nicht weiter fahren als […].\nBitte, zögern Sie nicht, mich um Auskunft zu fragen, wenn ich im Zug vorbeikomme.",
+        "english": "Dear passengers, your attention please!\nDue to [...*]\n  * an accident\n  * the presence of an obstacle on the tracks\n  * a social movement\n  * infrastructure works\n  * weather conditions​\n  * disrupted traffic\n  * a copper wire theft\n  * ... (andere reden, autre raison)\n\nFor technical reasons\n\nOur train will not be going any further then […]\nDon't hesitate to ask for any information you need when I pass through the train.",
+        "favorite": false,
+        "icon": "pbtrain"
+      },
+      {
+        "title": "Déviation - Cause inconnu",
+        "french": "Chers voyageurs, votre attention svp!\nPour une raison encore indéterminée, notre train sera dévié entre ... et ... , ce qui engendra un temps de parcours supplémentaire d'environ x minutes. Veuillez nous en excuser.\nN'hésitez pas de me demander tout renseignement nécessaire lors de lors de mon passage dans le train.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nOm een nog ongekende reden rijdt onze trein om tussen [...] en [...] met een verlengde reistijd van ongeveer X minuten als gevolg. Onze excuses hiervoor. Aarzel niet om me om informatie te vragen wanneer ik in de trein langskom.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nAus einem noch unbekannten Grund wird unser Zug zwischen ... und ... umgeleitet. . Dies führt zu einer zusätzlichen Fahrzeit von ca. x Minuten. Wir bitten Sie, dies zu entschuldigen.\nBitte, zögern Sie nicht, mich um Auskunft zu fragen, wenn ich im Zug vorbeikomme.",
+        "english": "Dear passengers, your attention please!\nFor reasons as yet undetermined, our train will be diverted between ... and ... which will mean an extra journey time of approximately x minutes. We apologise for any inconvenience.  Don't hesitate to ask for any information you need when I pass through the train.",
+        "favorite": false,
+        "icon": "deviation"
+      },
+      {
+        "title": "Déviation cause connue",
+        "french": "Chers voyageurs, votre attention svp !\nEn raison [...*]\n  * d'un accident\n  * d'un incident sur les voies\n  * d'un obstacle dans les voies\n  * de personnes le long des voies\n  * d'un arrêt de travail spontané\n  * de travaux d'infrastructure\n  * d'une circulation des trains perturbée\n  * d'un vol de cuivre\n  * de travaux d'infrastructures non prévus\n  * des mauvaises conditions météo\n  * ... (autres raisons)\n\n  * Pour des raisons techniques\n\n  Aucun train ne circule entre [...] et [...]. Notre train sera dévié, ce qui engendra un temps de parcours supplémentaire d'environ xx minutes. Veuillez nous en excuser.\n  N'hésitez pas de me demander tout renseignement nécessaire lors de lors de mon passage dans le train.",
+        "dutch": "​Beste reizigers, even uw aandacht a.u.b!\nDoor [...*]\n  * een ongeval\n  * een aanrijding\n  * een obstakel op het spoor\n  * personen nabij het spoor\n  * een spontane werkonderbreking\n  * Infrastructuurwerkzaamheden\n  * weeromstandigen\n  * verstoord treinverkeer\n  * slechte weersomstandigheiden\n  * koperdiefstal\n  * ... (andere reden)\n\n  * Om technische redenen\n\n  Rijden er geen treinen tussen [...] en [...]. Onze trein rijdt om met een verlengde reistijd van ongeveer X minuten tot gevolg. Onze excuses hiervoor.\n  Aarzel niet om me om informatie te vragen wanneer ik in de trein langskom.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWegen [...*]\n  * eines Unfalls\n  * eines Hindernisses auf dem Gleis\n  * einer sozialen Bewegung\n  * Infrastrukturarbeiten\n  * der klimatischen Bedingungen\n  * einer Verkehrsstörung\n  * eines Kupferdiebstahls\n  * ... (andere reden, autre raison)\n\n  * Aus technischen Gründen\n\n  Gibt es kein Zugverkehr zwischen [...] und [...]. Unser Zug wird umgeleitet, was zu einer zusätzlichen Fahrzeit von etwa xx Minuten führt. Wir bitten Sie, dies zu entschuldigen.\n  Bitte, zögern Sie nicht, mich um Auskunft zu fragen, wenn ich im Zug vorbeikomme.",
+        "english": "Dear passengers, your attention please!\nDue to [...*]\n  * an accident\n  * the presence of an obstacle on the tracks\n  * a social movement\n  * infrastructure works\n  * weather conditions\n  * disrupted traffic\n  * a copper wire theft\n  * ... (andere reden, autre raison)\n\n  * For technical reasons\n\n  There is no railway traffic between […] and […]. Our train will be diverted, resulting in an extra journey time of around xx minutes. We apologise for any inconvenience.\n  Please do not hesitate to ask me for any information you may require when I am on the train.",
+        "favorite": false,
+        "icon": "deviation"
+      },
+      {
+        "title": "Climatisation / Chauffage hors service 1 voiture",
+        "french": "[À annoncer uniquement dans la (les) voiture(s) concernée(s) via la sono ou de vive-voix]\n\nChers voyageurs, votre attention svp!\nLe chauffage / la climatisation de cette voiture est actuellement hors service.\n(Pour votre confort, vous pouvez prendre place dans une autre voiture). [si la possibilité existe].\nVeuillez nous en excuser.",
+        "dutch": "[Enkel in het (de) betreffende rijtuig(en) via sono of luide stem]\n\nBeste reizigers, even uw aandacht a.u.b!\nDe verwarming / airco van dit rijtuig is op dit ogenblik buiten dienst.\n(Voor uw comfort kan u eventueel plaatsnemen in een ander rijtuig). [indien mogelijk]\nWe verontschuldigen ons hiervoor.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!​\n\nDie Heizung/Klimaanlage dieses Wagens ist derzeit außer Betrieb.\n(Zu Ihrer Bequemlichkeit können Sie in einem anderen Wagen Platz nehmen).[indien mogelijk / si possible].\nDafür entschuldigen wir uns.",
+        "english": "Dear passengers, your attention please!\nThe air-conditioning / heating in this carriage is out of order.\n(For your comfort, you can move to another carriage). [indien mogelijk / si possible].\nPlease accept our apologies.",
+        "favorite": false,
+        "icon": "clim"
+      },
+      {
+        "title": "Arrêt en pleine voie - climatisation hors service",
+        "french": "Chers voyageurs (votre attention svp.).\nEn raison de notre longue immobilisation, la climatisation ne fonctionne plus dans notre train.\nAfin de ventiler, certaines portes seront ouvertes par le personnel.\nPour votre sécurité, nous vous demandons de ne pas ouvrir les portes par vous-mêmes, de ne pas quitter le train et de suivre les directives du personnel. Merci pour votre coopération.",
+        "dutch": "Beste reizigers, (graag even uw aandacht).\nDoor onze lange stilstand, werkt de airconditioning niet meer in onze trein.\nOm ventilatie mogelijk te maken, zal het personeel enkele deuren openen.\nVoor uw veiligheid vraag ik u de deuren niet zelf te openen, de trein niet te verlaten en de richtlijnen van het personeel op te volgen.\nDank u voor uw medewerking.",
+        "german": "Liebe Reisende, (ich bitte um Ihre Aufmerksamkeit!).\nAufgrund unserer langen Ausfallzeit funktioniert die Klimaanlage in unserem Zug nicht mehr.\nUm zu lüften, werden vom Personal einige Türen geöffnet.\nZu Ihrer Sicherheit bitten wir Sie, die Türen nicht selbst zu öffnen, den Zug nicht zu verlassen und die Anweisungen des Personals zu befolgen. Ich danke Ihnen für Ihre Mitwirkung.",
+        "english": "Dear passengers, (your attention please!)\nDue to our long standstill, the air conditioning is no longer working in our train.\nFor ventilation reasons, some doors will be opened by the train staff.\nFor your safety, please do not open the doors yourself, please do not leave the train and please follow the instructions from staff. Thank you for your cooperation.",
+        "favorite": false,
+        "icon": "clim"
+      },
+      {
+        "title": "Éclairage hors service",
+        "french": "[À annoncer uniquement dans la (les) voiture(s) concernée(s) via la sono ou de vive-voix]\nChers voyageurs, votre attention svp !\nL'éclairage de cette voiture est actuellement hors service.\nPour votre sécurité, nous vous invitons à limiter vos déplacements.",
+        "dutch": "[Enkel in het (de) betreffende rijtuig(en) via sono of luide stem]\nBeste reizigers, even uw aandacht a.u.b!\nDe verlichting van dit rijtuig is momenteel buiten dienst.\nVoor uw veiligheid vragen we u uw verplaatsingen in de trein te beperken.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDie Beleuchtung dieses Wagens ist (derzeit) außer Betrieb.\nZu Ihrer Sicherheit bitten wir Sie ein, Ihre Bewegungen einzuschränken.",
+        "english": "Dear passengers, your attention please!\nThe lighting in this carriage is (currently) out of order.\nFor your safety, please refrain from moving around.",
+        "favorite": false,
+        "icon": "eclairage"
+      },
+      {
+        "title": "Portes hors service voiture complète",
+        "french": "[À annoncer uniquement dans la (les) voiture(s) concernée(s) via la sono ou de vive-voix]\nChers voyageurs, votre attention svp !\nLes portes de cette voiture (à droite/gauche dans le sens de la marche) sont hors service.\nLe débarquement n'est possible que par une autre voiture.",
+        "dutch": "[Enkel in het (de) betreffende rijtuig(en) via sono of luide stem]\nBeste reizigers, even uw aandacht a.u.b!\nDe deuren van dit rijtuig (aan de rechter-/linkerzijde in de rijrichting) zijn buiten dienst.\nUitstappen kan alleen via een ander rijtuig.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDie Türen dieses Wagens (in Fahrtrichtung rechts/links) sind außer Betrieb.\nDer Ausstieg ist nur über einen anderen Wagen möglich.",
+        "english": "Dear passengers, your attention please!\nThe doors of this carriage (on the right/left side in the direction of travel) are out of service.\nDisembarking is only possible via another carriage.",
+        "favorite": false,
+        "icon": "porte"
+      },
+      {
+        "title": "Suspension pneumatique hors service",
+        "french": "[À annoncer uniquement dans la (les) voiture(s) concernée(s) via la sono ou de vive-voix]\n\nChers voyageurs, votre attention svp !\nLa suspension pneumatique est hors service.\nPour votre sécurité, veuillez vous rendre dans une autre voiture.\nVeuillez nous en excuser.",
+        "dutch": "[Enkel in het (de) betreffende rijtuig(en) via sono of luide stem]\n\nBeste reizigers, even uw aandacht a.u.b!\nDe pneumatische ophanging van dit rijtuig is buiten dienst.\nVoor uw veiligheid dient u in een ander rijtuig plaats te nemen.\nWe verontschuldigen ons hiervoor.",
+        "german": "[Nur in dem/den betreffenden Wagen über Mikrofon oder mündlich anzukündigen]\n\nLiebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDie Luftfederung ist außer Betrieb.\nZu Ihrer Sicherheit, gehen Sie bitte in einen anderen Wagen.\nDafür entschuldigen wir uns.",
+        "english": "Dear passengers, your attention please!\nThe air suspension is out of order.\nFor your safety, please move to another carriage.\nPlease accept our apologies.",
+        "favorite": false,
+        "icon": "pbtrain"
+      },
+      {
+        "title": "Arrêt en pleine voie - cause inconnue",
+        "french": "Chers voyageurs, notre train est (toujours) à l'arrêt.\nJe me renseigne sur la cause et reviens rapidement vers vous.",
+        "dutch": "Beste reizigers, onze trein staat momenteel (nog steeds) stil. Ik informeer me over de oorzaak en breng u zo snel mogelijk op de hoogte.",
+        "german": "Liebe Reisende, unser Zug steht derzeit noch immer still.\nIch erkundige mich nach der Ursache und werde Sie so schnell wie möglich informieren.",
+        "english": "Dear passengers, our train is currently (still) at a standstill.\nI am inquiring about the cause and will inform you as soon as possible.",
+        "favorite": false,
+        "icon": "arret"
+      },
+      {
+        "title": "Arrêt en pleine voie / Trafic interrompu - cause connue",
+        "french": "Chers voyageurs, votre attention svp !\nEn raison [...*]\n  * d'un accident\n  * d'un incident sur les voies\n  * d'un obstacle dans les voies\n  * de personnes le long des voies\n  * d'un arrêt de travail spontané\n  * de travaux d'infrastructure\n  * d'un vol de cuivre\n  * de travaux d'infrastructures non prévus\n  * des mauvaises conditions météo\n  * Pour des raisons techniques\n  * ... (autres raisons)\nil n'y a plus de circulation de trains entre [...] et [...].\nJe passerai dans le train d'ici peu. N'hésitez pas de me demander tout renseignement nécessaire.",
+        "dutch": "​Beste reizigers, even uw aandacht a.u.b!\nDoor [...*]\n  * een ongeval\n  * een aanrijding\n  * een obstakel op het spoor\n  * personen nabij het spoor\n  * een spontane werkonderbreking\n  * Infrastructuurwekzaamheden\n  * weeromstandigheden\n  * slechte weersomstandigheden\n  * koperdiefstal\n  * ... (andere reden)\n  * Om technische redenen\nstaat onze trein op dit moment stil en rijden er momenteel geen treinen tussen [...] en [...].\nIk kom zodadelijk in de trein voorbij, aarzel niet om me aan te spreken als u vragen hebt.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWegen [...*]\n  * eines Unfalls\n  * eines Hindernisses auf den Gleisen\n  * einer sozialen Bewegung\n  * Infrastrukturarbeiten\n  * der klimatischen Bedingungen\n  * eines Kupferdiebstahls\n  * Aus technischen Gründen\n  * ... (andere Gründe)\n gibt es kein Zugverkehr zwischen [...] und [...].\nIch werde in Kürze im Zug vorbeikommen, bitte zögern Sie nicht, mich anzusprechen, wenn Sie irgendwelche Fragen haben.",
+        "english": "Dear passengers, your attention please!\nDue to [...*]\n  * an accident\n  * the presence of an obstacle on the tracks\n  * a social movement\n  * infrastructure works\n  * weather conditions\n  * disrupted traffic\n  * a copper wire theft\n  * For technical reasons\n  * ... (other reasons)\nthe railway traffic between […] and […] is interrupted.\nI will pass by on the train shortly, please do not hesitate to speak to me if you have any questions.",
+        "favorite": false,
+        "icon": "arret"
+      },
+      {
+        "title": "Défaillance du conducteur",
+        "french": "Chers voyageurs, votre attention svp !\nNotre conducteur ne peut pas poursuivre son service.\nNous mettons tout en oeuvre pour en limiter les conséquences.\nJe vous tiendrai informés de l'évolution de la situation. Veuillez nous en excuser.",
+        "dutch": "​Beste reizigers, even uw aandacht a.u.b!\nOnze bestuurder kan de rit niet verderzetten.​\nWe doen er alles aan om de gevolgen voor u te​ beperken.\nIk hou op de hoogte van de evolutie van de situatie. Onze excuses hiervoor.",
+        "german": "Unser Fahrer kann die Fahrt nicht fortsetzen.\nWir tun alles, um die Auswirkungen für Sie so gering wie möglich zu halten.\nIch werde Sie weiter über die Entwicklung der Situation informieren. Wir entschuldigen uns hierfür.",
+        "english": "Dear passengers, your attention please!\nOur driver cannot remain on duty.\nWe are doing everything possible to minimise the disruption.\nI will keep you informed on the evolution of the situation.\nPlease accept our apologies.",
+        "favorite": false,
+        "icon": "conducteur"
+      },
+      {
+        "title": "Mouvement social / Gréve",
+        "french": "Chers voyageurs, votre attention svp !\n\nEn raison d'un arrêt de travail spontané\n  * notre train ne peut (actuellement) pas poursuivre son parcours.\n  * notre train partira avec un retard d'environ […] minutes.\n\nJe vous tiendrai informés de l'évolution de la situation.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\n\nDoor een spontane werkonderbreking [...*]\n  * kan onze trein (momenteel) niet verder rijden.\n  * zullen we met een vertraging van (ongeveer […] minuten)  vertrekken.\n\nIk hou op de hoogte van  de evolutie van de situatie.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\n\nAufgrund einer sozialen Bewegung [...*]\n  * kann unser Zug (derzeit) seine Fahrt nicht fortsetzen.\n  * wird unser Zug mit einer Verspätung (von voraussichtlich [...]) abfahren.\n\nIch werde Sie weiter über die Entwicklung der Situation informieren.",
+        "english": "Dear passengers, your attention please!\n\nDue to a social movement [...*]\n  * our train cannot (currently) continue its journey.\n  * our train will be delayed (probably by [...]).\n\nI will keep you informed on the evolution of th situation.",
+        "favorite": false,
+        "icon": "redflag"
+      },
+      {
+        "title": "Voie occupée / Signal rouge en pleine voie",
+        "french": "Chers voyageurs, votre attention svp !\nNous attendons que le train précédent libère la voie.\nNous repartirons dès que possible.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b.!\nWe wachten tot het spoor voor ons vrij is.\nWe vertrekken zo snel mogelijk.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWir warten darauf, dass der vorherige Zug die Gleise freigibt.\nWir werden so bald wie möglich abfahren.",
+        "english": "Dear passengers, your attention please!\nWe are waiting for the train ahead to clear the tracks.\nWe will continue our journey as soon as possible.",
+        "favorite": false,
+        "icon": "signal"
+      },
+      {
+        "title": "Arrêt / départ imprévu suite à un problème technique 1ère annonce",
+        "french": "Chers voyageurs, votre attention svp !\nLe conducteur me signale un problème technique. Je vous tiendrai au courant de l'évolution de la situation.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nDe bestuurder meldt mij zonet een technisch probleem. Ik houd u op de hoogte van de verdere ontwikkeling van de situatie.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDer Fahrer hat mir gerade ein technisches Problem gemeldet. Ich werde Sie informieren, wie sich die Situation entwickelt.",
+        "english": "Dear passengers, your attention please!\nThe driver just reported a technical problem to me. I will keep you updated on how the situation develops.",
+        "favorite": false,
+        "icon": "technic"
+      },
+      {
+        "title": "Train supprimé - temp dispo pour ronde info",
+        "french": "Chers voyageurs, votre attention svp !\nEn raison [...*]\n  * d'un accident\n  * d'un incident sur les voies\n  * d'un obstacle dans les voies\n  * de personnes le long des voies\n  * d'un arrêt de travail spontané\n  * de travaux d'infrastructure\n  * d'une circulation des trains perturbée\n  * d'un vol de cuivre\n  * de travaux d'infrastructures non prévus\n  * des mauvaises conditions météo\n  * Pour des raisons techniques\n  * ... (autres raisons)\nce train sera supprimé.\nSi vous avez des questions sur la suite de votre trajet, n'hésitez pas à me le signaler quand je passe parmi vous. Je me trouve actuellement, à l'avant/au milieu/à l'arrière du train.",
+        "dutch": "​Beste reizigers, even uw aandacht a.u.b!\nMen meldt mij net dat door [...*]\n  * een ongeval\n  * een aanrijding\n  * een obstakel op het spoor\n  * personen nabij het spoor\n  * een spontane werkonderbreking\n  * Infrastructuurwekzaamheden\n  * weeromstandigen\n  * verstoord treinverkeer\n  * slechte weersomstandigheden\n  * koperdiefstal\n  * ... (andere reden)\n  * Om technische redenen\nonze trein niet verder rijdt dan [...]\nIk kom zodadelijk in de trein voorbij, aarzel niet om me aan te spreken als u vragen hebt.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWegen [...*]\n  * eines Unfalls\n  * eines Hindernisses auf dem Gleis\n  * einer sozialen Bewegung\n  * Infrastrukturarbeiten\n  * der klimatischen Bedingungen\n  * einer Verkehrsstörung\n  * eines Kupferdiebstahls\nAus [...*]\n  * technischen Gründen\n  * noch nicht geklärtem Grund\nwird dieser Zug gestrichen\nWir versuchen Alternatieve mit zu teilen vor unserem Ankunft",
+        "english": "Dear passengers, your attention please!\nDue to [...*]\n  * an accident\n  * the presence of an obstacle on the tracks\n  * a social movement\n  * infrastructure works\n  * weather conditions\n  * disrupted traffic\n  * a copper wire theft\nFor [...*]\n  * technical reasons\n  * an as yet unknown reason\nthis train will be removed from service\nWe will try to inform you on alternatives before our arrival",
+        "favorite": false,
+        "icon": "pbtrain"
+      },
+      {
+        "title": "Train supprimé - pas d'alternative connue",
+        "french": "[Alternative connue avant arrivée en gare]\nNous arrivons en gare de [...], gare terminus de ce train/ Comme signalé plus tôt, notre train ne continuera pas son voyage à partir d'ici.\nLe premier train en direction de […] est prévu à la voie […]",
+        "dutch": "[Alternatief gekend voor aankomst in het station]\nWe komen aan in [...]; eindstation van deze trein/zoals eerder gemeld, rijdt onze trein van hieruit niet verder. De eerste trein naar […] is voorzien op spoor […].​",
+        "german": "[Alternative connue avant arrivée en gare]\nWir erreichen den Bahnhof [...], den Endbahnhof dieses Zuges/wie bereits berichtet, unser Zug wird von hier aus nicht weiterfahren. Der erste Zug nach [...] ist auf Gleis [...] geplant.",
+        "english": "[Alternatief gekend voor aankomst in het station]\nWe arrive at [...]; final station of this train/as previously reported, our train does not continue from here.\nThe next train for […] is scheduled on platform […].",
+        "favorite": false,
+        "icon": "pbtrain"
+      },
+      {
+        "title": "Arrêt interdit dans une gare",
+        "french": "Chers voyageurs, votre attention svp !\nSur ordre des services de sécurité, l'arrêt des trains est interdit en gare de [...].\nVous êtes donc invités à descendre en gare de ... Je vous tiendrai informé des alternatives.",
+        "dutch": "Aankondigingen\nVerbod te stoppen in een station\nNederlands\nBeste reizigers, even uw aandacht a.u.b!\nOp bevel van de veiligheidsdiensten mogen er geen treinen stoppen in het station [...].\nWij raden u aan om in […] uit te stappen.\nIk hou u op de hoogte van de alternatieven.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nAuf Anordnung der Sicherheitskräfte dürfen im Bahnhof [...] keine Züge halten.\nWir empfehlen Ihnen, in [...] auszusteigen.\nIch werde Sie über die Alternativen weiter informieren.",
+        "english": "Dear passengers, your attention please!\nBy order of the security forces, no trains are allowed to stop at [...] station.\nWe advise you to disembark in [...].\nI will keep you informed about the alternatives.",
+        "favorite": false,
+        "icon": "nogare"
+      },
+      {
+        "title": "Debloque / Signal d'entrée fermé (arrivée en gare)",
+        "french": "Chers voyageurs, votre attention svp !\nNous attendons l'autorisation d'entrer en gare de […].\nCet arrêt devrait être/ J'espère que cet arrêt sera de courte durée.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nWe wachten op toestemming om het station […]​ binnen te rijden.​\nIk vermoed/hoop dat dit niet lang zal duren.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWir warten auf die Erlaubnis, in den Bahnhof [...] einfahren zu dürfen.\nDieser Halt soll von kurzer Dauer sein/ Ich hoffe das dieser Stilstand von kurze Dauer sein wird.",
+        "english": "Dear passengers, your attention please!\nWe are awaiting permission to enter […] station.\nThis stop should be/ I hope this stop will be a short one.",
+        "favorite": false,
+        "icon": "signal"
+      },
+      {
+        "title": "Départ retardé / Retard pour correspondance",
+        "french": "Chers voyageurs, votre attention svp !\nNotre train partira avec un retard d'environ XX minutes, ceci afin d'assurer une correspondance.\nNous vous remercions de votre compréhension.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nOnze trein zal met ongeveer XX minuten vertraging vertrekken, dit om een aansluiting te verzekeren.\nDank u voor uw begrip.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nUnser Zug wird mit etwa XX Minuten Verspätung abfahren, um einen Anschluss zu gewährleisten.\nWir danken Ihnen für Ihr Verständnis.",
+        "english": "Dear passengers, your attention please!\nOur train will leave with about XX minutes delay, this to ensure a connection.\nThank you for your understanding.",
+        "favorite": false,
+        "icon": "depart"
+      },
+      {
+        "title": "Départ retardé / Retard - Problèmes techniques",
+        "french": "Chers voyageurs, votre attention svp!\nEn raison d'un problème technique, notre train partira avec un retard d'environ [...] minutes. Veuillez nous en excuser.\nN'hésitez pas de me demander tout renseignement nécessaire lors de lors de mon passage dans le train.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nOm technische redenen zal onze trein met (ongeveer​ […] minuten) vertraging vertrekken.​\nOnze excuses hiervoor. Aarzel niet om me om informatie te vragen wanneer ik in de trein langskom.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nAufgrund technischer Probleme wird unser Zug mit einer Verspätung (von voraussichtlich [...] Minuten) abfahren.\nDafür entschuldigen wir uns.",
+        "english": "Dear passengers, your attention please!\nDue to technical problems Our train will leave with about […] minutes delay,\nPlease accept our apologies.\nDon't hesitate to ask for any information you need when I pass through the train.",
+        "favorite": false,
+        "icon": "depart"
+      },
+      {
+        "title": "Départ retardé / Retard - Absence du personnel de bord (conducteur / accompagnatuer de train)",
+        "french": "Chers voyageurs, votre attention svp !\nNous attendons notre conducteur/accompagnateur (qui a été retardé sur son trajet précédent). Notre train partira dès que le personnel de bord sera au complet. Je vous tiendrai informé de l'évolution de la situation.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nWij wachten op de treinbestuurder/treinbegeleider van deze trein (die vertraging heeft opgelopen tijdens zijn vorige rit.)\nOnze trein vertrekt zodra het boordpersoneel​ voltallig is.​\nIk hou u op de hoogte van de evolutie van de situatie.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWir warten auf den Zugführer/Zugbegleiter dieses Zuges, (der auf seiner vorherigen Reise Verspätung hatte.)\nUnser Zug wird abfahren, sobald das Bordpersonal vollständig ist.\nIch werde Sie weiter über die Entwicklung der Situation informieren.",
+        "english": "Dear passengers, your attention please!\nWe are waiting for the driver/train attendant of this train (who was delayed on his previous journey.)\nOur train will leave as soon as the on-board staff is complete.\nI will keep you updated on the evolution of the situation.",
+        "favorite": false,
+        "icon": "agent"
+      },
+      {
+        "title": "Toilettes / WC hors service",
+        "french": "[uniquement après autorisation du RTS]\nChers voyageurs, votre attention svp!\nLes toilettes de ce train sont hors service.\nLe train effectuera un arrêt prolongé afin de vous permettre de vous rendre aux toilettes de la gare.",
+        "dutch": "[enkel na toelating RTS]\nBeste reizigers, even uw aandacht a.u.b!\nDe toiletten van deze trein zijn buiten dienst.​\nWe stellen het vertrek van onze trein even uit​ zodat u gebruik kan maken van de toiletten in​het station.",
+        "german": "[Uniquement après autorisation du RTS]\nLiebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDie Toiletten in diesem Zug sind außer Betrieb.\nDer Zug wird einen längeren Halt einlegen, um Ihnen die Nutzung der Toilettenanlagen im Bahnhof zu ermöglichen.",
+        "english": "[Enkel na toelating RTS]\nDear passengers, your attention please!\nThe toilets in the train are out of order.\nThe train will make an extended stop so that you can use the toilets in the station.",
+        "favorite": false,
+        "icon": "wc"
+      },
+      {
+        "title": "Départ retardé - intervention service de sécurité / secours",
+        "french": "Chers voyageurs, votre attention svp !\nEn raison de l'intervention des services de sécurité/secours notre train partira avec un retard (probable de […] minutes).\nNous vous remercions pour votre compréhension.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nTen gevolge van een tussenkomst van de​ veiligheidsdiensten / hulpdiensten zullen we met​ (ongeveer […] minuten) vertraging vertrekken.​\nDank u voor uw begrip.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nAufgrund des Einsatzes des Sicherheits-/Rettungsdienstes wird unser Zug mit einer Verspätung (von voraussichtlich [...] Minuten) abfahren.\nWir danken Ihnen für Ihr Verständnis.",
+        "english": "Dear passengers, your attention please!\nDue to the intervention of the security/emergency services our train will be delayed (probably by [...] minutes).\nThank you for your understanding.",
+        "favorite": false,
+        "icon": "depart"
+      },
+      {
+        "title": "Probléme techinque résolu",
+        "french": "Chers voyageurs, votre attention svp !\nLe problème technique a été résolu [...*]\n*Nous pouvons partir / poursuivre notre parcours vers [...]\n*Notre train va retourner vers [...]\nN'hésitez pas de me demander tout renseignement nécessaire lors de lors de mon passage dans le train.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nHet defect is verholpen [...*]\n*We kunnen vertrekken / onze rit verderzetten richting [...]\n*Onze trein zal terugkeren richting [...]\nAarzel niet om me om informatie te vragen wanneer ik in de trein langskom.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDas technische Problem wurde behoben [...*]\n*Wir können abfahren / unsere Fahrt fortsetzen nach [...]\n*Unser Zug wird nach [...] zurückkehren.\nBitte, zögern Sie nicht, mich um Auskunft zu fragen, wenn ich im Zug vorbeikomme.",
+        "english": "Dear passengers, your attention please!\nThe technical problem has been resolved [...*]\n*We can start/ continue our journey towards [...]\n*Our train will return to [...]\nDon't hesitate to ask for any information you need when I pass through the train.",
+        "favorite": false,
+        "icon": "technic"
+      },
+      {
+        "title": "Départ retardé / Retard - Accouplement",
+        "french": "Chers voyageurs, votre attention svp !\nNous attendons l'arrivée de l'autre partie du train en provenance de [...]\nNotre train partira avec un retard (probable) de [...] minutes.\nVeuillez nous en excuser.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nWe wachten op de aankomst van het andere treingedeelte uit [...].\nWe zullen met (ongeveer) [...] minuten vertraging vertrekken.\nWe verontschuldigen ons hiervoor.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWir warten auf die Ankunft des anderen Teils des Zuges aus [...]\nUnser Zug wird mit einer Verspätung von (voraussichtlich) [...] Minuten abfahren.\nDafür entschuldigen wir uns.",
+        "english": "Dear passengers, your attention please!\nWe are waiting for the other part of our train to arrive from [...]\nOur train will (probably) be delayed by [...] minutes.\nPlease accept our apologies.",
+        "favorite": false,
+        "icon": "accouplement"
+      },
+      {
+        "title": "Vitesse réduite - Cause inconnue 2eme annonce",
+        "french": "Chers voyageurs, votre attention s'il vous plaît !\nJe n'ai pas d'informations supplémentaires pour l'instant. N'hésitez pas de me demander tout renseignement nécessaire lors de lors de mon passage dans le train.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nIk heb voorlopig geen bijkomende informatie. Aarzel niet om me om informatie te vragen wanneer ik in de trein langskom.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nIch habe im Moment keine weiteren Informationen. Bitte, zögern Sie nicht, mich um Auskunft zu fragen, wenn ich im Zug vorbeikomme.",
+        "english": "Dear travellers, your attention please!\nI have no additional information for now. Don't hesitate to ask for any information you need when I pass through the train.",
+        "favorite": false,
+        "icon": "slow"
+      },
+      {
+        "title": "Vitesse réduite - Cause inconnue maintenant connue",
+        "french": "Chers passagers,\nLa vitesse réduite de notre train est due à [...*]\n*un accident plus loin sur la ligne\n*un obstacle dans la voie\n*des personnes dans la voie\n*un mouvement social\n*des travaux d'infrastructure\n*des conditions climatiques​\n*un trafic perturbé\n*un vol de cuivre\n*... (autres raison)\n*des raisons techniques\nNous vous tiendrons informés\nN'hésitez pas de me demander tout renseignement nécessaire lors de lors de mon passage dans le train.",
+        "dutch": "Beste reizigers,\nDe beperkte snelheid van onze trein wordt veroorzaakt door [...*]\n*een ongeval verder op de lijn\n*een obstakel op het spoor\n*personen nabij het spoor\n*een spontane werkonderbreking\n*Infrastructuurwekzaamheden\n*weeromstandigen\n*verstoord treinverkeer\n*slechte weersomstandigheiden\n*koperdiefstal\n... (andere reden)\n* om technische redenen\nWe houden u op de hoogte.\nAarzel niet om me om informatie te vragen wanneer ik in de trein langskom. ",
+        "german": "​Liebe Reisende,\nSehr geehrte Fahrgäste,\ndie verringerte Geschwindigkeit unseres Zuges wird verursacht durch [...*]\n*eines Unfalls\n*eines Hindernisses auf dem Gleis\n*Personen in den Gleisen\n*einer sozialen Bewegung\n*Infrastrukturarbeiten\n*der klimatischen Bedingungen\n*einer Verkehrsstörung\n*eines Kupferdiebstahls\n... (andere reden, autre raison)\n*technischen Gründen\nWir werden Sie weiter informieren.\nBitte, zögern Sie nicht, mich um Auskunft zu fragen, wenn ich im Zug vorbeikomme.",
+        "english": "​Dear passengers,\nThe reduced speed of our train is caused by [...*]\n*an accident\n*the presence of an obstacle on the tracks\n*the presence of people on the tracks\n*a social movement\n*infrastructure works\n*weather conditions​\n*disrupted traffic\n*a copper wire theft\n... (andere reden, autre raison)\n*technical reasons\nWe will keep you informed.\nDon't hesitate to ask for any information you need when I pass through the train.",
+        "favorite": false,
+        "icon": "slow"
+      },
+      {
+        "title": "Vitesse réduite solutionné",
+        "french": "Chers voyageurs, notre train reprend sa vitesse normale. Nous avons actuellement un retard d'environ [...] minutes.\nN'hésitez pas de me demander tout renseignement nécessaire lors de lors de mon passage dans le train.",
+        "dutch": "Beste reizigers, onze trein herneemt zijn normale snelheid. Op dit moment hebben we een vertraging van ongeveer [...] minuten.\nAarzel niet om me om informatie te vragen wanneer ik in de trein langskom.",
+        "german": "Liebe Reisende, unser Zug nimmt seine normale Geschwindigkeit wieder auf. Wir haben jetzt eine Verspätung von etwa [...] Minuten.\nBitte, zögern Sie nicht, mich um Auskunft zu fragen, wenn ich im Zug vorbeikomme.",
+        "english": "Dear passengers, our train is resuming its normal speed. We are currently experiencing a delay of about [...] minutes.\nDon't hesitate to ask for any information you need when I pass through the train.",
+        "favorite": false,
+        "icon": "slow"
+      },
+      {
+        "title": "Climatisation hors service tout le train",
+        "french": "Chers voyageurs, (votre attention svp.)\nLa climatisation est hors service.\nVeuillez laisser toutes les portes fermées et baisser les stores / fermer les rideaux.\nMerci pour votre coopération.",
+        "dutch": "Beste reizigers, graag even uw aandacht.\nDe airconditioning is buiten dienst.\nWe vragen u de deuren gesloten te houden en de zonneschermen neer te laten / gordijnen dicht te doen.\nDank u voor uw medewerking.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDie Klimaanlage ist ausgefallen.\nBitte halten Sie alle Türen geschlossen und lassen Sie die Jalousien herunter / schließen Sie die Vorhänge.\nIch danke Ihnen für Ihre Mitwirkung.",
+        "english": "Dear passengers, your attention please!\nThe air-conditioning is not working.\nPlease keep all doors closed and lower the blinds / close the curtains.\nThank you for your cooperation.",
+        "favorite": false,
+        "icon": "clim"
+      },
+      {
+        "title": "Arrêt en pleine voie, probablement de courte durée / Signal rouge",
+        "french": "Chers voyageurs, désolé pour cet arrêt imprévu.\nNous espérons que cette situation sera de courte durée et que nous pourrons poursuivre notre voyage dès que possible.",
+        "dutch": "Beste reizigers, sorry voor deze stilstand.\nWe vermoeden/ hopen dat dit van korte duur is en we onze reis zo snel mogelijk kunnen verder zetten.",
+        "german": "Liebe Reisende, wir entschuldigen uns für dieser Stillstand. Wir hoffen, dass dies nur von kurzer Dauer ist und wir unsere Reise so bald wie möglich fortsetzen können.",
+        "english": "Dear travellers, sorry for this standstill.\nWe hope this is short-lived and we can continue our journey as soon as possible.",
+        "favorite": false,
+        "icon": "arret"
+      },
+      {
+        "title": "Arrêt en pleine voie / Trafic interrompu cause inconnue 2ème annonce",
+        "french": "Chers voyageurs,\nJe n'ai pas encore d'informations supplémentaires quant à la reprise de circulation de notre train. Je passerai dans le train d'ici peu. N'hésitez pas de me demander tout renseignement nécessaire.",
+        "dutch": "Beste reizigers,\nIk heb voorlopig geen bijkomende informatie over het verder rijden van onze trein. Ik kom zodadelijk in de trein voorbij, aarzel niet om me aan te spreken als u vragen hebt.",
+        "german": "Liebe Reisende,\nich habe im Moment keine weiteren Informationen über die Fortsetzung unseres Zuges. Ich werde in Kürze im Zug vorbeikommen, bitte zögern Sie nicht, mich anzusprechen, wenn Sie irgendwelche Fragen haben.",
+        "english": "Dear passengers,\nI have no additional information on the continuation of our train for now. I will pass by on the train shortly, please do not hesitate to speak to me if you have any questions.",
+        "favorite": false,
+        "icon": "arret"
+      },
+      {
+        "title": "Arrêt suite à un problème technique 2ème annonce",
+        "french": "Chers voyageurs, le problème technique ne peut être résolu dans l'immédiat. Je vous tiendrai au courant de l'évolution de la situation.\n[D'autres annonces devront être faites en fonction des informations reçues / en fonction des alternatives que tu peux offrir]",
+        "dutch": "Beste reizigers, het technisch probleem kan niet onmiddellijk opgelost worden. Ik houd u op de hoogte van het verdere verloop van de situatie.\n[Verdere aankondigingen moeten gebeuren afhankelijk van ontvangen info / afhankelijk van de alternatieven die je kan bieden]",
+        "german": "Liebe Reisende, das technische Problem kann nicht sofort gelöst werden. Ich werde Sie weiter informieren, wie sich die Situation entwickelt.\n[D'autres annonces devront être faites en fonction des informations reçues / en fonction des alternatives que tu peux offrir]",
+        "english": "Dear passengers, the technical problem cannot be solved immediately. I will keep you updated on how the situation develops.\n[Verdere aankondigingen moeten gebeuren afhankelijk van ontvangen info / afhankelijk van de alternatieven die je kan bieden]",
+        "favorite": false,
+        "icon": "technic"
       }
     ],
     "urgent": [
       {
-        "title": "Item 1",
-        "favorite": false
+        "title": "Appel du personnel",
+        "french": "Chers passagers, votre attention s'il vous plaît !\nEst-ce que le personnel ferroviaire peut se présenter à moi dans la voiture [...], s'il vous plaît.\nMerci d'avance de la coopération.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nZou spoorwegpersoneel zich bij mij kunnen melden in het [...] rijtuig, aub.\nAlvast bedankt voor de medewerking.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nWir bitten das Personal der SNCB-Gruppe, sich beim Schaffner im Wagen Nummer [...] / an der Spitze des Zuges / in der Mitte des Zuges / am Ende des Zuges zu melden.\nIch danke Ihnen für Ihre Mitwirkung.",
+        "english": "Dear passengers, your attention please!\nWill SNCB Group staff please report to the train manager in carriage number […] / at the front of the train / at the centre of the train / at the back of the train.\nThank you for your cooperation.",
+        "favorite": false,
+        "icon": "sncb"
       },
       {
-        "title": "Item 2",
-        "favorite": false
+        "title": "Appel personnel médical / Docteur",
+        "french": "Chers voyageurs, votre attention svp !\nDu personnel médical est demandé d'urgence dans la voiture numéro […] / en tête du train / au milieu du train / en queue du train.\nMerci de votre coopération.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nMedisch personeel wordt om hulp gevraagd in rijtuig nummer […] / vooraan de trein / in het midden van de trein / achteraan de trein.\nDank u voor uw medewerking.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nMedizinisches Personal wird dringend im Wagen Nummer [...] / an der Spitze des Zuges / in der Mitte des Zuges / am Ende des Zuges benötigt.\nIch danke Ihnen für Ihre Mitwirkung.",
+        "english": "Dear passengers, your attention please!\nMedical personnel are urgently required in carriage number […] / at the front of the train / at the centre of the train / at the back of the train.\nThank you for your cooperation.",
+        "favorite": false,
+        "icon": "med"
       },
       {
-        "title": "Item 3",
-        "favorite": false
+        "title": "Hors quai - imprévu",
+        "french": "Chers voyageurs, attention !\nNotre train n'a pas encore complètement terminé sa manœuvre .\nPour votre sécurité, nous vous demandons de patienter avant d'ouvrir les portes.",
+        "dutch": "Beste reizigers, opgelet!\nOnze trein staat nog niet op de correcte plaats aan het perron. Voor uw veiligheid vragen we de deuren niet te openen.",
+        "german": "Liebe Reisende, Ihre Aufmerksamkeit bitte!\nUnser Zug befindet sich noch nicht an der richtigen Stelle am Bahnsteig. Zu Ihrer Sicherheit bitten wir Sie, die Türen nicht zu öffnen.",
+        "english": "Dear passengers,  attention please!\nOur train is not yet in the correct place at the platform. For your safety, we ask you not to open the doors.",
+        "favorite": false,
+        "icon": "horsQuai"
+      },
+      {
+        "title": "Hors quai - prévu - rame tractée",
+        "french": "Chers voyageurs, attention.\nEn raison de la longueur limitée du quai /En raison de travaux, le train n'arrive pas complètement à quai, les passagers à destination de [...] ne peuvent pas descendre des premières / dernières [...[nombre]] voitures. Veuillez changer de voiture avant l'arrivée à votre gare de destination si nécessaire.",
+        "dutch": "Dear passengers,  attention please!\nOur train is not yet in the correct place at the platform. For your safety, we ask you not to open the doors.",
+        "german": "Liebe Reisende, Ihre Aufmerksamkeit bitte!\nAufgrund der begrenzten Länge des Bahnsteigs / Wegen Bauarbeiten kommt der Zug nicht vollständig am Bahnsteig an, Fahrgäste mit Bestimmungsort [...] können nicht aus den ersten / letzten [...[Nummer]]-Wagen aussteigen. Bitte wechseln Sie den Wagen, bevor Sie an Ihrem Zielbahnhof ankommen.",
+        "english": "Dear passengers, your attention please!\nDue to the limited length of the platform /Because of works, the train does not fully arrive at the platform, passengers with destination [...] cannot disembark from the first / last [...[number]] carriages. Please change carriages before arrival at your destination station if necessary.",
+        "favorite": false,
+        "icon": "horsQuai"
+      },
+      {
+        "title": "Arrêt non prévu",
+        "french": "Chers voyageurs, attention !\nCeci n'est pas un arrêt prévu pour notre train.\nPour votre sécurité, nous vous demandons de ne pas ouvrir les portes.\nLe prochain arrêt prévu est la gare de […]​.",
+        "dutch": "Beste reizigers, opgelet!\nDit is geen voorziene halte van onze trein.\nVoor uw veiligheid vragen we u de deuren niet te openen.\nDe eerstvolgende voorziene halte is het station […].",
+        "german": "Liebe Reisende, Ihre Aufmerksamkeit bitte!\nDies ist kein planmäßiger Halt für unseren Zug.\nZu Ihrer Sicherheit bitten wir Sie, die Türen nicht zu öffnen.\nDer nächste planmäßige Halt ist der Bahnhof [...].",
+        "english": "Dear passengers, your attention please!\nThis is not a scheduled stop for our train.\nFor your own safety, please do not open the doors.\nThe next scheduled stop is at […] station​.",
+        "favorite": false,
+        "icon": "arretImprevu"
+      },
+      {
+        "title": "Ordre des services de sécurité",
+        "french": "Chers voyageurs, attention!\nSur ordre des services de sécurité\n* notre train sera dévié\n* notre train ne circulera pas plus loin que ...\n* notre train est supprimé\n* notre train a quitté la gare plus tôt que prévu\n* l'arrêt des trains est interdit en gare de [...]. Les voyageurs pour [...] sont invités à descendre en gare de [...]\nN'hésitez pas de me demander tout renseignement nécessaire lors de lors de mon passage dans le train.",
+        "dutch": "Beste reizigers, opgelet!\nOp bevel van de veiligheidsdiensten\n* rijdt onze trein om\n* rijdt onze trein niet verder dan\n* wordt onze trein afgeschaft\n* is onze trein vroeger vertrokken dan voorzien\n* mogen de treinen niet stoppen in het station [...]. Ik wacht op /ben op zoek naar verdere informatie.\nAarzel niet om me om informatie te vragen wanneer ik in de trein langskom.",
+        "german": "Liebe Reisende, Vorsicht!\nAuf Anordnung der Sicherheitskräfte\n* wird unser Zug eine andere Route nehmen\n* fährt unser Zug nicht weiter als\n* wird unser Zug gestrichen\n* ist unser Zug früher als geplant abgefahren\n* dürfen die Züge nicht im Bahnhof halten [...]. Ich warte auf / suche weitere Informationen.\nBitte, zögern Sie nicht, mich um Auskunft zu fragen, wenn ich im Zug vorbeikomme.",
+        "english": "Dear passengers, attention please!\nBy order of the security forces\n* our train will reroute\n* our train will run no further than\n* our train is cancelled\n* our train has left earlier than scheduled\n* trains are not allowed to stop at [...] station. I am waiting for / seeking further information.\nDon't hesitate to ask for any information you need when I pass through the train.",
+        "favorite": false,
+        "icon": "police"
+      },
+      {
+        "title": "Pickpockets / Vol à la tire",
+        "french": "Chers voyageurs, attention !\nOn nous signale la présence de pickpockets dans ce train, surveillez vos effets personnels.",
+        "dutch": "Beste reizigers, opgelet!\nEr zijn mogelijk zakkenrollers aanwezig in deze trein. Hou uw bezittingen goed in het oog.",
+        "german": "Liebe Reisende,\nseien Sie vorsichtig - in diesem Zug kann es Taschendiebe geben. Bitte passen Sie gut auf Ihre Sachen auf.",
+        "english": "Dear passengers,\nbeware - there may be pickpockets on this train. Please keep a close eye on your belongings.",
+        "favorite": false,
+        "icon": "pickpocket"
+      },
+      {
+        "title": "Bouton alarme / assistance actionée",
+        "french": "Chers voyageurs, attention!\nLe signal d'assistance vient d'être actionné.\nÉtant donné qu'il n'y a pas de passage possible, le personnel du train ne pourra pas se rendre à la voiture concernée avant le prochain arrêt.\nSi une intervention immédiate est indispensable, veuillez prendre contact avec le service de secours au numéro 0800/30.230, je répète au numéro 0800/30.230.",
+        "dutch": "Beste reizigers, opgelet!\nDe assistentieknop werd ingedrukt. Gezien er geen doorgang is, kan het treinpersoneel pas bij de volgende halte naar het betrokken rijtuig gaan. Indien een tussenkomst nu absoluut noodzakelijk is, vragen we u de hulpcentrale te bellen op het nummer 0800/30.230, ik herhaal nummer 0800/30.230.",
+        "german": "Liebe Reisende, Ihre Aufmerksamkeit bitte!\nDas Hilfssignal wurde soeben aktiviert.\nDa es keinen Durchgang gibt, kann das Zugpersonal erst am nächsten Halt zu dem betreffenden Wagen gelangen.\nWenn sofortige Hilfe erforderlich ist, wenden Sie sich bitte an den Notdienst unter der Nummer 0800/30.230, ich wiederhole: unter der Nummer 0800/30.230.",
+        "english": "Dear passengers, your attention please!\nThe assistance signal has just be triggered.\nAs no passage is possible, the train staff cannot reach the affected carriage before the next stop.\nIf immediate intervention is essential, please contact the emergency services on 0800/30.230, I repeat, 0800/30.230.",
+        "favorite": false,
+        "icon": "alarm"
+      },
+      {
+        "title": "Incendie",
+        "french": "Chers voyageurs, attention !\n\n[à annoncer uniquement dans la (les) voiture(s) concernée(s) de vive-voix]\nPour votre sécurité, veuillez quitter la voiture dans cette direction.",
+        "dutch": "Beste reizigers, opgelet!\n\n[enkel in het (de) betreffende rijtuig(en) met luide stem]\nVoor uw veiligheid vragen we u dit rijtuig te verlaten in deze richting.",
+        "german": "Liebe Reisende, Ihre Aufmerksamkeit bitte!\n\nZu Ihrer Sicherheit verlassen Sie bitte den Wagen in dieser Richtung.",
+        "english": "Dear passengers, your attention please!\n\nFor your own safety, please leave the carriage in this direction.",
+        "favorite": false,
+        "icon": "fire"
+      },
+      {
+        "title": "Accident / Obstacle / Collision 1ére annonce",
+        "french": "Chers voyageurs, attention !\n\n[à annoncer uniquement dans la (les) voiture(s) concernée(s) de vive-voix]\nPour votre sécurité, veuillez quitter la voiture dans cette direction.",
+        "dutch": "Beste reizigers, opgelet!\n\n[enkel in het (de) betreffende rijtuig(en) met luide stem]\nVoor uw veiligheid vragen we u dit rijtuig te verlaten in deze richting.",
+        "german": "Liebe Reisende, Ihre Aufmerksamkeit bitte!\n\nZu Ihrer Sicherheit verlassen Sie bitte den Wagen in dieser Richtung.",
+        "english": "Dear passengers, your attention please!\n\nFor your own safety, please leave the carriage in this direction.",
+        "favorite": false,
+        "icon": "accident"
+      },
+      {
+        "title": "Évacuation du train",
+        "french": "Chers voyageurs, votre attention svp!\n\nEn raison de [...*]\n* la présence d'un obstacle sur les voies\n* un incident sur les voies\n* une collision (à un passage à niveau)\n\nnotre train ne peut (actuellement) pas poursuivre son parcours.\nLe personnel de bord va appliquer les procédures de sécurité prioritaires.\nPour votre sécurité, nous vous demandons de ne pas ouvrir les portes.\n\nJe vous tiendrai informés.",
+        "dutch": "Beste reizigers,  aandacht a.u.b!\n\nDoor [...*]\n* een obstakel op het spoor\n* een aanrijding\n* een aanrijding (op een overweg)\n\nKan onze trein (momenteel) niet verderrijden.\n\nHet treinpersoneel zal de eerste veiligheidsprocedures uitvoeren.\nVoor uw veiligheid vragen we u de deuren niet te openen.\n\nIk houd u op de hoogte.",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\n\nInfolge [...*]\n* eines Hindernis auf dem Gleis\n* eines Unfalls (Personenunfalls)\n* einer Kollision (an einem Bahnübergang)\n\nkann unser Zug (derzeit) seine Fahrt nicht fortsetzen.\nDas Bordpersonal wird die ersten Sicherheitsverfahren anwenden.\nZu Ihrer Sicherheit bitten wir Sie, die Türen nicht zu öffnen.\n\nIch werde Sie weiter informieren",
+        "english": "Dear passengers, your attention please!\n\nDue to [...*]\n* the presence of an obstacle on the tracks\n* an accident (involving a person)\n* a collision (at a level crossing)\n\nour train cannot (currently) continue its journey.\nThe train staff will apply safety the first safety procedures.\nFor your own safety, please do not open the doors.\n\nI will keep you informed.",
+        "favorite": false,
+        "icon": "evac"
+      },
+      {
+        "title": "Distribution d'eau voyageurs",
+        "french": "Chers voyageurs, votre attention s.v.p !\nDes collaborateurs passeront bientôt parmi vous pour distribuer des bouteilles d'eau.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nZo dadelijk komen er medewerkers langs om flesjes drinkwater uit te delen.",
+        "german": "Liebe Reisende, ich bitte um eure Aufmerksamkeit!\nGleich kommt das Personal vorbei, um Flaschen mit Trinkwasser zu verteilen",
+        "english": "Dear passengers, your attention please!\nIn a moment, staff will come by to hand out bottles of drinking water.",
+        "favorite": false,
+        "icon": "water"
+      },
+      {
+        "title": "Le train repart après arrêt imprévu",
+        "french": "[Après un arrêt imprévu, un signal rouge, un accident/obstacle, un déblocage etc...].\nChers voyageurs, votre attention s'il vous plaît !\nNotre train peut repartir. (Je passerai dans le train dans un instant, n'hésitez pas à vous adresser à moi si vous avez des questions).",
+        "dutch": "[Na onvoorziene stilstand, rood sein, ongeval/obstakel, ontgrendeling enz...]\nBeste reizigers, even uw aandacht a.u.b!\nOnze trein kan terug vertrekken. (Ik kom zodadelijk in de trein voorbij, aarzel niet om me aan te spreken als u vragen hebt.)",
+        "german": "[Nach unbemerktem Stillstand, rotem Signal, Unfall/Hindernis, Freigabe usw.]\nLiebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nUnser Zug kann wieder abfahren. (Ich werde gleich im Zug vorbeikommen, zögern Sie nicht, mit mir zu sprechen, wenn Sie Fragen haben).",
+        "english": "[After unseen stoppage, red signal, accident/obstacle, unblocking etc...]\nDear passengers, your attention please!\nOur train can depart again. (I will pass by on the train shortly, do not hesitate to speak to me if you have any questions).",
+        "favorite": false,
+        "icon": "pbtrain"
+      },
+      {
+        "title": "Accident/Incident - Attente service de secours",
+        "french": "Chers voyageurs, votre attention svp !\n(Suite à un incident) nous attendons l'intervention des services de secours.\nNous vous tiendrons informés.",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\n(Naar aanleiding van een incident) wachten we / We wachten op de tussenkomst van de hulpdiensten.\nWe houden u op de hoogte.\nHulpdiensten onderweg",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\n(Aufgrund eines Unfalls) warten wir / Wir warten auf das Eingreifen des Rettungsdienstes.\nWir werden Sie auf dem Laufenden halten.",
+        "english": "Dear passengers, your attention please!\nDue to an incident, we are waiting for the emergency services.\nWe will keep you informed.",
+        "favorite": false,
+        "icon": "accident"
+      },
+      {
+        "title": "Accident/Incident - Arrivée service de secours",
+        "french": "Chers voyageurs, votre attention svp !\nLes services de secours sont sur place.\nNous vous tiendrons informés sur la suite des événements",
+        "dutch": "Beste reizigers even uw aandacht a.u.b!\nDe hulpdiensten zijn inmiddels aanwezig.\nWe houden u op de hoogte van het verder verloop",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDer Rettungsdienst ist vor Ort. Wir werden Sie auf dem Laufenden halten.",
+        "english": "Dear passengers, your attention please!\nThe emergency services are here.\nWe will keep you infromed",
+        "favorite": false,
+        "icon": "accident"
+      },
+      {
+        "title": "Matériel de remplacement en route",
+        "french": "Chers voyageurs, votre attention svp !\n(Le problème technique ne peut être résolu sur place.)\nDu matériel de remplacement est en route et devrait arriver vers [...].​",
+        "dutch": "Beste reizigers even uw aandacht a.u.b!\nWe kunnen het defect niet ter plaatse verhelpen.\nEr is vervangingsmaterieel onderweg dat omstreeks [...] ​wordt verwacht.​",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDas technische Problem kann nicht vor Ort behoben werden.\nDas Ersatzmaterial ist unterwegs und sollte gegen [...] eintreffen.​",
+        "english": "Dear passengers, your attention please!\nThe technical problem cannot be resolved here.\nReplacement equipment is on the way and will arrive at around [...(time)]",
+        "favorite": false,
+        "icon": "accident"
+      },
+      {
+        "title": "Matériel de remplacement sur place",
+        "french": "Chers voyageurs, votre attention svp !\nLe matériel de remplacement est sur place.\nNous vous tiendrons informés sur la suite des événements",
+        "dutch": "Beste reizigers, even uw aandacht a.u.b!\nHet vervangingsmaterieel is ter plaatse.\nWe houden u op de hoogte van het verder verloop",
+        "german": "Liebe Reisende, ich bitte um Ihre Aufmerksamkeit!\nDas Ersatzmaterial ist vor Ort.\nWir werden Sie auf dem Laufenden halten.",
+        "english": "Dear passengers, your attention please!\nThe replacement equipment is here.\nWe will keep you informed.",
+        "favorite": false,
+        "icon": "accident"
+      },
+      {
+        "title": "Suroccupation",
+        "french": "Chers voyageurs,\nNous constatons un nombre important de voyageurs dans ce train, veuillez […] [à compléter selon les directives du RTS]",
+        "dutch": "Beste reizigers,\nWe merken een groot aantal reizigers op in de trein, gelieve […] [aan te vullen volgens de richtlijnen van RTS]",
+        "german": "Liebe Reisende,\nwir sehen eine beträchtliche Anzahl von Reisenden in diesem Zug, bitte [...] [à compléter selon les directives du RTS]",
+        "english": "Dear passengers,\nThere are very large number of passengers on board this train, please […] [aan te vullen volgens de richtlijnen van RTS]",
+        "favorite": false,
+        "icon": "suroccupation"
+      },
+      {
+        "title": "Hors quai - Prévu - Automotrice",
+        "french": "Chers voyageurs, attention !\nÉtant donné la longueur limitée du quai, les voyageurs à destination de […] ne peuvent pas descendre des voitures portant le numéro […] / les numéros […] et […].\nVeuillez éventuellement changer de voiture avant l'arrivée à votre destination.",
+        "dutch": "Beste reizigers, opgelet!\nWegens de beperkte lengte van het perron kunnen de reizigers met bestemming […] niet uitstappen vanuit de rijtuigen met nummer […] /nummers […] en […].\nGelieve eventueel van rijtuig te veranderen voor aankomst in uw bestemmingsstation.",
+        "german": "Liebe Reisende, Ihre Aufmerksamkeit bitte!\nAufgrund der begrenzten Länge des Bahnsteigs dürfen Fahrgäste, die nach [...] reisen, nicht aus dem Wagen mit der Nummer [...] / den Wagen mit den Nummern [...] und [...] aussteigen.\nBitte wechseln Sie gegebenenfalls den Wagen, bevor Sie an Ihrem Zielort ankommen.",
+        "english": "Dear passengers, your attention please!\nDue to limited platform length, passengers for […] cannot exit carriage number […] / carriages numbers [...] and [...].\nYou may need to change carriage before arriving at your destination.",
+        "favorite": false,
+        "icon": "horsQuai"
+      },
+      {
+        "title": "Accident / Obstacle / Collision 2ème annonce",
+        "french": "Chers voyageurs !\nLe personnel de bord vient de prendre les premières mesures de sécurité.\nJe passerai dans le train d'ici peu. N'hésitez pas de me demander tout renseignement nécessaire.\n[Dès que tu as de nouvelles informations, tu les transmets aux voyageurs. Sans nouvelle info, tu fais régulièrement une annonce  d'attente supplémentaire.]",
+        "dutch": "Beste reizigers !\nHet treinpersoneel heeft zonet de eerste veiligheidsmaatregelen genomen.\nIk kom zodadelijk in de trein voorbij, aarzel niet om me aan te spreken als u vragen hebt.\n[Zodra je nieuwe info hebt, geef je die verder door aan de reizgers. Zonder nieuwe info doe je geregeld een bijkomende afwachtende aankondiging]",
+        "german": "Liebe Reisende !\nDas Bordpersonal hat gerade die ersten Sicherheitsmaßnahmen ergriffen.\nIch werde in Kürze im Zug vorbeikommen, bitte zögern Sie nicht, mich anzusprechen, wenn Sie irgendwelche Fragen haben.\n[Dès que tu as de nouvelles informations, tu les transmets aux voyageurs. Sans nouvelle info, tu fais régulièrement une annonce  d'attente supplémentaire.]",
+        "english": "Dear passengers !\nThe train staff has just taken the first safety measures.\nI will pass by on the train shortly, please do not hesitate to speak to me if you have any questions.\n[Zodra je nieuwe info hebt, geef je die verder door aan de reizgers. Zonder nieuwe info doe je geregeld een bijkomende afwachtende aankondiging]",
+        "favorite": false,
+        "icon": "accident"
       }
     ]
   }

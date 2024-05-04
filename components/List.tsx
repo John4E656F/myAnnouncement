@@ -1,20 +1,16 @@
 import React from 'react';
 import { Link } from 'expo-router';
-import { Image, Pressable, Text, View, StyleSheet } from 'react-native';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { Image, Pressable, Text, StyleSheet } from 'react-native';
 import type { ListProps } from '../types';
-
-function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string; size: number }) {
-  return <FontAwesome style={{ marginBottom: -3 }} {...props} />;
-}
+import { icons } from '../constants/iconMapping';
 
 export function ListItem({ link, icon, title, category }: ListProps) {
-  console.log(`/${link}`);
+  // console.log(icon);
 
   return (
     <Link href={{ pathname: `/${link}`, params: { cat: category } }} asChild style={styles.link}>
       <Pressable style={styles.buttonItemContainer}>
-        <TabBarIcon name={icon} color='black' size={50} />
+        <Image source={icons[icon]} style={styles.icon} />
         <Text style={styles.title}>{title}</Text>
       </Pressable>
     </Link>
@@ -27,9 +23,7 @@ const styles = StyleSheet.create({
     borderTopColor: 'black',
     borderBottomWidth: 1,
     borderBottomColor: 'black',
-    // paddingHorizontal: 25,
     paddingVertical: 20,
-    // marginVertical: 20,
   },
   buttonItemContainer: {
     gap: 20,
@@ -40,6 +34,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 15,
     maxWidth: '80%',
-    // fontWeight: 'bold',
+  },
+  icon: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
   },
 });

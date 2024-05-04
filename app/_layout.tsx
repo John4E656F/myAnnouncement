@@ -1,9 +1,8 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
-import { Image, Text, View, useColorScheme, StyleSheet } from 'react-native';
+import { Image, Text, View, StyleSheet } from 'react-native';
 
 export const unstable_settings = {
   initialRouteName: '/home',
@@ -34,45 +33,41 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen
-          name='(tabs)'
-          options={{
-            headerStyle: { backgroundColor: '#005BB8' },
-            headerTintColor: '#FFFFFF',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-            headerTitle: (props) => (
-              <View style={styles.navbarContainer}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
-              </View>
-            ),
-          }}
-        />
-        <Stack.Screen
-          name='announce'
-          options={{
-            headerStyle: { backgroundColor: '#005BB8' },
-            headerTintColor: '#FFFFFF',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-            headerTitle: (props) => (
-              <View style={styles.navbarContainer}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
-              </View>
-            ),
-          }}
-        />
-      </Stack>
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen
+        name='(tabs)'
+        options={{
+          headerStyle: { backgroundColor: '#005BB8' },
+          headerTintColor: '#FFFFFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitle: (props) => (
+            <View style={styles.navbarContainer}>
+              <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+              <Text style={styles.navbarTitle}>My Announcements</Text>
+            </View>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name='announce'
+        options={{
+          headerStyle: { backgroundColor: '#005BB8' },
+          headerTintColor: '#FFFFFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitle: (props) => (
+            <View style={styles.navbarContainer}>
+              <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+              <Text style={styles.navbarTitle}>My Announcements</Text>
+            </View>
+          ),
+        }}
+      />
+    </Stack>
   );
 }
 

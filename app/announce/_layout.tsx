@@ -3,7 +3,7 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
-import { Image, Text, View, useColorScheme, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export const unstable_settings = {
   initialRouteName: '/home',
@@ -34,14 +34,10 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name='[id]/index' options={{ headerShown: false }} />
-      </Stack>
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen name='[id]/index' options={{ headerShown: false }} />
+    </Stack>
   );
 }
 

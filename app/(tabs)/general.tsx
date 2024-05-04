@@ -5,13 +5,12 @@ import DefaultData from '../../constants/DefaultData.json';
 
 export default function Page() {
   const generalData = DefaultData.categories.general;
-  const urgentData = DefaultData.categories.urgent;
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         {generalData.map((item, index) => (
-          <ListItem key={`general-${index}`} title={item.title} link={`announce/${index}`} category='general' icon='train' />
+          <ListItem key={`general-${index}`} title={item.title} link={`announce/${index}`} category='general' icon={item.icon} />
         ))}
       </ScrollView>
     </SafeAreaView>
