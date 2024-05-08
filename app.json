@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "my-announcement",
+    "name": "My Announcement",
     "slug": "my-announcement",
     "version": "1.0.1",
     "orientation": "portrait",
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#005CB7"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -29,9 +27,7 @@
       "favicon": "./assets/logo.png"
     },
     "scheme": "myapp",
-    "plugins": [
-      "expo-router"
-    ],
+    "plugins": ["expo-router"],
     "extra": {
       "router": {
         "origin": false

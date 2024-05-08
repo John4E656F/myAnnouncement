@@ -14,7 +14,10 @@ export default function TabLayout() {
         tabBarActiveTintColor: '#2f95dc',
       }}
     >
-      <Tabs.Screen name='Index' options={{ headerShown: false, tabBarIcon: ({ color }) => <TabBarIcon name='home' color='#2f95dc' /> }} />
+      <Tabs.Screen
+        name='index'
+        options={{ title: 'Index', headerShown: false, tabBarIcon: ({ color }) => <TabBarIcon name='home' color='#2f95dc' /> }}
+      />
       <Tabs.Screen
         name='general'
         options={{

@@ -1,12 +1,54 @@
+import React, { useEffect, useState } from 'react';
 import { Image, Pressable, Text, View, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { getAllData, storeData } from '../../lib/storage';
 
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string; size: number }) {
   return <FontAwesome style={{ marginBottom: -3 }} {...props} />;
 }
 
 export default function Page() {
+  const [generalData, setGeneralData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        // Attempt to retrieve data from AsyncStorage
+        const storedData = await getAllData();
+
+        if (Array.isArray(storedData) && storedData.some(([key, value]) => value !== null)) {
+          // If data exists and is not null, use it
+          // setGeneralData(storedData.map(([key, value]) => JSON.parse(value)));
+        } else {
+          // If data doesn't exist or is null, fetch it from the API
+          const response = await fetch('http://192.168.178.79:5001/announce/all', {
+            method: 'GET',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+          });
+          // console.log(response);
+
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          const newData = await response.json();
+          console.log(newData);
+
+          // // Store fetched data in AsyncStorage
+          // await storeData({ key: '@general', data: newData });
+          // setGeneralData(newData);
+        }
+      } catch (error) {
+        console.error('Error fetching or storing data:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <View style={styles.container}>
       <Link href='/general' asChild style={styles.link}>

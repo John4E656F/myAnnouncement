@@ -10,7 +10,7 @@ export default function Page() {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         {urgentData.map((item, index) => (
-          <ListItem key={`urgent-${index}`} title={item.title} link={`announce/${index}`} category='realTime' icon={item.icon} />
+          <ListItem key={`urgent-${index}`} title={item.title} link={`announce/${index}`} category='urgent' icon={item.icon} />
         ))}
       </ScrollView>
     </SafeAreaView>

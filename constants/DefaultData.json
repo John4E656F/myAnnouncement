@@ -75,8 +75,8 @@
       },
       {
         "title": "Nightjet: arrivée à Aix-la-Chapelle",
-        "french": "Beste reizigers,\nOver enkele ogenblikken komen wij aan in Aken.\nWe wensen de reizigers die ons hier verlaten nog een fijne avond en danken u dat u met Nightjet hebt gereisd.\nGelieve voor aansluitende treinen de schermen in het station te raadplegen.",
-        "dutch": "Chers voyageurs,\nDans quelques instants nous arrivons à Aix-la-Chapelle.\nNous vous  souhaitons une agréable soirée à tous les voyageurs qui nous quittent ici et vous remercions d’avoir voyagé avec le Nightjet.\nPour vos correspondances, veuillez consulter les écrans en gare.",
+        "french": "Chers voyageurs,\nDans quelques instants nous arrivons à Aix-la-Chapelle.\nNous vous  souhaitons une agréable soirée à tous les voyageurs qui nous quittent ici et vous remercions d’avoir voyagé avec le Nightjet.\nPour vos correspondances, veuillez consulter les écrans en gare.",
+        "dutch": "Beste reizigers,\nOver enkele ogenblikken komen wij aan in Aken.\nWe wensen de reizigers die ons hier verlaten nog een fijne avond en danken u dat u met Nightjet hebt gereisd.\nGelieve voor aansluitende treinen de schermen in het station te raadplegen.",
         "german": "Liebe Reisende,\nIn wenigen Augenblicken werden wir in Aachen ankommen.\nWir wünschen allen Reisenden, die uns hier verlassen, einen guten Abend und danken Ihnen für Ihre Reise mit Nightjet.\nBitte informieren Sie sich auf den Bildschirmen im Bahnhof über Anschlusszüge.",
         "english": "Dear travellers,\nIn a few moments we will arrive in Aachen.\nWe wish travellers leaving us here a good evening and thank you for travelling with Nightjet.\nPlease check the screens in the station for connecting trains.",
         "favorite": false,
@@ -228,8 +228,8 @@
       },
       {
         "title": "Extra - au revoir",
-        "french": "*Wij komen aan op spoor [...]. U kunt de trein verlaten via de rechter/linkerkant in de rijrichting.​\n*Ik wens u verder nog een prettige/aangename dag / avond / nog een fijn weekend!\n\n*Ik wens u verder nog een aangename reis!\n\n*Veel plezier in / op [naam evenement, toeristische plek, ...]\n\n*Kijkt u voor het uitstappen even na of u niks vergeten bent.",
-        "dutch": "*Nous arrivons à la voie [...]. Vous pouvez sortir du train par le côté droit/gauche dans le sens de la marche.\n*Je vous souhaite une belle/agréable journée/soirée/un bon week-end !\n\n*Je vous souhaite un bon voyage !\n\n*Amusez-vous bien à [nom de l'événement, du site touristique, ...].\n\n*Merci de vérifier que vous n'avez rien oublié avant de descendre.",
+        "french": "*Nous arrivons à la voie [...]. Vous pouvez sortir du train par le côté droit/gauche dans le sens de la marche.\n*Je vous souhaite une belle/agréable journée/soirée/un bon week-end !\n\n*Je vous souhaite un bon voyage !\n\n*Amusez-vous bien à [nom de l'événement, du site touristique, ...].\n\n*Merci de vérifier que vous n'avez rien oublié avant de descendre.",
+        "dutch": "*Wij komen aan op spoor [...]. U kunt de trein verlaten via de rechter/linkerkant in de rijrichting.​\n*Ik wens u verder nog een prettige/aangename dag / avond / nog een fijn weekend!\n\n*Ik wens u verder nog een aangename reis!\n\n*Veel plezier in / op [naam evenement, toeristische plek, ...]\n\n*Kijkt u voor het uitstappen even na of u niks vergeten bent.",
         "german": "*Wir kommen an auf Gleis [...]. Sie können den Zug auf der rechten/linken Seite in Fahrtrichtung​ verlassen.\n*Ich wünsche Ihnen einen schönen/angenehmen Tag/Abend/ein tolles Wochenende!\n\n*Ich wünsche Ihnen eine angenehme Reise!\n\n*Viel Spaß in/bei [Name der Veranstaltung, Sehenswürdigkeit, ...].\n*Bitte überprüfen Sie, ob Sie nichts vergessen haben, bevor Sie uns verlassen.",
         "english": "*We arrive on platform [...]. You can exit the train from the right/left side in direction of travel.​\n*I wish you a nice/pleasant day/evening/great weekend!\n\n*I wish you a pleasant journey!\nHave fun in / at [name of event, tourist site, ...].\n\n*Please check that you haven't forgotten anything before getting off the train.",
         "favorite": false,
