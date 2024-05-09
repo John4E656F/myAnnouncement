@@ -23,7 +23,7 @@ export default function Page() {
         }
 
         // If data doesn't exist or is empty, fetch it from the API
-        const response = await fetch('http://192.168.178.79:5001/announce/all', {
+        const response = await fetch('http://35.157.117.28:5001/announce/all', {
           method: 'GET',
           headers: {
             Accept: 'application/json',
