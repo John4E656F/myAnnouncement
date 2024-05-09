@@ -67,6 +67,22 @@ function RootLayoutNav() {
           ),
         }}
       />
+      <Stack.Screen
+        name='custom'
+        options={{
+          headerStyle: { backgroundColor: '#005BB8' },
+          headerTintColor: '#FFFFFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitle: (props) => (
+            <View style={styles.navbarContainer}>
+              <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+              <Text style={styles.navbarTitle}>My Announcements</Text>
+            </View>
+          ),
+        }}
+      />
     </Stack>
   );
 }

@@ -73,14 +73,14 @@ export default function Page() {
           <Text style={[styles.text, styles.favoriteText]}>Favori</Text>
         </Pressable>
       </Link>
-      {/* <View style={styles.lastLinkContainer}>
+      <View style={styles.lastLinkContainer}>
         <Link href='/custom' asChild style={styles.lastLink}>
           <Pressable style={styles.buttonItemContainer}>
             <TabBarIcon name='plus-circle' color='gray' size={80} />
             <Text style={styles.CTAText}>Ajouté une annonce</Text>
           </Pressable>
         </Link>
-      </View> */}
+      </View>
     </View>
   );
 }
