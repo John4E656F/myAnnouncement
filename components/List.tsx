@@ -4,11 +4,9 @@ import { Image, Pressable, Text, StyleSheet } from 'react-native';
 import type { ListProps } from '../types';
 import { icons } from '../constants/iconMapping';
 
-export function ListItem({ link, icon, title, category }: ListProps) {
-  // console.log(icon);
-
+export function ListItem({ _id, link, icon, title, category }: ListProps) {
   return (
-    <Link href={{ pathname: `/${link}`, params: { cat: category } }} asChild style={styles.link}>
+    <Link href={{ pathname: `/${link}`, params: { _id: _id, cat: category } }} asChild style={styles.link}>
       <Pressable style={styles.buttonItemContainer}>
         <Image source={icons[icon]} style={styles.icon} />
         <Text style={styles.title}>{title}</Text>

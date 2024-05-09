@@ -12,7 +12,7 @@ export default function Page() {
     async function fetchData() {
       try {
         // Attempt to retrieve data from AsyncStorage
-        const storedData = await getStoredData('general');
+        const storedData = await getStoredData('urgent');
         // console.log(storedData);
         if (storedData.length === 0) {
           // If no data found, use default data
@@ -32,7 +32,7 @@ export default function Page() {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         {urgentData.map((item, index) => (
-          <ListItem key={`urgent-${index}`} title={item.title} link={`announce/${index}`} category='urgent' icon={item.icon} />
+          <ListItem key={`urgent-${index}`} title={item.title} link={`announce/${index}`} category='urgent' icon={item.icon} _id={item._id} />
         ))}
       </ScrollView>
     </SafeAreaView>

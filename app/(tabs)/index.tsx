@@ -67,6 +67,20 @@ export default function Page() {
           <Text style={[styles.text, styles.urgentText]}>Urgent</Text>
         </Pressable>
       </Link>
+      <Link href='/favori' asChild style={styles.favoriteLink}>
+        <Pressable style={styles.buttonItemContainer}>
+          <TabBarIcon name='star' color='yellow' size={80} />
+          <Text style={[styles.text, styles.favoriteText]}>Favori</Text>
+        </Pressable>
+      </Link>
+      {/* <View style={styles.lastLinkContainer}>
+        <Link href='/custom' asChild style={styles.lastLink}>
+          <Pressable style={styles.buttonItemContainer}>
+            <TabBarIcon name='plus-circle' color='gray' size={80} />
+            <Text style={styles.CTAText}>Ajouté une annonce</Text>
+          </Pressable>
+        </Link>
+      </View> */}
     </View>
   );
 }

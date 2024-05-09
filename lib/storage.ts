@@ -1,8 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import type { AnnounceProps } from '../types';
 
 export async function getAllStoredData(): Promise<{ categories: Record<string, any[]> }> {
   try {
-    const keys = ['@general', '@realTime', '@urgent', '@favorites', '@custom'];
+    const keys = ['@general', '@realTime', '@urgent', '@favorite', '@custom'];
     const dataPairs = await AsyncStorage.multiGet(keys);
 
     const categories: Record<string, any[]> = {
@@ -44,7 +45,78 @@ export async function getStoredData(categoryKey: string): Promise<any[]> {
     }
 
     const parsedData = JSON.parse(data);
+    // console.log(parsedData);
+
     return Array.isArray(parsedData) ? parsedData : [parsedData];
+  } catch (error: any) {
+    throw new Error(`Error retrieving ${categoryKey} data: ${error.message}`);
+  }
+}
+
+export async function getStoredFavoriteData(): Promise<any[]> {
+  try {
+    const data = await AsyncStorage.getItem('@favorite');
+
+    if (data === null) {
+      return []; // Return an empty array if no data found for the category
+    }
+
+    const parsedData = JSON.parse(data);
+
+    return Array.isArray(parsedData) ? parsedData : [parsedData];
+  } catch (error: any) {
+    throw new Error(`Error retrieving favorites data: ${error.message}`);
+  }
+}
+
+export async function getStoredFavoriteDataById(_id: string): Promise<AnnounceProps | null> {
+  try {
+    const data = await AsyncStorage.getItem('@favorite');
+    // console.log(data);
+
+    if (data === null) {
+      console.log('Error: No data found for favorites.');
+      return null; // Return null if no data found for the category
+    }
+
+    // Parse the data as JSON
+    const parsedData: AnnounceProps[] | AnnounceProps = JSON.parse(data);
+    // console.log(parsedData);
+
+    // Check if parsedData is an array or a single object
+    if (Array.isArray(parsedData)) {
+      // Find the announcement by _id
+      const announcement = parsedData.find((item: AnnounceProps) => item._id === _id);
+      return announcement || null; // Return null if no data found for the specified ID
+    } else if (parsedData._id === _id) {
+      return parsedData; // Return the single object if its _id matches the input _id
+    } else {
+      return null;
+    }
+  } catch (error: any) {
+    throw new Error(`Error retrieving favorite data: ${error.message}`);
+  }
+}
+
+export async function getStoredDataById(categoryKey: string, _id: string): Promise<any | null> {
+  try {
+    const key = `@${categoryKey}`;
+    const data = await AsyncStorage.getItem(key);
+    // console.log(data);
+
+    if (data === null) {
+      return null; // Return null if no data found for the category
+    }
+
+    const parsedData = JSON.parse(data);
+    if (!Array.isArray(parsedData)) {
+      throw new Error(`Invalid data format for ${categoryKey}`);
+    }
+
+    const announcement = parsedData.find((item: any) => item._id === _id);
+    // console.log(announcement);
+
+    return announcement || null; // Return null if no data found for the specified ID
   } catch (error: any) {
     throw new Error(`Error retrieving ${categoryKey} data: ${error.message}`);
   }
@@ -54,6 +126,55 @@ export async function storeData(params: any) {
   try {
     const jsonValue = JSON.stringify(params.data);
     await AsyncStorage.setItem(params.key, jsonValue);
+    return { type: 'Success', message: 'Data stored successfully' };
+  } catch (e) {
+    return { type: 'Error', message: e };
+  }
+}
+
+export async function storeFavoriteData(data: any) {
+  try {
+    // Fetch existing favorite data
+    let existingData = await AsyncStorage.getItem('@favorite');
+    // console.log('Existing data:');
+
+    // console.log(existingData);
+
+    let newData: any[] = [];
+    // If there is existing data, parse it and append our data to it
+    if (existingData) {
+      // console.log('data exist');
+
+      const parsedExistingData = JSON.parse(existingData);
+      // console.log('First PArse');
+
+      // console.log(parsedExistingData);
+
+      if (Array.isArray(parsedExistingData)) {
+        newData = [...parsedExistingData, data];
+        // If existing data is an array, simply append our data to it
+        // newData = [...parsedExistingData, data];
+      } else {
+        // If existing data is an object, convert it into an array and append our data
+        newData = [parsedExistingData, data];
+      }
+    } else {
+      // console.log('no data');
+
+      // If no existing data, just use our data as an array
+      newData = data;
+    }
+    // console.log('new data');
+    // console.log(newData);
+
+    // Stringify the new data before storing it
+    // const newDataString = JSON.stringify(newData);
+    // Store the new data
+    await storeData({ key: '@favorite', data: newData });
+    // let existingDatas = await AsyncStorage.getItem('@favorite');
+    // console.log(existingDatas);
+    // const parsedExistingData = JSON.parse(existingDatas!);
+    // console.log(parsedExistingData);
   } catch (e) {
     return { type: 'Error', message: e };
   }
@@ -88,7 +209,7 @@ export async function storeAllData(params: any) {
       }
     }
 
-    console.log('Data stored successfully:', categories);
+    // console.log('Data stored successfully:', categories);
     return { type: 'Success', message: 'Data stored successfully' };
   } catch (error: any) {
     console.error('Error storing data:', error);
@@ -104,4 +225,41 @@ export async function clearAll() {
   }
 
   console.log('Done.');
+}
+
+export async function removeValue() {
+  try {
+    await AsyncStorage.removeItem('@favorite');
+  } catch (e) {
+    // remove error
+  }
+
+  console.log('Done.');
+}
+
+export async function removeFavoriteData(_id: string) {
+  try {
+    let existingData = await AsyncStorage.getItem('@favorite');
+
+    if (existingData) {
+      const parsedExistingData: any[] = JSON.parse(existingData);
+      // console.log(parsedExistingData);
+
+      // Find the index of the item with the specified _id
+      const indexToRemove = parsedExistingData.findIndex((item: any) => item._id === _id);
+
+      if (indexToRemove !== -1) {
+        // If the item exists, remove it from the array
+        parsedExistingData.splice(indexToRemove, 1);
+
+        // const newData = JSON.stringify(parsedExistingData);
+        // Save the modified data back to AsyncStorage
+        await storeData({ key: '@favorite', data: parsedExistingData });
+      }
+    }
+
+    return { type: 'Success', message: 'Data removed successfully' };
+  } catch (e) {
+    return { type: 'Error', message: e };
+  }
 }

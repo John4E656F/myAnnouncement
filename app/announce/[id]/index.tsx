@@ -1,20 +1,47 @@
-import { useLocalSearchParams, usePathname, useRouter, useSegments } from 'expo-router';
-import { SafeAreaView, ScrollView, Button, Text, View, StyleSheet } from 'react-native';
-import React from 'react';
-import DefaultData from '../../../constants/DefaultData.json';
-import type { AnnounceProps } from '../../../types';
+import { useLocalSearchParams } from 'expo-router';
+import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { getStoredDataById } from '../../../lib/storage';
+import { AnnounceProps } from '../../../types';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { FavoriteButton } from '../../../components/FavoriteButton';
 
 export default function Announcement() {
-  const { cat, id } = useLocalSearchParams<{ cat: string; id: string }>();
+  const { cat, _id } = useLocalSearchParams<{ cat: string; _id: string }>();
+  const [announcementData, setAnnouncementData] = useState<AnnounceProps | null>(null);
 
-  const category = cat as keyof typeof DefaultData.categories;
+  useEffect(() => {
+    async function fetchAnnouncement() {
+      try {
+        const storedData = await getStoredDataById(cat!, _id!);
+        // console.log(storedData);
 
-  const announcementData = DefaultData.categories[category!][id! as unknown as number] as AnnounceProps;
+        if (storedData !== null) {
+          setAnnouncementData(storedData);
+        }
+      } catch (error) {
+        console.error('Error fetching announcement data:', error);
+      }
+    }
+    fetchAnnouncement();
+    // console.log(announcementData);
+  }, [cat, _id]); // Include cat and id in the dependency array of useEffect
+
+  if (!announcementData) {
+    return (
+      <View>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView>
       <ScrollView style={styles.container}>
-        <Text style={styles.title}>{announcementData.title}</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{announcementData.title}</Text>
+          <FavoriteButton data={announcementData} />
+        </View>
         <Text style={styles.language}>Francais</Text>
         <Text style={styles.text}>{announcementData.french}</Text>
         <Text style={styles.language}>Nederlands</Text>
@@ -30,15 +57,20 @@ export default function Announcement() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    // margin: 10,
+    // overflow: 'hidden',
+  },
+  titleContainer: {
+    flexDirection: 'row',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 5,
+    marginRight: 5,
+    maxWidth: '90%',
+    textAlignVertical: 'center',
   },
   language: {
     fontSize: 15,

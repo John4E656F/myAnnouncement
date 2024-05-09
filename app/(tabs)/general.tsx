@@ -31,7 +31,7 @@ export default function Page() {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         {generalData.map((item, index) => (
-          <ListItem key={`general-${index}`} title={item.title} link={`announce/${index}`} category='general' icon={item.icon} />
+          <ListItem key={`general-${index}`} title={item.title} link={`announce/${index}`} category='general' icon={item.icon} _id={item._id} />
         ))}
       </ScrollView>
     </SafeAreaView>

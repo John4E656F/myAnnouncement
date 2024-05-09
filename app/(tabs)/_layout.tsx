@@ -16,13 +16,13 @@ export default function TabLayout() {
     >
       <Tabs.Screen
         name='index'
-        options={{ title: 'Index', headerShown: false, tabBarIcon: ({ color }) => <TabBarIcon name='home' color='#2f95dc' /> }}
+        options={{ title: 'Index', headerShown: false, tabBarIcon: ({ color }) => <TabBarIcon name='home' color={color} /> }}
       />
       <Tabs.Screen
         name='general'
         options={{
           title: 'General',
-          tabBarIcon: ({ color }) => <TabBarIcon name='book' color='#2f95dc' />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='book' color={color} />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
               <Pressable>
@@ -36,7 +36,7 @@ export default function TabLayout() {
         name='realTime'
         options={{
           title: 'Temps Réel',
-          tabBarIcon: ({ color }) => <TabBarIcon name='clock-o' color='#2f95dc' />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='clock-o' color={color} />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
               <Pressable>
@@ -50,7 +50,7 @@ export default function TabLayout() {
         name='urgent'
         options={{
           title: 'Urgent',
-          tabBarIcon: ({ color }) => <TabBarIcon name='exclamation-circle' color='#2f95dc' />,
+          tabBarIcon: ({ color }) => <TabBarIcon name='exclamation-circle' color={color} />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
               <Pressable>
@@ -60,7 +60,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      {/* <Tabs.Screen
+      <Tabs.Screen
         name='favori'
         options={{
           title: 'Favori',
@@ -68,19 +68,12 @@ export default function TabLayout() {
           headerRight: () => (
             <Link href='(tabs)' asChild>
               <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name='arrow-left'
-                    size={25}
-                    color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
+                {({ pressed }) => <FontAwesome name='arrow-left' size={25} color='#2f95dc' style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} />}
               </Pressable>
             </Link>
           ),
         }}
-      /> */}
+      />
     </Tabs>
   );
 }
