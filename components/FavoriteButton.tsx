@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Pressable, Text, StyleSheet, View } from 'react-native';
 import type { AnnounceProps } from '../types/AnnounceProps';
-import { storeFavoriteData, getStoredFavoriteDataById, removeFavoriteData, removeValue } from '../lib/storage';
+import { storeFavoriteData, getStoredFavoriteDataById, removeFavoriteData, removeValue, clearAll } from '../lib/storage';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 function addOrRemove(isFavorite: boolean, data: AnnounceProps) {
   // If it's already a favorite, remove it
   // removeValue()
+  // clearAll();
   if (isFavorite) {
     removeFavoriteData(data._id!);
     return false;

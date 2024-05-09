@@ -23,13 +23,7 @@ export default function Page() {
         }
 
         // If data doesn't exist or is empty, fetch it from the API
-        const response = await fetch('http://35.157.117.28:5001/announce/all', {
-          method: 'GET',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-        });
+        const response = await fetch('http://myannouncement-be.onrender.com/announce/all');
 
         if (!response.ok) {
           throw new Error('Failed to fetch data');
@@ -40,7 +34,7 @@ export default function Page() {
         // Pass fetched data to storeAllData function
         await storeAllData({ data: newData });
       } catch (error) {
-        console.error('Error fetching or storing data:', error);
+        console.error('Error fetching data from server:', error);
       }
     }
 
