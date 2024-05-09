@@ -1,8 +1,9 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
-import { SplashScreen, Stack } from 'expo-router';
-import { useEffect } from 'react';
-import { Image, Text, View, StyleSheet } from 'react-native';
+import { SplashScreen, Stack, useRouter } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { Image, Text, View, StyleSheet, Easing, TouchableOpacity, Animated } from 'react-native';
+import { storeAllData, clearAll } from '../lib/storage';
 
 export const unstable_settings = {
   initialRouteName: '/home',
@@ -33,6 +34,49 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
+  const [syncAnimation] = useState(new Animated.Value(1));
+  const router = useRouter();
+  async function handlePress() {
+    try {
+      // Trigger the sync animation
+      Animated.sequence([
+        Animated.timing(syncAnimation, {
+          toValue: 0.8,
+          duration: 100,
+          easing: Easing.ease,
+          useNativeDriver: true,
+        }),
+        Animated.timing(syncAnimation, {
+          toValue: 1,
+          duration: 100,
+          easing: Easing.ease,
+          useNativeDriver: true,
+        }),
+      ]).start();
+
+      // Fetch data from the server
+      const response = await fetch('http://myannouncement-be.onrender.com/announce/all');
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+
+      const newData = await response.json();
+      // console.log(newData);
+
+      // Pass fetched data to storeAllData function
+      await storeAllData({ data: newData });
+      router.push('(tabs)');
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+
+  async function clear() {
+    clearAll();
+    router.push('(tabs)');
+  }
+
   return (
     <Stack>
       <Stack.Screen
@@ -45,8 +89,22 @@ function RootLayoutNav() {
           },
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
-              <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-              <Text style={styles.navbarTitle}>My Announcements</Text>
+              <View style={styles.logo}>
+                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Text style={styles.navbarTitle}>My Announcements</Text>
+              </View>
+              <View style={styles.utility}>
+                <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                    <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                  </Animated.View>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.sync} onPress={() => clear()} activeOpacity={0.8}>
+                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                    <FontAwesome name='trash' size={24} color='black' />
+                  </Animated.View>
+                </TouchableOpacity>
+              </View>
             </View>
           ),
         }}
@@ -61,8 +119,15 @@ function RootLayoutNav() {
           },
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
-              <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-              <Text style={styles.navbarTitle}>My Announcements</Text>
+              <View style={styles.logo}>
+                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Text style={styles.navbarTitle}>My Announcements</Text>
+              </View>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
             </View>
           ),
         }}
@@ -77,8 +142,15 @@ function RootLayoutNav() {
           },
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
-              <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-              <Text style={styles.navbarTitle}>My Announcements</Text>
+              <View style={styles.logo}>
+                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Text style={styles.navbarTitle}>My Announcements</Text>
+              </View>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
             </View>
           ),
         }}
@@ -92,10 +164,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
+    width: '96%',
+    justifyContent: 'space-between',
   },
   navbarTitle: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#fff',
+  },
+  logo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  sync: {
+    marginLeft: 'auto',
+  },
+  utility: {
+    flexDirection: 'row',
+    gap: 10,
+    justifyContent: 'center',
   },
 });

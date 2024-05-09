@@ -35,6 +35,7 @@ export default function Page() {
         await storeAllData({ data: newData });
       } catch (error) {
         console.error('Error fetching data from server:', error);
+        setTimeout(fetchData, 10000);
       }
     }
 

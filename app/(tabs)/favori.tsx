@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import { ListItem } from '../../components/List';
 import DefaultData from '../../constants/DefaultData.json';
 import { getStoredFavoriteData } from '../../lib/storage';
-import { useFocusEffect } from '@react-navigation/native'; // Import useFocusEffect from React Navigation
+import { useFocusEffect } from '@react-navigation/native';
 
 export default function Page({ navigation }: any) {
   const [favoriteData, setFavoriteData] = useState<any[]>([]); // Explicitly specify the type as an array
