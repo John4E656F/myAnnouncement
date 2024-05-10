@@ -1,9 +1,14 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
+import { Link } from 'expo-router';
+import { SafeAreaView, ScrollView, Text, View, StyleSheet, Pressable } from 'react-native';
 import { ListItem } from '../../components/List';
-import DefaultData from '../../constants/DefaultData.json';
 import { getStoredCustomData } from '../../lib/storage';
 import { useFocusEffect } from '@react-navigation/native';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+
+function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string; size: number }) {
+  return <FontAwesome style={{ marginBottom: -3 }} {...props} />;
+}
 
 export default function Page({ navigation }: any) {
   const [customData, setCustomData] = useState<any[]>([]); // Explicitly specify the type as an array
@@ -40,8 +45,13 @@ export default function Page({ navigation }: any) {
             <ListItem key={`custom-${index}`} title={item.title} link={`announce/${index}`} category='custom' icon={item.icon} customId={item.id} />
           ))
         ) : (
-          <View>
-            <Text>No Data</Text>
+          <View style={styles.noDataContainer}>
+            <Link href='/customPage' asChild style={styles.link}>
+              <Pressable style={styles.buttonItemContainer}>
+                <TabBarIcon name='plus-circle' color='gray' size={80} />
+                <Text style={styles.CTAText}>Ajouté une annonce</Text>
+              </Pressable>
+            </Link>
           </View>
         )}
       </ScrollView>
@@ -52,5 +62,27 @@ export default function Page({ navigation }: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  noDataContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  CTAText: {
+    fontSize: 25,
+    color: 'gray',
+  },
+  link: {
+    borderStyle: 'dashed',
+    borderColor: 'gray',
+    borderWidth: 2,
+    borderRadius: 5,
+    paddingVertical: 5,
+    paddingHorizontal: 30,
+  },
+  buttonItemContainer: {
+    gap: 20,
+    flexDirection: 'row',
+    paddingHorizontal: 30,
+    alignItems: 'center',
   },
 });

@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import { ListItem } from '../../components/List';
-import DefaultData from '../../constants/DefaultData.json';
 import { getStoredFavoriteData } from '../../lib/storage';
 import { useFocusEffect } from '@react-navigation/native';
+import { Loading } from '../../components/Loading';
 
 export default function Page({ navigation }: any) {
   const [favoriteData, setFavoriteData] = useState<any[]>([]); // Explicitly specify the type as an array
@@ -40,8 +40,9 @@ export default function Page({ navigation }: any) {
             <ListItem key={`favorites-${index}`} title={item.title} link={`announce/${index}`} category='favorite' icon={item.icon} _id={item._id} />
           ))
         ) : (
-          <View>
-            <Text>No Data</Text>
+          <View style={styles.noDataContainer}>
+            <Text style={styles.text}>Vous n'avez pas encore de favoris </Text>
+            {/* <Loading /> */}
           </View>
         )}
       </ScrollView>
@@ -52,5 +53,15 @@ export default function Page({ navigation }: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  noDataContainer: {
+    paddingTop: '50%',
+    gap: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 25,
+    fontWeight: 'bold',
   },
 });

@@ -1,16 +1,19 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { SafeAreaView, ScrollView, StatusBar, View, StyleSheet } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import { ListItem } from '../../components/List';
 import DefaultData from '../../constants/DefaultData.json';
 import { getStoredData } from '../../lib/storage';
 import { useFocusEffect } from '@react-navigation/native';
+import { Loading } from '../../components/Loading';
 
 export default function Page({ navigation }: any) {
   // const urgentData = DefaultData.categories.urgent;
   const [urgentData, setUrgentData] = useState<any[]>([]);
+  const [isFetchingData, setIsFetchingData] = useState(false);
 
   const fetchData = async () => {
     try {
+      setIsFetchingData(true);
       // Attempt to retrieve data from AsyncStorage
       const storedData = await getStoredData('urgent');
       // console.log(storedData);
@@ -18,6 +21,7 @@ export default function Page({ navigation }: any) {
         // If no data found, use default data
         // setGeneralData(DefaultData.categories.general);
       } else {
+        setIsFetchingData(false);
         // Set the retrieved data to state
         setUrgentData(storedData);
       }
@@ -35,9 +39,19 @@ export default function Page({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        {urgentData.map((item, index) => (
-          <ListItem key={`urgent-${index}`} title={item.title} link={`announce/${index}`} category='urgent' icon={item.icon} _id={item._id} />
-        ))}
+        {isFetchingData ? (
+          <View style={styles.noDataContainer}>
+            <View>
+              <Text style={styles.text}>La recherche de données peut prendre un certain temps.</Text>
+              <Text style={styles.text}>Faites un don pour que je puisse payer un serveur digne de ce nom.</Text>
+            </View>
+            <Loading />
+          </View>
+        ) : (
+          urgentData.map((item, index) => (
+            <ListItem key={`urgent-${index}`} title={item.title} link={`announce/${index}`} category='urgent' icon={item.icon} _id={item._id} />
+          ))
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -46,5 +60,16 @@ export default function Page({ navigation }: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  noDataContainer: {
+    paddingTop: '50%',
+    gap: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
