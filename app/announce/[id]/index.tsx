@@ -3,17 +3,17 @@ import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { getStoredDataById } from '../../../lib/storage';
 import { AnnounceProps } from '../../../types';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { DeleteButton } from '../../../components/DeleteButton';
 import { FavoriteButton } from '../../../components/FavoriteButton';
 
 export default function Announcement() {
-  const { cat, _id } = useLocalSearchParams<{ cat: string; _id: string }>();
+  const { cat, _id, customId } = useLocalSearchParams<{ cat: string; _id?: string; customId?: string }>();
   const [announcementData, setAnnouncementData] = useState<AnnounceProps | null>(null);
 
   useEffect(() => {
     async function fetchAnnouncement() {
       try {
-        const storedData = await getStoredDataById(cat!, _id!);
+        const storedData = await getStoredDataById(cat!, _id!, customId!);
         // console.log(storedData);
 
         if (storedData !== null) {
@@ -23,6 +23,10 @@ export default function Announcement() {
         console.error('Error fetching announcement data:', error);
       }
     }
+    // console.log(cat);
+    // console.log(_id);
+    // console.log(customId);
+
     fetchAnnouncement();
     // console.log(announcementData);
   }, [cat, _id]); // Include cat and id in the dependency array of useEffect
@@ -40,7 +44,10 @@ export default function Announcement() {
       <ScrollView style={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{announcementData.title}</Text>
-          <FavoriteButton data={announcementData} />
+          <View style={styles.buttonContainer}>
+            <FavoriteButton data={announcementData} />
+            {customId && <DeleteButton id={announcementData.id!} />}
+          </View>
         </View>
         <Text style={styles.language}>Francais</Text>
         <Text style={styles.text}>{announcementData.french}</Text>
@@ -60,6 +67,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     // overflow: 'hidden',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    marginLeft: 'auto',
+    gap: 10,
   },
   titleContainer: {
     flexDirection: 'row',

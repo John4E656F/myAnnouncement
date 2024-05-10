@@ -2,23 +2,23 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import { ListItem } from '../../components/List';
 import DefaultData from '../../constants/DefaultData.json';
-import { getStoredFavoriteData } from '../../lib/storage';
+import { getStoredCustomData } from '../../lib/storage';
 import { useFocusEffect } from '@react-navigation/native';
 
 export default function Page({ navigation }: any) {
-  const [favoriteData, setFavoriteData] = useState<any[]>([]); // Explicitly specify the type as an array
+  const [customData, setCustomData] = useState<any[]>([]); // Explicitly specify the type as an array
 
   const fetchData = async () => {
     try {
       // Attempt to retrieve data from AsyncStorage
-      const storedData = await getStoredFavoriteData();
-      console.log(storedData);
+      const storedData = await getStoredCustomData();
+      //   console.log(storedData);
       if (storedData.length === 0) {
         // If no data found, use default data
         // setGeneralData(DefaultData.categories.general);
       } else {
         // Set the retrieved data to state
-        setFavoriteData(storedData);
+        setCustomData(storedData);
       }
     } catch (error) {
       console.error('Error fetching or storing data:', error);
@@ -35,9 +35,9 @@ export default function Page({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        {favoriteData.length > 0 ? (
-          favoriteData.map((item, index) => (
-            <ListItem key={`favorites-${index}`} title={item.title} link={`announce/${index}`} category='favorite' icon={item.icon} _id={item._id} />
+        {customData.length > 0 ? (
+          customData.map((item, index) => (
+            <ListItem key={`custom-${index}`} title={item.title} link={`announce/${index}`} category='custom' icon={item.icon} customId={item.id} />
           ))
         ) : (
           <View>

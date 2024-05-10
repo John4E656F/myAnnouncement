@@ -1,4 +1,5 @@
 export interface AnnounceProps {
+  id?: string;
   _id?: string;
   title: string;
   favorite: boolean;

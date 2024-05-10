@@ -1,23 +1,43 @@
 import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, Pressable } from 'react-native';
+import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, Pressable, TouchableOpacity, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import Checkbox from 'expo-checkbox';
+import { storeCustomData, storeFavoriteData } from '../../lib/storage';
+import { icons } from '../../constants/iconMapping';
+import { randomUUID } from 'expo-crypto';
+import { useRouter } from 'expo-router';
 
 export default function Page() {
+  const router = useRouter();
   const [inputs, setInputs] = useState({
+    id: randomUUID(),
     category: null,
     title: '',
     french: '',
     dutch: '',
     german: '',
     english: '',
+    icon: '',
     isFavorite: false,
   });
   const toggleCheckbox = () => {
     setInputs({ ...inputs, isFavorite: !inputs.isFavorite });
   };
 
+  const handleIconSelect = (iconName: string) => {
+    setInputs({ ...inputs, icon: iconName });
+  };
+
   console.log(inputs);
+
+  const handlePress = () => {
+    storeCustomData(inputs);
+
+    if (inputs.isFavorite) {
+      storeFavoriteData(inputs);
+    }
+    router.push('(tabs)');
+  };
 
   return (
     <SafeAreaView style={styles.pageContainer}>
@@ -89,8 +109,24 @@ export default function Page() {
               />
               <Text style={styles.inputTitle}>Ajouter aux favoris</Text>
             </View>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputTitle}>Select an Icon:</Text>
+              <ScrollView horizontal showsHorizontalScrollIndicator={true}>
+                <View style={styles.iconContainer}>
+                  {(Object.keys(icons) as Array<keyof typeof icons>).map((iconName, index) => (
+                    <TouchableOpacity key={index} onPress={() => handleIconSelect(iconName)}>
+                      <Image
+                        source={icons[iconName]}
+                        style={[styles.icon, iconName === inputs.icon ? styles.selectedIcon : null]}
+                        resizeMode='contain'
+                      />
+                    </TouchableOpacity>
+                  ))}
+                </View>
+              </ScrollView>
+            </View>
           </View>
-          <Pressable style={styles.button}>
+          <Pressable style={styles.button} onPress={handlePress}>
             <Text style={styles.text}>Sauvegarder</Text>
           </Pressable>
         </View>
@@ -172,5 +208,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
+  },
+  iconContainer: {
+    flexDirection: 'row',
+    gap: 10,
+  },
+  icon: {
+    width: 60,
+    height: 60,
+  },
+  selectedIcon: {
+    borderWidth: 1,
+    borderColor: '#005BB8',
   },
 });

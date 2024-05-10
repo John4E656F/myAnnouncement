@@ -54,11 +54,10 @@ function RootLayoutNav() {
           useNativeDriver: true,
         }),
       ]).start();
-
       // Fetch data from the server
       const response = await fetch('https://myannouncement-be.onrender.com/announce/all');
 
-      if (!response.ok) {
+      if (!response) {
         throw new Error('Failed to fetch data');
       }
 
