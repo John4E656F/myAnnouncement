@@ -35,6 +35,7 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const [syncAnimation] = useState(new Animated.Value(1));
+  const [syncAnimationDelete] = useState(new Animated.Value(1));
   const router = useRouter();
   async function handlePress() {
     try {
@@ -55,7 +56,7 @@ function RootLayoutNav() {
       ]).start();
 
       // Fetch data from the server
-      const response = await fetch('http://myannouncement-be.onrender.com/announce/all');
+      const response = await fetch('https://myannouncement-be.onrender.com/announce/all');
 
       if (!response.ok) {
         throw new Error('Failed to fetch data');
@@ -72,10 +73,10 @@ function RootLayoutNav() {
     }
   }
 
-  async function clear() {
-    clearAll();
-    router.push('(tabs)');
-  }
+  // async function clear() {
+  //   clearAll();
+  //   router.push('(tabs)');
+  // }
 
   return (
     <Stack>
@@ -99,11 +100,11 @@ function RootLayoutNav() {
                     <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
                   </Animated.View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.sync} onPress={() => clear()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                {/* <TouchableOpacity style={styles.sync} onPress={() => clear()} activeOpacity={0.8}>
+                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimationDelete }] }]}>
                     <FontAwesome name='trash' size={24} color='black' />
                   </Animated.View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </View>
             </View>
           ),

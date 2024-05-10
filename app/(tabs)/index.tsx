@@ -3,12 +3,15 @@ import { Image, Pressable, Text, View, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { getAllStoredData, storeAllData, clearAll } from '../../lib/storage';
+import { FetchingModal } from '../../components/FetchingModal';
 
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string; size: number }) {
   return <FontAwesome style={{ marginBottom: -3 }} {...props} />;
 }
 
 export default function Page() {
+  const [isFetchingData, setIsFetchingData] = useState<boolean>(false);
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -23,7 +26,7 @@ export default function Page() {
         }
 
         // If data doesn't exist or is empty, fetch it from the API
-        const response = await fetch('http://myannouncement-be.onrender.com/announce/all');
+        const response = await fetch('https://myannouncement-be.onrender.com/announce/all');
 
         if (!response.ok) {
           throw new Error('Failed to fetch data');
@@ -31,6 +34,10 @@ export default function Page() {
 
         const newData = await response.json();
 
+        if (!newData) {
+          setIsFetchingData(true);
+        }
+        setIsFetchingData(false);
         // Pass fetched data to storeAllData function
         await storeAllData({ data: newData });
       } catch (error) {
@@ -44,6 +51,7 @@ export default function Page() {
 
   return (
     <View style={styles.container}>
+      <FetchingModal visible={isFetchingData} />
       <Link href='/general' asChild style={styles.link}>
         <Pressable style={styles.buttonItemContainer}>
           <TabBarIcon name='book' color='black' size={80} />

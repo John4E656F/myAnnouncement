@@ -21,7 +21,8 @@
         "backgroundColor": "#005CB7"
       },
       "package": "com.john4e656f.myannouncement",
-      "versionCode": 2
+      "versionCode": 2,
+      "permissions": ["INTERNET"]
     },
     "web": {
       "favicon": "./assets/logo.png"

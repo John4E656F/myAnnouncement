@@ -12,7 +12,7 @@ export default function Page({ navigation }: any) {
     try {
       // Attempt to retrieve data from AsyncStorage
       const storedData = await getStoredFavoriteData();
-      // console.log(storedData);
+      console.log(storedData);
       if (storedData.length === 0) {
         // If no data found, use default data
         // setGeneralData(DefaultData.categories.general);
