@@ -76,8 +76,14 @@ export default function Page() {
           <Text style={[styles.text, styles.favoriteText]}>Favori</Text>
         </Pressable>
       </Link>
+      <Link href='/custom' asChild style={styles.customLink}>
+        <Pressable style={styles.buttonItemContainer}>
+          <TabBarIcon name='pencil-square-o' color='gray' size={80} />
+          <Text style={[styles.text, styles.customText]}>Custom</Text>
+        </Pressable>
+      </Link>
       <View style={styles.lastLinkContainer}>
-        <Link href='/custom' asChild style={styles.lastLink}>
+        <Link href='/customPage' asChild style={styles.lastLink}>
           <Pressable style={styles.buttonItemContainer}>
             <TabBarIcon name='plus-circle' color='gray' size={80} />
             <Text style={styles.CTAText}>Ajouté une annonce</Text>
@@ -97,7 +103,7 @@ const styles = StyleSheet.create({
   },
   link: {
     marginVertical: 5,
-    paddingVertical: 10,
+    paddingVertical: 5,
     borderWidth: 2,
     borderRadius: 5,
   },
@@ -128,7 +134,7 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 2,
     borderRadius: 5,
-    paddingVertical: 10,
+    paddingVertical: 5,
     paddingHorizontal: 30,
   },
   favoriteLink: {
@@ -136,7 +142,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
     marginVertical: 5,
-    paddingVertical: 10,
+    paddingVertical: 5,
   },
   favoriteText: {
     color: 'yellow',
@@ -146,9 +152,19 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
     marginVertical: 5,
-    paddingVertical: 10,
+    paddingVertical: 5,
   },
   urgentText: {
     color: 'red',
+  },
+  customLink: {
+    borderColor: 'gray',
+    marginVertical: 5,
+    paddingVertical: 5,
+    borderWidth: 2,
+    borderRadius: 5,
+  },
+  customText: {
+    color: 'gray',
   },
 });

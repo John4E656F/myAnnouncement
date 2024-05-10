@@ -16,7 +16,7 @@ export default function TabLayout() {
     >
       <Tabs.Screen
         name='index'
-        options={{ title: 'Index', headerShown: false, tabBarIcon: ({ color }) => <TabBarIcon name='home' color={color} /> }}
+        options={{ title: 'Home', headerShown: false, tabBarIcon: ({ color }) => <TabBarIcon name='home' color={color} /> }}
       />
       <Tabs.Screen
         name='general'
@@ -65,6 +65,20 @@ export default function TabLayout() {
         options={{
           title: 'Favori',
           tabBarIcon: ({ color }) => <TabBarIcon name='star' color={color} />,
+          headerRight: () => (
+            <Link href='(tabs)' asChild>
+              <Pressable>
+                {({ pressed }) => <FontAwesome name='arrow-left' size={25} color='#2f95dc' style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} />}
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name='custom'
+        options={{
+          title: 'Custom',
+          tabBarIcon: ({ color }) => <TabBarIcon name='pencil-square-o' color={color} />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
               <Pressable>

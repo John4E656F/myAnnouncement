@@ -134,7 +134,7 @@ function RootLayoutNav() {
         }}
       />
       <Stack.Screen
-        name='custom'
+        name='customPage'
         options={{
           headerStyle: { backgroundColor: '#005BB8' },
           headerTintColor: '#FFFFFF',

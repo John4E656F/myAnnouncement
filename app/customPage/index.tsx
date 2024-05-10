@@ -1,22 +1,27 @@
 import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet } from 'react-native';
+import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, Pressable } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import Checkbox from 'expo-checkbox';
 
 export default function Page() {
   const [inputs, setInputs] = useState({
-    category: '',
+    category: null,
     title: '',
     french: '',
     dutch: '',
     german: '',
     english: '',
+    isFavorite: false,
   });
-  const [selectedCategory, setSelectedCategory] = useState();
-  const [text, onChangeText] = React.useState('');
+  const toggleCheckbox = () => {
+    setInputs({ ...inputs, isFavorite: !inputs.isFavorite });
+  };
+
+  console.log(inputs);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
+    <SafeAreaView style={styles.pageContainer}>
+      <ScrollView style={styles.container}>
         <View>
           <Text style={styles.title}>Ajouté une annonce</Text>
           <View style={styles.inputsContainer}>
@@ -25,11 +30,9 @@ export default function Page() {
               <View style={styles.pickerContainer}>
                 <Picker
                   style={styles.picker}
-                  selectedValue={selectedCategory}
-                  onValueChange={(itemValue, itemIndex) => setSelectedCategory(itemValue)}
+                  selectedValue={inputs.category}
+                  onValueChange={(itemValue, itemIndex) => setInputs({ ...inputs, category: itemValue })}
                   mode='dropdown'
-                  // dropdownIconColor='red'
-                  // dropdownIconRippleColor='purple'
                 >
                   <Picker.Item label='General' value='general' />
                   <Picker.Item label='Real Time' value='realTime' />
@@ -77,7 +80,19 @@ export default function Page() {
                 multiline={true}
               />
             </View>
+            <View style={styles.checkboxInput}>
+              <Checkbox
+                // style={}
+                color='#005BB8'
+                value={inputs.isFavorite}
+                onValueChange={toggleCheckbox}
+              />
+              <Text style={styles.inputTitle}>Ajouter aux favoris</Text>
+            </View>
           </View>
+          <Pressable style={styles.button}>
+            <Text style={styles.text}>Sauvegarder</Text>
+          </Pressable>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -85,6 +100,9 @@ export default function Page() {
 }
 
 const styles = StyleSheet.create({
+  pageContainer: {
+    flex: 1,
+  },
   container: {
     paddingVertical: 10,
     paddingHorizontal: 20,
@@ -105,10 +123,11 @@ const styles = StyleSheet.create({
   inputsContainer: {
     padding: 20,
     gap: 30,
+    marginBottom: 15,
   },
   pickerContainer: {
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 2,
   },
   inputContainer: {
     gap: 5,
@@ -117,7 +136,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 2,
   },
   inputTitle: {
     fontWeight: '400',
@@ -125,11 +144,33 @@ const styles = StyleSheet.create({
   },
   multiLineInput: {
     textAlignVertical: 'top',
-    height: 200,
+    height: 150,
     // alignItems: 'center',
     // margin: 12,
     borderWidth: 1,
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 2,
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 16,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: '#005BB8',
+    marginBottom: 30,
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
+  },
+  checkboxInput: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
   },
 });
