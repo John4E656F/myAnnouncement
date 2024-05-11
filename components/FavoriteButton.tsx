@@ -54,6 +54,10 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: 'center',
     marginLeft: 'auto',
+    width: 45,
+    height: 45,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   favoriteIcon: {
     alignSelf: 'center',

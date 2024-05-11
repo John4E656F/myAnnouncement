@@ -28,7 +28,7 @@ export default function Page() {
     setInputs({ ...inputs, icon: iconName });
   };
 
-  console.log(inputs);
+  // console.log(inputs);
 
   const handlePress = () => {
     storeCustomData(inputs);
@@ -52,7 +52,8 @@ export default function Page() {
                   style={styles.picker}
                   selectedValue={inputs.category}
                   onValueChange={(itemValue, itemIndex) => setInputs({ ...inputs, category: itemValue })}
-                  mode='dropdown'
+                  // mode='dropdown'
+                  accessibilityLabel='Category picker'
                 >
                   <Picker.Item label='General' value='general' />
                   <Picker.Item label='Real Time' value='realTime' />
@@ -62,7 +63,12 @@ export default function Page() {
             </View>
             <View style={styles.inputContainer}>
               <Text style={styles.inputTitle}>Titre:</Text>
-              <TextInput style={styles.input} onChangeText={(value) => setInputs({ ...inputs, title: value })} value={inputs.title} />
+              <TextInput
+                style={styles.input}
+                onChangeText={(value) => setInputs({ ...inputs, title: value })}
+                value={inputs.title}
+                accessibilityLabel='Title input'
+              />
             </View>
             <View style={styles.inputContainer}>
               <Text style={styles.inputTitle}>Français:</Text>
@@ -71,6 +77,7 @@ export default function Page() {
                 onChangeText={(value) => setInputs({ ...inputs, french: value })}
                 value={inputs.french}
                 multiline={true}
+                accessibilityLabel='French input'
               />
             </View>
             <View style={styles.inputContainer}>
@@ -80,6 +87,7 @@ export default function Page() {
                 onChangeText={(value) => setInputs({ ...inputs, dutch: value })}
                 value={inputs.dutch}
                 multiline={true}
+                accessibilityLabel='Dutch input'
               />
             </View>
             <View style={styles.inputContainer}>
@@ -89,6 +97,7 @@ export default function Page() {
                 onChangeText={(value) => setInputs({ ...inputs, german: value })}
                 value={inputs.german}
                 multiline={true}
+                accessibilityLabel='German input'
               />
             </View>
             <View style={styles.inputContainer}>
@@ -98,6 +107,7 @@ export default function Page() {
                 onChangeText={(value) => setInputs({ ...inputs, english: value })}
                 value={inputs.english}
                 multiline={true}
+                accessibilityLabel='English'
               />
             </View>
             <View style={styles.checkboxInput}>
@@ -106,6 +116,7 @@ export default function Page() {
                 color='#005BB8'
                 value={inputs.isFavorite}
                 onValueChange={toggleCheckbox}
+                accessibilityLabel='Add to favorite'
               />
               <Text style={styles.inputTitle}>Ajouter aux favoris</Text>
             </View>

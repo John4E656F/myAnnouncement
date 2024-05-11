@@ -1,7 +1,7 @@
 // _layout.tsx
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
@@ -25,8 +25,8 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name='book' color={color} />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
-              <Pressable>
-                {({ pressed }) => <FontAwesome name='arrow-left' size={25} color='black' style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} />}
+              <Pressable style={styles.backButton}>
+                {({ pressed }) => <FontAwesome name='arrow-left' size={30} color='black' style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} />}
               </Pressable>
             </Link>
           ),
@@ -39,7 +39,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name='clock-o' color={color} />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
-              <Pressable>
+              <Pressable style={styles.backButton}>
                 {({ pressed }) => <FontAwesome name='arrow-left' size={25} color='black' style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} />}
               </Pressable>
             </Link>
@@ -53,7 +53,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name='exclamation-circle' color={color} />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
-              <Pressable>
+              <Pressable style={styles.backButton}>
                 {({ pressed }) => <FontAwesome name='arrow-left' size={25} color='black' style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} />}
               </Pressable>
             </Link>
@@ -67,7 +67,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name='star' color={color} />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
-              <Pressable>
+              <Pressable style={styles.backButton}>
                 {({ pressed }) => <FontAwesome name='arrow-left' size={25} color='#2f95dc' style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} />}
               </Pressable>
             </Link>
@@ -81,7 +81,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name='pencil-square-o' color={color} />,
           headerRight: () => (
             <Link href='(tabs)' asChild>
-              <Pressable>
+              <Pressable style={styles.backButton}>
                 {({ pressed }) => <FontAwesome name='arrow-left' size={25} color='#2f95dc' style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} />}
               </Pressable>
             </Link>
@@ -91,3 +91,12 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  backButton: {
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    marginRight: 5,
+  },
+});
