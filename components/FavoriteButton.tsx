@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: 'center',
     marginLeft: 'auto',
-    width: 45,
-    height: 45,
+    width: 48,
+    height: 48,
     justifyContent: 'center',
     alignItems: 'center',
   },

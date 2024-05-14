@@ -104,11 +104,11 @@ function RootLayoutNav() {
                     <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
                   </Animated.View>
                 </TouchableOpacity>
-                {/* <TouchableOpacity style={styles.sync} onPress={() => handleInfo()} activeOpacity={0.8}>
+                <TouchableOpacity style={styles.sync} onPress={() => handleInfo()} activeOpacity={0.8}>
                   <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimationInfo }] }]}>
                     <FontAwesome name='info-circle' size={30} color='gray' />
                   </Animated.View>
-                </TouchableOpacity> */}
+                </TouchableOpacity>
                 {/* <TouchableOpacity style={styles.sync} onPress={() => clear()} activeOpacity={0.8}>
                   <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimationDelete }] }]}>
                     <FontAwesome name='trash' size={24} color='black' />
@@ -184,13 +184,13 @@ function RootLayoutNav() {
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
                 <Text style={styles.navbarTitle}>My Announcements</Text>
               </View>
-              <View style={styles.utility}>
+              {/* <View style={styles.utility}>
                 <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
                   <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
                     <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
                   </Animated.View>
                 </TouchableOpacity>
-              </View>
+              </View> */}
             </View>
           ),
         }}
@@ -223,8 +223,8 @@ const styles = StyleSheet.create({
   sync: {
     // backgroundColor: 'red',
     marginLeft: 'auto',
-    width: 40,
-    height: 40,
+    width: 48,
+    height: 48,
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -94,8 +94,8 @@ export default function TabLayout() {
 
 const styles = StyleSheet.create({
   backButton: {
-    width: 40,
-    height: 40,
+    width: 48,
+    height: 48,
     justifyContent: 'center',
     marginRight: 5,
   },

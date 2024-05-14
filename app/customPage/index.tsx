@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   input: {
-    height: 40,
+    height: 48,
     borderWidth: 1,
     padding: 10,
     borderRadius: 2,

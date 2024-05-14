@@ -4,6 +4,9 @@ import { Link } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { getAllStoredData, storeAllData, clearAll } from '../../lib/storage';
 import { FetchingModal } from '../../components/FetchingModal';
+import { Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string; size: number }) {
   return <FontAwesome style={{ marginBottom: -3 }} {...props} />;
@@ -98,9 +101,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    margin: 20,
+    marginHorizontal: width * 0.05,
+    marginVertical: height * 0.1,
     gap: 10,
   },
+
   link: {
     marginVertical: 5,
     paddingVertical: 5,
