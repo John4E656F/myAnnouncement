@@ -1,7 +1,7 @@
 import { Link, router } from 'expo-router';
-import { A } from '@expo/html-elements';
 import { Image, Pressable, Text, View, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import { MaterialIcons, AntDesign } from '@expo/vector-icons/';
+import { Linking } from 'react-native';
 
 export default function Modal() {
   return (
@@ -33,7 +33,7 @@ export default function Modal() {
             <Text style={styles.subTitle}>Comment voir les annonces?</Text>
             <View style={styles.textContainer}>
               <Text>Il existe trois catégories d'annonces : Général, Temps réel et Urgent.</Text>
-              <Text>Vous choisissez une des catégories, vous verrez alors une liste des bases d'annonces de cette catégorie.</Text>
+              <Text>Vous choisissez une des catégories, vous verrez alors une liste d'annonces.</Text>
               <Text>Cliquez ensuite sur l'annonce que vous souhaitez lire.</Text>
             </View>
           </View>
@@ -52,14 +52,16 @@ export default function Modal() {
               <View style={styles.contactContainer}>
                 <Text>Vous pouvez me contacter soit via :</Text>
                 <View style={styles.contactList}>
-                  <A href='mailTo:john4e656f@gmail.com' style={styles.contactItem}>
-                    <MaterialIcons name='email' size={24} color='black' />
-                    <Text>john4e656f@gmail.com</Text>
-                  </A>
-                  <View style={styles.contactItem}>
-                    <AntDesign name='linkedin-square' size={24} color='black' />
-                    <Text>john4e656f@gmail.com</Text>
-                  </View>
+                  <Pressable onPress={() => Linking.openURL('mailto:john4e656f@gmail.com')} style={styles.contactItem}>
+                    <View style={styles.contactItem}>
+                      <MaterialIcons name='email' size={24} color='#005BB8' />
+                      <Text style={styles.contactText}>john4e656f@gmail.com</Text>
+                    </View>
+                  </Pressable>
+                  <Pressable onPress={() => Linking.openURL('https://www.linkedin.com/in/john4e656f/')} style={styles.contactItem}>
+                    <AntDesign name='linkedin-square' size={24} color='#005BB8' />
+                    <Text style={styles.contactText}>john4e656f</Text>
+                  </Pressable>
                 </View>
               </View>
             </View>
@@ -76,7 +78,6 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   subContainer: {
-    alignItems: 'center',
     marginVertical: 20,
     paddingHorizontal: 20,
     gap: 20,
@@ -88,9 +89,20 @@ const styles = StyleSheet.create({
     gap: 15,
     paddingHorizontal: 20,
   },
-  contactContainer: {},
-  contactList: {},
-  contactItem: { alignContent: 'center', gap: 5, flexDirection: 'row' },
+  contactContainer: {
+    gap: 15,
+  },
+  contactList: {
+    gap: 5,
+  },
+  contactItem: {
+    alignContent: 'center',
+    gap: 5,
+    flexDirection: 'row',
+  },
+  contactText: {
+    color: '#005BB8',
+  },
   title: {
     fontSize: 26,
     fontWeight: 'bold',
