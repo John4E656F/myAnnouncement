@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Image, Pressable, Text, View, StyleSheet } from 'react-native';
+import { Image, Pressable, Text, View, StyleSheet, Dimensions } from 'react-native';
 import { Link } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { getAllStoredData, storeAllData, clearAll } from '../../lib/storage';
 import { FetchingModal } from '../../components/FetchingModal';
-import { Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
@@ -14,13 +13,51 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['nam
 
 export default function Page() {
   const [isFetchingData, setIsFetchingData] = useState<boolean>(false);
+  const [size, setSize] = useState({
+    icon: 70,
+    font: 35,
+    AddBTNFont: 25,
+  });
+
+  useEffect(() => {
+    if (height <= 720) {
+      setSize({
+        icon: 50,
+        font: 22,
+        AddBTNFont: 22,
+      });
+    } else if (height <= 750) {
+      setSize({
+        icon: 55,
+        font: 26,
+        AddBTNFont: 26,
+      });
+    } else if (height <= 780) {
+      setSize({
+        icon: 60,
+        font: 30,
+        AddBTNFont: 30,
+      });
+    } else if (height <= 860) {
+      setSize({
+        icon: 65,
+        font: 30,
+        AddBTNFont: 40,
+      });
+    } else {
+      setSize({
+        icon: 70,
+        font: 40,
+        AddBTNFont: 24,
+      });
+    }
+  }, [height]);
 
   useEffect(() => {
     async function fetchData() {
       try {
         // Attempt to retrieve data from AsyncStorage
         const storedData = await getAllStoredData();
-        // console.log(storedData);
 
         // Check if data exists for any category
         if (Object.values(storedData.categories).some((data) => data.length > 0)) {
@@ -57,39 +94,39 @@ export default function Page() {
       <FetchingModal visible={isFetchingData} />
       <Link href='/general' asChild style={styles.link}>
         <Pressable style={styles.buttonItemContainer}>
-          <TabBarIcon name='book' color='black' size={80} />
-          <Text style={styles.text}>General</Text>
+          <TabBarIcon name='book' color='black' size={size.icon} />
+          <Text style={[{ fontSize: size.font }]}>General</Text>
         </Pressable>
       </Link>
       <Link href='/realTime' asChild style={styles.link}>
         <Pressable style={styles.buttonItemContainer}>
-          <TabBarIcon name='clock-o' color='black' size={80} />
-          <Text style={styles.text}>Temps Réel</Text>
+          <TabBarIcon name='clock-o' color='black' size={size.icon} />
+          <Text style={[{ fontSize: size.font }]}>Temps Réel</Text>
         </Pressable>
       </Link>
       <Link href='/urgent' asChild style={styles.urgentLink}>
         <Pressable style={styles.buttonItemContainer}>
-          <TabBarIcon name='exclamation-circle' color='red' size={80} />
-          <Text style={[styles.text, styles.urgentText]}>Urgent</Text>
+          <TabBarIcon name='exclamation-circle' color='red' size={size.icon} />
+          <Text style={[styles.urgentText, { fontSize: size.font }]}>Urgent</Text>
         </Pressable>
       </Link>
       <Link href='/favori' asChild style={styles.favoriteLink}>
         <Pressable style={styles.buttonItemContainer}>
-          <TabBarIcon name='star' color='yellow' size={80} />
-          <Text style={[styles.text, styles.favoriteText]}>Favori</Text>
+          <TabBarIcon name='star' color='yellow' size={size.icon} />
+          <Text style={[styles.favoriteText, { fontSize: size.font }]}>Favori</Text>
         </Pressable>
       </Link>
       <Link href='/custom' asChild style={styles.customLink}>
         <Pressable style={styles.buttonItemContainer}>
-          <TabBarIcon name='pencil-square-o' color='gray' size={80} />
-          <Text style={[styles.text, styles.customText]}>Custom</Text>
+          <TabBarIcon name='pencil-square-o' color='gray' size={size.icon} />
+          <Text style={[styles.customText, { fontSize: size.font }]}>Custom</Text>
         </Pressable>
       </Link>
       <View style={styles.lastLinkContainer}>
         <Link href='/customPage' asChild style={styles.lastLink}>
           <Pressable style={styles.buttonItemContainer}>
-            <TabBarIcon name='plus-circle' color='gray' size={80} />
-            <Text style={styles.CTAText}>Ajouté une annonce</Text>
+            <TabBarIcon name='plus-circle' color='gray' size={size.icon} />
+            <Text style={[{ fontSize: size.AddBTNFont, color: 'gray' }]}>Ajouté une annonce</Text>
           </Pressable>
         </Link>
       </View>
@@ -101,11 +138,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    marginHorizontal: width * 0.05,
-    marginVertical: height * 0.1,
+    marginHorizontal: '5%',
     gap: 10,
   },
-
   link: {
     marginVertical: 5,
     paddingVertical: 5,
@@ -118,13 +153,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     alignItems: 'center',
   },
-  text: {
-    fontSize: 40,
-  },
-  CTAText: {
-    fontSize: 25,
-    color: 'gray',
-  },
   lastLinkContainer: {
     borderTopWidth: 1,
     borderTopColor: 'black',
@@ -135,6 +163,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   lastLink: {
+    width: '100%',
     borderStyle: 'dashed',
     borderColor: 'gray',
     borderWidth: 2,

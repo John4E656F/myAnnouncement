@@ -18,7 +18,8 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
-        "backgroundColor": "#005CB7"
+        "backgroundColor": "#005CB7",
+        "resizeMode": "contain"
       },
       "package": "com.john4e656f.myannouncement",
       "versionCode": 2,
