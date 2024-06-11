@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, Pressable, Text, View, StyleSheet, Dimensions } from 'react-native';
 import { Link } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { getAllStoredData, storeAllData, clearAll } from '../../lib/storage';
+import { getAllStoredData, storeAllData, clearAll, getAdmin } from '../../lib/storage';
 import { FetchingModal } from '../../components/FetchingModal';
 
 const { width, height } = Dimensions.get('window');
@@ -21,35 +21,41 @@ export default function Page() {
   });
 
   useEffect(() => {
-    if (height <= 720) {
+    if (height <= 650) {
       setSize({
-        icon: 45,
-        font: 22,
+        icon: isAdmin ? 42 : 38,
+        font: isAdmin ? 22 : 22,
+        AddBTNFont: 22,
+      });
+    } else if (height <= 720) {
+      setSize({
+        icon: isAdmin ? 42 : 46,
+        font: isAdmin ? 22 : 22,
         AddBTNFont: 22,
       });
     } else if (height <= 750) {
       setSize({
-        icon: 50,
-        font: 26,
-        AddBTNFont: 26,
+        icon: isAdmin ? 46 : 50,
+        font: isAdmin ? 24 : 26,
+        AddBTNFont: isAdmin ? 22 : 26,
       });
     } else if (height <= 780) {
       setSize({
-        icon: 55,
-        font: 30,
-        AddBTNFont: 30,
+        icon: isAdmin ? 50 : 55,
+        font: isAdmin ? 28 : 30,
+        AddBTNFont: isAdmin ? 22 : 30,
       });
     } else if (height <= 860) {
       setSize({
-        icon: 60,
-        font: 30,
-        AddBTNFont: 40,
+        icon: isAdmin ? 52 : 60,
+        font: isAdmin ? 28 : 30,
+        AddBTNFont: isAdmin ? 22 : 30,
       });
     } else {
       setSize({
         icon: isAdmin ? 50 : 65,
         font: 40,
-        AddBTNFont: 24,
+        AddBTNFont: 40,
       });
     }
   }, [height, isAdmin]);
@@ -59,7 +65,11 @@ export default function Page() {
       try {
         // Attempt to retrieve data from AsyncStorage
         const storedData = await getAllStoredData();
+        const storedIsAdmin = await getAdmin();
 
+        if (storedIsAdmin.isAdmin) {
+          setIsAdmin(true);
+        }
         // Check if data exists for any category
         if (Object.values(storedData.categories).some((data) => data.length > 0)) {
           // Data exists, do not fetch from API
@@ -166,7 +176,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: 'black',
     paddingTop: 20,
-    marginTop: 20,
+    marginTop: 10,
     alignSelf: 'stretch',
     justifyContent: 'center',
     alignItems: 'center',

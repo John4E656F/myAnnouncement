@@ -373,7 +373,7 @@ export async function adminLogin(code: string) {
   }
 }
 
-export async function isAdmin(): Promise<any> {
+export async function getAdmin(): Promise<any> {
   try {
     const data = await AsyncStorage.getItem('@isAdmin');
 
