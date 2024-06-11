@@ -13,6 +13,7 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['nam
 
 export default function Page() {
   const [isFetchingData, setIsFetchingData] = useState<boolean>(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [size, setSize] = useState({
     icon: 70,
     font: 35,
@@ -22,36 +23,36 @@ export default function Page() {
   useEffect(() => {
     if (height <= 720) {
       setSize({
-        icon: 50,
+        icon: 45,
         font: 22,
         AddBTNFont: 22,
       });
     } else if (height <= 750) {
       setSize({
-        icon: 55,
+        icon: 50,
         font: 26,
         AddBTNFont: 26,
       });
     } else if (height <= 780) {
       setSize({
-        icon: 60,
+        icon: 55,
         font: 30,
         AddBTNFont: 30,
       });
     } else if (height <= 860) {
       setSize({
-        icon: 65,
+        icon: 60,
         font: 30,
         AddBTNFont: 40,
       });
     } else {
       setSize({
-        icon: 70,
+        icon: isAdmin ? 50 : 65,
         font: 40,
         AddBTNFont: 24,
       });
     }
-  }, [height]);
+  }, [height, isAdmin]);
 
   useEffect(() => {
     async function fetchData() {
@@ -122,6 +123,14 @@ export default function Page() {
           <Text style={[styles.customText, { fontSize: size.font }]}>Custom</Text>
         </Pressable>
       </Link>
+      {isAdmin && (
+        <Link href='/suggestion' asChild style={styles.suggestLink}>
+          <Pressable style={styles.buttonItemContainer}>
+            <TabBarIcon name='lightbulb-o' color='orange' size={size.icon} />
+            <Text style={[styles.suggestText, { fontSize: size.font }]}>Suggestions</Text>
+          </Pressable>
+        </Link>
+      )}
       <View style={styles.lastLinkContainer}>
         <Link href='/customPage' asChild style={styles.lastLink}>
           <Pressable style={styles.buttonItemContainer}>
@@ -200,5 +209,15 @@ const styles = StyleSheet.create({
   },
   customText: {
     color: 'gray',
+  },
+  suggestLink: {
+    borderColor: 'orange',
+    marginVertical: 5,
+    paddingVertical: 5,
+    borderWidth: 2,
+    borderRadius: 5,
+  },
+  suggestText: {
+    color: 'orange',
   },
 });

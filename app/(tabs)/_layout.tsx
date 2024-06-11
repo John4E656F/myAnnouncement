@@ -88,6 +88,20 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name='suggestion'
+        options={{
+          title: 'Suggestion',
+          tabBarIcon: ({ color }) => <TabBarIcon name='pencil-square-o' color={color} />,
+          headerRight: () => (
+            <Link href='(tabs)' asChild>
+              <Pressable style={styles.backButton}>
+                {({ pressed }) => <FontAwesome name='arrow-left' size={25} color='#2f95dc' style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} />}
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
     </Tabs>
   );
 }

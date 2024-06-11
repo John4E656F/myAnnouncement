@@ -359,3 +359,32 @@ export async function removeCustomData(id: string) {
     return { type: 'Error', message: e };
   }
 }
+
+export async function adminLogin(code: string) {
+  try {
+    const jsonValue = JSON.stringify({
+      isAdmin: true,
+      secretCode: code,
+    });
+    await AsyncStorage.setItem('@isAdmin', jsonValue);
+    return { type: 'Success', message: 'Successful login' };
+  } catch (e) {
+    return { type: 'Error', message: e };
+  }
+}
+
+export async function isAdmin(): Promise<any> {
+  try {
+    const data = await AsyncStorage.getItem('@isAdmin');
+
+    if (data === null) {
+      return { type: 'Error', message: 'Not Admin' };
+    }
+
+    const parsedData = JSON.parse(data);
+
+    return parsedData;
+  } catch (error: any) {
+    throw new Error(`Error retrieving favorites data: ${error.message}`);
+  }
+}

@@ -66,6 +66,13 @@ export default function Modal() {
               </View>
             </View>
           </View>
+          <View style={styles.contentContainer}>
+            <Link href='/adminPage' asChild>
+              <Pressable>
+                <Text>Admin Login</Text>
+              </Pressable>
+            </Link>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -170,6 +170,31 @@ function RootLayoutNav() {
         }}
       />
       <Stack.Screen
+        name='adminPage'
+        options={{
+          headerStyle: { backgroundColor: '#005BB8' },
+          headerTintColor: '#FFFFFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitle: (props) => (
+            <View style={[styles.navbarContainer, styles.secondary]}>
+              <View style={styles.logo}>
+                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Text style={styles.navbarTitle}>My Announcements</Text>
+              </View>
+              <View style={styles.utility}>
+                <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                    <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                  </Animated.View>
+                </TouchableOpacity>
+              </View>
+            </View>
+          ),
+        }}
+      />
+      <Stack.Screen
         name='modal'
         options={{
           headerStyle: { backgroundColor: '#005BB8' },
