@@ -96,7 +96,7 @@ function RootLayoutNav() {
             <View style={styles.navbarContainer}>
               <View style={styles.logo}>
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
+                <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
               <View style={styles.utility}>
                 <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
@@ -128,10 +128,10 @@ function RootLayoutNav() {
             fontWeight: 'bold',
           },
           headerTitle: (props) => (
-            <View style={[styles.navbarContainer, styles.secondary]}>
+            <View style={styles.navbarContainer}>
               <View style={styles.logo}>
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
+                <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
               <View style={styles.utility}>
                 <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
@@ -153,10 +153,10 @@ function RootLayoutNav() {
             fontWeight: 'bold',
           },
           headerTitle: (props) => (
-            <View style={[styles.navbarContainer, styles.secondary]}>
+            <View style={styles.navbarContainer}>
               <View style={styles.logo}>
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
+                <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
               <View style={styles.utility}>
                 <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
@@ -178,10 +178,10 @@ function RootLayoutNav() {
             fontWeight: 'bold',
           },
           headerTitle: (props) => (
-            <View style={[styles.navbarContainer, styles.secondary]}>
+            <View style={styles.navbarContainer}>
               <View style={styles.logo}>
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
+                <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
               <View style={styles.utility}>
                 <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
@@ -204,10 +204,10 @@ function RootLayoutNav() {
           },
           presentation: 'modal',
           headerTitle: (props) => (
-            <View style={[styles.navbarContainer, styles.secondary]}>
+            <View style={styles.navbarContainer}>
               <View style={styles.logo}>
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
+                <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
               {/* <View style={styles.utility}>
                 <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
@@ -229,11 +229,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
-    width: '96%',
+    width: '100%',
     justifyContent: 'space-between',
-  },
-  secondary: {
-    width: '80%',
   },
   navbarTitle: {
     fontSize: 20,
@@ -255,7 +252,7 @@ const styles = StyleSheet.create({
   },
   utility: {
     flexDirection: 'row',
-    gap: 10,
+    // gap: 1,
     justifyContent: 'center',
   },
 });

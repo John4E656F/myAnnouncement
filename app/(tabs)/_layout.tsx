@@ -92,7 +92,9 @@ export default function TabLayout() {
         name='suggestion'
         options={{
           title: 'Suggestion',
-          tabBarIcon: ({ color }) => <TabBarIcon name='pencil-square-o' color={color} />,
+          // headerShown: false,
+          tabBarButton: () => null,
+          // tabBarStyle: { display: 'none' },
           headerRight: () => (
             <Link href='(tabs)' asChild>
               <Pressable style={styles.backButton}>

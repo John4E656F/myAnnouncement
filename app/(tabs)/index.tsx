@@ -21,17 +21,29 @@ export default function Page() {
   });
 
   useEffect(() => {
-    if (height <= 650) {
+    if (height <= 580) {
       setSize({
-        icon: isAdmin ? 42 : 38,
+        icon: isAdmin ? 26 : 30,
+        font: isAdmin ? 18 : 18,
+        AddBTNFont: 18,
+      });
+    } else if (height <= 590) {
+      setSize({
+        icon: isAdmin ? 28 : 34,
+        font: isAdmin ? 20 : 20,
+        AddBTNFont: 20,
+      });
+    } else if (height <= 650) {
+      setSize({
+        icon: isAdmin ? 34 : 36,
         font: isAdmin ? 22 : 22,
         AddBTNFont: 22,
       });
     } else if (height <= 720) {
       setSize({
         icon: isAdmin ? 42 : 46,
-        font: isAdmin ? 22 : 22,
-        AddBTNFont: 22,
+        font: isAdmin ? 24 : 22,
+        AddBTNFont: 24,
       });
     } else if (height <= 750) {
       setSize({
@@ -41,7 +53,7 @@ export default function Page() {
       });
     } else if (height <= 780) {
       setSize({
-        icon: isAdmin ? 50 : 55,
+        icon: isAdmin ? 50 : 54,
         font: isAdmin ? 28 : 30,
         AddBTNFont: isAdmin ? 22 : 30,
       });
@@ -53,9 +65,9 @@ export default function Page() {
       });
     } else {
       setSize({
-        icon: isAdmin ? 50 : 65,
-        font: 40,
-        AddBTNFont: 40,
+        icon: isAdmin ? 50 : 70,
+        font: isAdmin ? 38 : 40,
+        AddBTNFont: isAdmin ? 38 : 40,
       });
     }
   }, [height, isAdmin]);

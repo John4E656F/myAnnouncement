@@ -22,9 +22,9 @@ export default function Page() {
 
     if (username === inputs.username && password === inputs.password && secretCode === inputs.code) {
       const response = adminLogin(inputs.code);
-      console.log(response);
+      // console.log(response);
       setError({ isError: false, errorMessage: '' });
-      // router.push('(tabs)');
+      router.push('(tabs)');
     } else if (username !== inputs.username && password === inputs.password) {
       setError({ isError: true, errorMessage: 'Wrong username' });
     } else if (username === inputs.username && password !== inputs.password) {
