@@ -29,45 +29,45 @@ export default function Page() {
       });
     } else if (height <= 590) {
       setSize({
-        icon: isAdmin ? 28 : 34,
+        icon: isAdmin ? 28 : 28,
         font: isAdmin ? 20 : 20,
         AddBTNFont: 20,
       });
     } else if (height <= 650) {
       setSize({
-        icon: isAdmin ? 34 : 36,
+        icon: isAdmin ? 34 : 34,
         font: isAdmin ? 22 : 22,
         AddBTNFont: 22,
       });
     } else if (height <= 720) {
       setSize({
-        icon: isAdmin ? 42 : 46,
+        icon: isAdmin ? 42 : 42,
         font: isAdmin ? 24 : 22,
         AddBTNFont: 24,
       });
     } else if (height <= 750) {
       setSize({
-        icon: isAdmin ? 46 : 50,
+        icon: isAdmin ? 46 : 46,
         font: isAdmin ? 24 : 26,
-        AddBTNFont: isAdmin ? 22 : 26,
+        AddBTNFont: isAdmin ? 22 : 24,
       });
     } else if (height <= 780) {
       setSize({
-        icon: isAdmin ? 50 : 54,
+        icon: isAdmin ? 50 : 50,
         font: isAdmin ? 28 : 30,
-        AddBTNFont: isAdmin ? 22 : 30,
+        AddBTNFont: isAdmin ? 22 : 24,
       });
     } else if (height <= 860) {
       setSize({
-        icon: isAdmin ? 52 : 60,
+        icon: isAdmin ? 52 : 56,
         font: isAdmin ? 28 : 30,
-        AddBTNFont: isAdmin ? 22 : 30,
+        AddBTNFont: isAdmin ? 22 : 26,
       });
     } else {
       setSize({
-        icon: isAdmin ? 50 : 70,
+        icon: isAdmin ? 50 : 55,
         font: isAdmin ? 38 : 40,
-        AddBTNFont: isAdmin ? 38 : 40,
+        AddBTNFont: isAdmin ? 38 : 38,
       });
     }
   }, [height, isAdmin]);
@@ -160,6 +160,14 @@ export default function Page() {
             <Text style={[{ fontSize: size.AddBTNFont, color: 'gray' }]}>Ajouté une annonce</Text>
           </Pressable>
         </Link>
+        {!isAdmin && (
+          <Link href='/suggestPage' asChild style={styles.lastLink}>
+            <Pressable style={styles.buttonItemContainer}>
+              <TabBarIcon name='plus-circle' color='gray' size={size.icon} />
+              <Text style={[{ fontSize: size.AddBTNFont, color: 'gray' }]}>Proposer une annonce</Text>
+            </Pressable>
+          </Link>
+        )}
       </View>
     </View>
   );
@@ -192,6 +200,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     justifyContent: 'center',
     alignItems: 'center',
+    gap: 20,
   },
   lastLink: {
     width: '100%',
