@@ -25,13 +25,13 @@ export default function Page() {
       setSize({
         icon: isAdmin ? 26 : 30,
         font: isAdmin ? 18 : 18,
-        AddBTNFont: 18,
+        AddBTNFont: 14,
       });
     } else if (height <= 590) {
       setSize({
         icon: isAdmin ? 28 : 28,
         font: isAdmin ? 20 : 20,
-        AddBTNFont: 20,
+        AddBTNFont: 16,
       });
     } else if (height <= 650) {
       setSize({
