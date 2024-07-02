@@ -180,13 +180,15 @@ function RootLayoutNav() {
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
-              <View style={styles.utility}>
-                <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
-                    <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
-                  </Animated.View>
-                </TouchableOpacity>
-              </View>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
             </View>
           ),
         }}
@@ -205,13 +207,15 @@ function RootLayoutNav() {
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
-              <View style={styles.utility}>
-                <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
-                    <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
-                  </Animated.View>
-                </TouchableOpacity>
-              </View>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
             </View>
           ),
         }}
@@ -230,13 +234,15 @@ function RootLayoutNav() {
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
-              <View style={styles.utility}>
-                <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
-                    <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
-                  </Animated.View>
-                </TouchableOpacity>
-              </View>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
             </View>
           ),
         }}
@@ -255,13 +261,15 @@ function RootLayoutNav() {
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
-              <View style={styles.utility}>
-                <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
-                    <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
-                  </Animated.View>
-                </TouchableOpacity>
-              </View>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
             </View>
           ),
         }}
