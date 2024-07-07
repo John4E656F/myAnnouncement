@@ -6,12 +6,14 @@ import { storeCustomData, storeFavoriteData } from '../../lib/storage';
 import { icons } from '../../constants/iconMapping';
 import { randomUUID } from 'expo-crypto';
 import { useRouter } from 'expo-router';
+import { suggestAnnouncement } from '../../lib/suggest';
+import type { AnnounceProps } from '../../types';
 
 export default function Page() {
   const router = useRouter();
-  const [inputs, setInputs] = useState({
+  const [inputs, setInputs] = useState<AnnounceProps>({
     id: randomUUID(),
-    category: '',
+    category: 'general',
     title: '',
     french: '',
     dutch: '',
@@ -19,6 +21,7 @@ export default function Page() {
     english: '',
     icon: '',
     isFavorite: false,
+    suggested: true,
   });
   const toggleCheckbox = () => {
     setInputs({ ...inputs, isFavorite: !inputs.isFavorite });
@@ -30,13 +33,22 @@ export default function Page() {
 
   // console.log(inputs);
 
-  const handlePress = () => {
-    storeCustomData(inputs);
+  const handlePress = async () => {
+    try {
+      // Save data locally
+      storeCustomData(inputs);
+      if (inputs.isFavorite) {
+        storeFavoriteData(inputs);
+      }
 
-    if (inputs.isFavorite) {
-      storeFavoriteData(inputs);
+      // Send data to the backend
+      await suggestAnnouncement(inputs);
+
+      // Navigate to another page
+      router.push('(tabs)');
+    } catch (error) {
+      console.error('Failed to suggest announcement:', error);
     }
-    router.push('(tabs)');
   };
 
   return (
@@ -138,7 +150,7 @@ export default function Page() {
             </View>
           </View>
           <Pressable style={styles.button} onPress={handlePress}>
-            <Text style={styles.text}>Sauvegarder</Text>
+            <Text style={styles.text}>Suggérer</Text>
           </Pressable>
         </View>
       </ScrollView>
