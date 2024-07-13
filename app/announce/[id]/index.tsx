@@ -1,5 +1,5 @@
-import { useLocalSearchParams } from 'expo-router';
-import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
+import { useLocalSearchParams, Link } from 'expo-router';
+import { SafeAreaView, ScrollView, Text, View, StyleSheet, Pressable } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { getStoredDataById } from '../../../lib/storage';
 import { AnnounceProps } from '../../../types';
@@ -38,6 +38,7 @@ export default function Announcement() {
       </View>
     );
   }
+  console.log(announcementData);
 
   return (
     <SafeAreaView>
@@ -57,6 +58,20 @@ export default function Announcement() {
         <Text style={styles.text}>{announcementData.german}</Text>
         <Text style={styles.language}>English</Text>
         <Text style={styles.text}>{announcementData.english}</Text>
+        <View style={styles.buttonContainer}>
+          <Link
+            href={{
+              pathname: announcementData.suggested ? '/suggestPage' : '/customPage',
+              params: { _id: announcementData.id, customId, cat: cat },
+            }}
+            asChild
+            style={styles.link}
+          >
+            <Pressable style={styles.button}>
+              <Text style={styles.buttonText}>{announcementData.suggested ? 'Suggest' : 'Edit'}</Text>
+            </Pressable>
+          </Link>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -92,5 +107,17 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 13,
     marginBottom: 20,
+  },
+  button: {
+    backgroundColor: '#005BB8',
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  link: {
+    flex: 1,
   },
 });

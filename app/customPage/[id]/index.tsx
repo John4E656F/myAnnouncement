@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, Pressable, TouchableOpacity, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import Checkbox from 'expo-checkbox';
-import { storeCustomData, storeFavoriteData } from '../../lib/storage';
-import { icons } from '../../constants/iconMapping';
+import { storeCustomData, storeFavoriteData } from '../../../lib/storage';
+import { icons } from '../../../constants/iconMapping';
 import { randomUUID } from 'expo-crypto';
 import { useRouter } from 'expo-router';
-import { suggestAnnouncement } from '../../lib/suggest';
-import type { AnnounceProps } from '../../types';
 
 export default function Page() {
   const router = useRouter();
-  const [inputs, setInputs] = useState<AnnounceProps>({
+  const [inputs, setInputs] = useState({
     id: randomUUID(),
-    category: 'general',
+    category: null,
     title: '',
     french: '',
     dutch: '',
@@ -21,11 +19,6 @@ export default function Page() {
     english: '',
     icon: '',
     isFavorite: false,
-    suggested: true,
-    suggestedBy: '',
-    addName: false,
-    email: '',
-    phone: '',
   });
   const toggleCheckbox = () => {
     setInputs({ ...inputs, isFavorite: !inputs.isFavorite });
@@ -37,35 +30,20 @@ export default function Page() {
 
   // console.log(inputs);
 
-  const handlePhoneChange = (value: string) => {
-    // Allow only numeric characters
-    const numericValue = value.replace(/[^0-9]/g, '');
-    setInputs({ ...inputs, phone: numericValue });
-  };
+  const handlePress = () => {
+    storeCustomData(inputs);
 
-  const handlePress = async () => {
-    try {
-      // Save data locally
-      storeCustomData(inputs);
-      if (inputs.isFavorite) {
-        storeFavoriteData(inputs);
-      }
-
-      // Send data to the backend
-      await suggestAnnouncement(inputs);
-
-      // Navigate to another page
-      router.push('(tabs)');
-    } catch (error) {
-      console.error('Failed to suggest announcement:', error);
+    if (inputs.isFavorite) {
+      storeFavoriteData(inputs);
     }
+    router.push('(tabs)');
   };
 
   return (
     <SafeAreaView style={styles.pageContainer}>
       <ScrollView style={styles.container}>
         <View>
-          <Text style={styles.title}>Proposer une annonce</Text>
+          <Text style={styles.title}>Ajouté une annonce</Text>
           <View style={styles.inputsContainer}>
             <View style={styles.inputContainer}>
               <Text style={styles.inputTitle}>Sélectionnez une catégorie:</Text>
@@ -158,49 +136,9 @@ export default function Page() {
                 </View>
               </ScrollView>
             </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputTitle}>Nom:</Text>
-              <TextInput
-                style={styles.input}
-                onChangeText={(value) => setInputs({ ...inputs, suggestedBy: value })}
-                value={inputs.suggestedBy}
-                accessibilityLabel='Name input'
-              />
-              <View style={styles.checkboxInput}>
-                <Checkbox
-                  // style={}
-                  color='#005BB8'
-                  value={inputs.addName}
-                  onValueChange={toggleCheckbox}
-                  accessibilityLabel='Show your name'
-                />
-                <Text style={styles.inputTitle}>Affiché mon nom</Text>
-              </View>
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputTitle}>Email:</Text>
-              <TextInput
-                style={styles.input}
-                onChangeText={(value) => setInputs({ ...inputs, email: value })}
-                value={inputs.email}
-                accessibilityLabel='Name input'
-              />
-              <Text style={styles.tips}>Votre e-mail ne sera pas affiché</Text>
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputTitle}>Numéro de téléphone:</Text>
-              <TextInput
-                style={styles.input}
-                keyboardType='numeric'
-                onChangeText={handlePhoneChange}
-                value={inputs.phone}
-                accessibilityLabel='Phone input'
-              />
-              <Text style={styles.tips}>Votre numéro de téléphone ne sera pas affiché</Text>
-            </View>
           </View>
           <Pressable style={styles.button} onPress={handlePress}>
-            <Text style={styles.text}>Suggérer</Text>
+            <Text style={styles.text}>Sauvegarder</Text>
           </Pressable>
         </View>
       </ScrollView>
@@ -293,8 +231,5 @@ const styles = StyleSheet.create({
   selectedIcon: {
     borderWidth: 1,
     borderColor: '#005BB8',
-  },
-  tips: {
-    color: '#333',
   },
 });
