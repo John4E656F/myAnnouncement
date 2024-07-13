@@ -11,4 +11,8 @@ export interface AnnounceProps {
   icon?: string;
   isFavorite?: boolean;
   suggested: boolean;
+  suggestedBy?: string;
+  addName?: boolean;
+  email?: string;
+  phone?: string;
 }

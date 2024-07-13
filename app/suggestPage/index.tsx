@@ -22,6 +22,10 @@ export default function Page() {
     icon: '',
     isFavorite: false,
     suggested: true,
+    suggestedBy: '',
+    addName: false,
+    email: '',
+    phone: '',
   });
   const toggleCheckbox = () => {
     setInputs({ ...inputs, isFavorite: !inputs.isFavorite });
@@ -32,6 +36,12 @@ export default function Page() {
   };
 
   // console.log(inputs);
+
+  const handlePhoneChange = (value: string) => {
+    // Allow only numeric characters
+    const numericValue = value.replace(/[^0-9]/g, '');
+    setInputs({ ...inputs, phone: numericValue });
+  };
 
   const handlePress = async () => {
     try {
@@ -148,6 +158,46 @@ export default function Page() {
                 </View>
               </ScrollView>
             </View>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputTitle}>Nom:</Text>
+              <TextInput
+                style={styles.input}
+                onChangeText={(value) => setInputs({ ...inputs, suggestedBy: value })}
+                value={inputs.title}
+                accessibilityLabel='Name input'
+              />
+              <View style={styles.checkboxInput}>
+                <Checkbox
+                  // style={}
+                  color='#005BB8'
+                  value={inputs.addName}
+                  onValueChange={toggleCheckbox}
+                  accessibilityLabel='Show your name'
+                />
+                <Text style={styles.inputTitle}>Affiché mon nom</Text>
+              </View>
+            </View>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputTitle}>Email:</Text>
+              <TextInput
+                style={styles.input}
+                onChangeText={(value) => setInputs({ ...inputs, email: value })}
+                value={inputs.title}
+                accessibilityLabel='Name input'
+              />
+              <Text style={styles.tips}>Votre e-mail ne sera pas affiché</Text>
+            </View>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputTitle}>Numéro de téléphone:</Text>
+              <TextInput
+                style={styles.input}
+                keyboardType='numeric'
+                onChangeText={handlePhoneChange}
+                value={inputs.phone}
+                accessibilityLabel='Phone input'
+              />
+              <Text style={styles.tips}>Votre numéro de téléphone ne sera pas affiché</Text>
+            </View>
           </View>
           <Pressable style={styles.button} onPress={handlePress}>
             <Text style={styles.text}>Suggérer</Text>
@@ -243,5 +293,8 @@ const styles = StyleSheet.create({
   selectedIcon: {
     borderWidth: 1,
     borderColor: '#005BB8',
+  },
+  tips: {
+    color: '#333',
   },
 });

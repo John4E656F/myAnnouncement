@@ -2,7 +2,7 @@ import type { AnnounceProps } from '../types';
 
 export async function suggestAnnouncement(data: AnnounceProps): Promise<AnnounceProps> {
   try {
-    const response = await fetch('http://localhost:5001/suggest', {
+    const response = await fetch('http://localhost:5001/announce/suggest', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
