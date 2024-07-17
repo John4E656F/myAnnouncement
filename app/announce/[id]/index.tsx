@@ -58,17 +58,22 @@ export default function Announcement() {
         <Text style={styles.text}>{announcementData.german}</Text>
         <Text style={styles.language}>English</Text>
         <Text style={styles.text}>{announcementData.english}</Text>
-        <View style={styles.buttonContainer}>
+        <View style={styles.CTAbuttonContainer}>
+          <Link href={{ pathname: '/editPage', params: { _id: announcementData.id, customId, cat: cat } }} asChild style={styles.link}>
+            <Pressable style={styles.CTAbutton}>
+              <Text style={styles.buttonText}>{announcementData.suggested ? 'Edit' : 'Suggest'}</Text>
+            </Pressable>
+          </Link>
           <Link
             href={{
-              pathname: announcementData.suggested ? '/suggestPage' : '/customPage',
+              pathname: '/suggestPage',
               params: { _id: announcementData.id, customId, cat: cat },
             }}
             asChild
             style={styles.link}
           >
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>{announcementData.suggested ? 'Suggest' : 'Edit'}</Text>
+            <Pressable style={styles.CTAbutton}>
+              <Text style={styles.buttonText}>Suggest</Text>
             </Pressable>
           </Link>
         </View>
@@ -82,11 +87,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     // overflow: 'hidden',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    marginLeft: 'auto',
-    gap: 10,
   },
   titleContainer: {
     flexDirection: 'row',
@@ -108,6 +108,11 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginBottom: 20,
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    marginLeft: 'auto',
+    gap: 10,
+  },
   button: {
     backgroundColor: '#005BB8',
     padding: 10,
@@ -116,6 +121,18 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  CTAbuttonContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    marginLeft: 'auto',
+    gap: 10,
+  },
+  CTAbutton: {
+    backgroundColor: '#005BB8',
+    padding: 10,
+    borderRadius: 5,
   },
   link: {
     flex: 1,

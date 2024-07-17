@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, Pressable, TouchableOpacity, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import Checkbox from 'expo-checkbox';
-import { storeCustomData, storeFavoriteData } from '../../lib/storage';
+import { storeCustomData, storeFavoriteData, getStoredDataById } from '../../lib/storage';
 import { icons } from '../../constants/iconMapping';
 import { randomUUID } from 'expo-crypto';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 
 export default function Page() {
   const router = useRouter();
+  const { cat, _id, customId } = useLocalSearchParams<{ cat: string; _id?: string; customId?: string }>();
   const [inputs, setInputs] = useState({
-    id: randomUUID(),
-    category: null,
+    id: customId || randomUUID(),
+    category: '',
     title: '',
     french: '',
     dutch: '',
@@ -20,6 +21,29 @@ export default function Page() {
     icon: '',
     isFavorite: false,
   });
+
+  useEffect(() => {
+    async function fetchData() {
+      if (_id || customId) {
+        try {
+          // console.log(_id);
+          // console.log(cat);
+
+          const storedData = await getStoredDataById(cat!, _id!, customId!);
+          if (storedData) {
+            console.log(storedData);
+
+            setInputs(storedData);
+          }
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      }
+    }
+    fetchData();
+    // console.log(inputs);
+  }, [_id, customId, cat]);
+
   const toggleCheckbox = () => {
     setInputs({ ...inputs, isFavorite: !inputs.isFavorite });
   };

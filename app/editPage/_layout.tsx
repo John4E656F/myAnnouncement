@@ -36,10 +36,20 @@ export default function RootLayout() {
 function RootLayoutNav() {
   return (
     <Stack>
-      <Stack.Screen name='index' options={{ headerShown: false }} />
       <Stack.Screen name='[id]/index' options={{ headerShown: false }} />
     </Stack>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  navbarContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  navbarTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+});

@@ -26,8 +26,8 @@ export default function Page() {
     async function fetchData() {
       if (_id || customId) {
         try {
-          // console.log(_id);
-          // console.log(cat);
+          console.log(_id);
+          console.log(cat);
 
           const storedData = await getStoredDataById(cat!, _id!, customId!);
           if (storedData) {
@@ -67,7 +67,7 @@ export default function Page() {
     <SafeAreaView style={styles.pageContainer}>
       <ScrollView style={styles.container}>
         <View>
-          <Text style={styles.title}>Ajouté une annonce</Text>
+          <Text style={styles.title}>Modifier votre annonce</Text>
           <View style={styles.inputsContainer}>
             <View style={styles.inputContainer}>
               <Text style={styles.inputTitle}>Sélectionnez une catégorie:</Text>

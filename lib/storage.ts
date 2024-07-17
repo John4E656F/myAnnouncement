@@ -100,6 +100,10 @@ export async function getStoredFavoriteDataById(_id: string): Promise<AnnouncePr
 
 export async function getStoredDataById(categoryKey: string, _id: string, customId?: string): Promise<any | null> {
   try {
+    // console.log(categoryKey);
+    // console.log(_id);
+    // console.log(customId);
+
     const key = `@${categoryKey}`;
     const data = await AsyncStorage.getItem(key);
 
@@ -116,7 +120,7 @@ export async function getStoredDataById(categoryKey: string, _id: string, custom
 
     let announcement;
     if (_id) {
-      announcement = parsedData.find((item: any) => item._id === _id);
+      announcement = parsedData.find((item: any) => item.id === _id);
     } else {
       announcement = parsedData.find((item: any) => item.id === customId);
     }
