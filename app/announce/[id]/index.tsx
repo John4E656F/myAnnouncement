@@ -59,11 +59,19 @@ export default function Announcement() {
         <Text style={styles.language}>English</Text>
         <Text style={styles.text}>{announcementData.english}</Text>
         <View style={styles.CTAbuttonContainer}>
-          <Link href={{ pathname: '/editPage', params: { _id: announcementData.id, customId, cat: cat } }} asChild style={styles.link}>
+          <Link
+            href={{
+              pathname: `/editPage/${announcementData.id}`,
+              params: { customId, cat },
+            }}
+            asChild
+            style={styles.link}
+          >
             <Pressable style={styles.CTAbutton}>
-              <Text style={styles.buttonText}>{announcementData.suggested ? 'Edit' : 'Suggest'}</Text>
+              <Text style={styles.buttonText}>Edit</Text>
             </Pressable>
           </Link>
+
           <Link
             href={{
               pathname: '/suggestPage',
