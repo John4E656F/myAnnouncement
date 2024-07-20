@@ -13,8 +13,12 @@ export default function Announcement() {
   useEffect(() => {
     async function fetchAnnouncement() {
       try {
+        console.log(cat);
+        console.log(_id);
+        console.log(customId);
+
         const storedData = await getStoredDataById(cat!, _id!, customId!);
-        // console.log(storedData);
+        console.log(storedData);
 
         if (storedData !== null) {
           setAnnouncementData(storedData);

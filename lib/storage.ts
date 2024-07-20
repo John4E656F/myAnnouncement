@@ -100,33 +100,41 @@ export async function getStoredFavoriteDataById(_id: string): Promise<AnnouncePr
 
 export async function getStoredDataById(categoryKey: string, _id: string, customId?: string): Promise<any | null> {
   try {
-    // console.log(categoryKey);
-    // console.log(_id);
-    // console.log(customId);
-
     const key = `@${categoryKey}`;
     const data = await AsyncStorage.getItem(key);
+
+    // console.log('Retrieved data:', data); // Log the raw data retrieved from AsyncStorage
 
     if (data === null) {
       return null; // Return null if no data found for the category
     }
 
     const parsedData = JSON.parse(data);
-    // console.log(parsedData);
+    // console.log('Parsed data:', parsedData); // Log the parsed data
 
     if (!Array.isArray(parsedData)) {
-      return parsedData;
+      console.error('Parsed data is not an array:', parsedData);
+      return null; // Return null if parsed data is not an array
     }
+
+    // Debug the item search logic
+    // console.log('_id:', _id);
+    // console.log('customId:', customId);
 
     let announcement;
     if (_id) {
-      announcement = parsedData.find((item: any) => item.id === _id);
+      // console.log('Searching for item with _id:', _id);
+      announcement = parsedData.find((item: any) => item._id === _id);
     } else {
-      announcement = parsedData.find((item: any) => item.id === customId);
+      // console.log('Searching for item with customId:', customId);
+      announcement = parsedData.find((item: any) => item._id === customId);
     }
+
+    // console.log('Found announcement:', announcement); // Log the result of the search
 
     return announcement || null; // Return null if no data found for the specified ID
   } catch (error: any) {
+    console.error('Error retrieving data:', error.message);
     throw new Error(`Error retrieving ${categoryKey} data: ${error.message}`);
   }
 }

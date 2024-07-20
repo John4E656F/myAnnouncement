@@ -37,7 +37,15 @@ export default function Page({ navigation }: any) {
       <ScrollView>
         {favoriteData.length > 0 ? (
           favoriteData.map((item, index) => (
-            <ListItem key={`favorites-${index}`} title={item.title} link={`announce/${index}`} category='favorite' icon={item.icon} _id={item._id} />
+            <ListItem
+              key={`favorites-${index}`}
+              title={item.title}
+              link={`announce/${index}`}
+              category='favorite'
+              icon={item.icon}
+              _id={item._id}
+              customId={item.id}
+            />
           ))
         ) : (
           <View style={styles.noDataContainer}>
