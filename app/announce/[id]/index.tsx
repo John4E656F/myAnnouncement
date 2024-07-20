@@ -13,9 +13,9 @@ export default function Announcement() {
   useEffect(() => {
     async function fetchAnnouncement() {
       try {
-        console.log(cat);
-        console.log(_id);
-        console.log(customId);
+        // console.log(cat);
+        // console.log(_id);
+        // console.log(customId);
 
         const storedData = await getStoredDataById(cat!, _id!, customId!);
         console.log(storedData);
@@ -75,19 +75,20 @@ export default function Announcement() {
               <Text style={styles.buttonText}>Edit</Text>
             </Pressable>
           </Link>
-
-          <Link
-            href={{
-              pathname: '/suggestPage',
-              params: { _id: announcementData.id, customId, cat: cat },
-            }}
-            asChild
-            style={styles.link}
-          >
-            <Pressable style={styles.CTAbutton}>
-              <Text style={styles.buttonText}>Suggest</Text>
-            </Pressable>
-          </Link>
+          {!announcementData.suggested && (
+            <Link
+              href={{
+                pathname: '/suggestPage',
+                params: { _id: announcementData.id, customId, cat: cat },
+              }}
+              asChild
+              style={styles.link}
+            >
+              <Pressable style={styles.CTAbutton}>
+                <Text style={styles.buttonText}>Suggest</Text>
+              </Pressable>
+            </Link>
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>
