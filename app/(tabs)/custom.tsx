@@ -42,7 +42,15 @@ export default function Page({ navigation }: any) {
       <ScrollView>
         {customData.length > 0 ? (
           customData.map((item, index) => (
-            <ListItem key={`custom-${index}`} title={item.title} link={`announce/${index}`} category='custom' icon={item.icon} customId={item.id} />
+            <ListItem
+              key={`custom-${index}`}
+              title={item.title}
+              link={`announce/${index}`}
+              category='custom'
+              icon={item.icon}
+              _id={item._id}
+              customId={item.id}
+            />
           ))
         ) : (
           <View style={styles.noDataContainer}>

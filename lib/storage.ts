@@ -127,7 +127,7 @@ export async function getStoredDataById(categoryKey: string, _id: string, custom
       announcement = parsedData.find((item: any) => item._id === _id);
     } else {
       // console.log('Searching for item with customId:', customId);
-      announcement = parsedData.find((item: any) => item._id === customId);
+      announcement = parsedData.find((item: any) => item.id === customId);
     }
 
     // console.log('Found announcement:', announcement); // Log the result of the search
