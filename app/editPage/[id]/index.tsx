@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, Pressable, TouchableOpacity, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import Checkbox from 'expo-checkbox';
-import { storeCustomData, storeFavoriteData, getStoredDataById } from '../../../lib/storage';
+import { editCustomData, storeCustomData, storeFavoriteData, getStoredDataById } from '../../../lib/storage';
+import { updateAnnouncement } from '../../../lib/suggest';
+import type { AnnounceProps } from '../../../types/AnnounceProps';
 import { icons } from '../../../constants/iconMapping';
 import { randomUUID } from 'expo-crypto';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -10,9 +12,9 @@ import { useRouter, useLocalSearchParams } from 'expo-router';
 export default function Page() {
   const router = useRouter();
   const { cat, _id, customId } = useLocalSearchParams<{ cat: string; _id?: string; customId?: string }>();
-  const [inputs, setInputs] = useState({
+  const [inputs, setInputs] = useState<AnnounceProps>({
     id: customId || randomUUID(),
-    category: '',
+    category: 'general',
     title: '',
     french: '',
     dutch: '',
@@ -26,28 +28,45 @@ export default function Page() {
     email: '',
     phone: '',
   });
+
   const [willSuggest, setWillSuggest] = useState<boolean>(false);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       if (_id || customId) {
         try {
-          // console.log(_id);
-          // console.log(cat);
-
           const storedData = await getStoredDataById(cat!, _id!, customId!);
-          if (storedData) {
-            console.log(storedData);
+          console.log(storedData);
 
-            setInputs(storedData);
+          if (storedData) {
+            // Ensure that all fields are defined
+            setInputs({
+              id: storedData.id || randomUUID(),
+              category: storedData.category || 'general',
+              title: storedData.title || '',
+              french: storedData.french || '',
+              dutch: storedData.dutch || '',
+              german: storedData.german || '',
+              english: storedData.english || '',
+              icon: storedData.icon || '',
+              isFavorite: storedData.isFavorite || false,
+              suggested: storedData.suggested || false,
+              suggestedBy: storedData.suggestedBy || '',
+              addName: storedData.addName || false,
+              email: storedData.email || '',
+              phone: storedData.phone || '',
+              _id: storedData._id || undefined,
+            });
           }
         } catch (error) {
           console.error('Error fetching data:', error);
         }
       }
-    }
+    };
+
     fetchData();
   }, [_id, customId, cat]);
+  console.log(inputs);
 
   const toggleCheckbox = () => {
     setInputs({ ...inputs, isFavorite: !inputs.isFavorite });
@@ -63,12 +82,22 @@ export default function Page() {
     }
   };
 
-  const handlePress = () => {
-    storeCustomData(inputs);
+  const handlePress = async () => {
+    editCustomData(inputs.id!, inputs);
+    // storeCustomData(inputs);
 
     if (inputs.isFavorite) {
       storeFavoriteData(inputs);
     }
+
+    if (inputs._id) {
+      try {
+        await updateAnnouncement(inputs._id, inputs);
+      } catch (error) {
+        console.error('Error updating announcement:', error);
+      }
+    }
+
     router.push('(tabs)');
   };
 

@@ -46,13 +46,26 @@ export default function Page() {
   const handlePress = async () => {
     try {
       // Save data locally
-      storeCustomData(inputs);
       if (inputs.isFavorite) {
         storeFavoriteData(inputs);
       }
 
       // Send data to the backend
-      await suggestAnnouncement(inputs);
+      const databaseData = await suggestAnnouncement(inputs);
+
+      if (databaseData.data) {
+        // Update the state with the new _id from the database
+        setInputs((prevInputs) => ({
+          ...prevInputs,
+          _id: databaseData.data._id, // Assuming _id is returned from the database
+        }));
+
+        // Save data to storage with the updated _id
+        storeCustomData({
+          ...databaseData.data,
+          _id: databaseData.data._id, // Ensure _id is included
+        });
+      }
 
       // Navigate to another page
       router.push('(tabs)');

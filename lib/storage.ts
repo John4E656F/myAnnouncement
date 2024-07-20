@@ -235,7 +235,7 @@ export async function storeCustomData(data: any) {
       // console.log('no data');
 
       // If no existing data, just use our data as an array
-      newData = data;
+      newData = [data];
     }
     // console.log('new data');
     // console.log(newData);
@@ -390,5 +390,17 @@ export async function getAdmin(): Promise<any> {
     return parsedData;
   } catch (error: any) {
     throw new Error(`Error retrieving favorites data: ${error.message}`);
+  }
+}
+
+export async function editCustomData(id: string, newData: any) {
+  try {
+    // Remove the existing data with the specified ID
+    await removeCustomData(id);
+    // Store the new data
+    await storeCustomData(newData);
+    return { type: 'Success', message: 'Data edited successfully' };
+  } catch (error: any) {
+    return { type: 'Error', message: `Error editing custom data: ${error.message}` };
   }
 }
