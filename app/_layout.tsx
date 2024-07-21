@@ -107,7 +107,7 @@ function RootLayoutNav() {
       }
 
       if (isAdmin) {
-        const fetchedSuggestionData = await fetch('http://localhost:5001/announce/suggest/all');
+        const fetchedSuggestionData = await fetch('https://myannouncement-be.onrender.com/announce/suggest/all');
         const suggestionData = await fetchedSuggestionData.json();
         await storeSuggestionData(suggestionData.data);
       }

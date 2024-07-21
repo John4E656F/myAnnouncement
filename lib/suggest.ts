@@ -12,7 +12,7 @@ interface DeleteAnnouncementResponse {
 
 export async function suggestAnnouncement(data: AnnounceProps): Promise<SuggestAnnouncementResponse> {
   try {
-    const response = await fetch('http://localhost:5001/announce/suggest', {
+    const response = await fetch('https://myannouncement-be.onrender.com/announce/suggest', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export async function suggestAnnouncement(data: AnnounceProps): Promise<SuggestA
 
 export async function deleteSuggestAnnouncement(_id: string): Promise<DeleteAnnouncementResponse> {
   try {
-    const response = await fetch(`http://localhost:5001/announce/suggest/delete/${_id}`, {
+    const response = await fetch(`https://myannouncement-be.onrender.com/announce/suggest/delete/${_id}`, {
       method: 'DELETE',
     });
 
@@ -59,7 +59,7 @@ export async function deleteSuggestAnnouncement(_id: string): Promise<DeleteAnno
 
 export async function updateAnnouncement(_id: string, data: AnnounceProps): Promise<AnnounceProps> {
   try {
-    const response = await fetch(`http://localhost:5001/announce/suggest/edit/${_id}`, {
+    const response = await fetch(`https://myannouncement-be.onrender.com/announce/suggest/edit/${_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

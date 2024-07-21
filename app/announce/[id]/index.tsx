@@ -51,13 +51,13 @@ export default function Announcement() {
 
   const handlePress = async () => {
     if (_id) {
-      const response = await fetch(`http://localhost:5001/announce/suggest/accept/${_id}`, {
+      const response = await fetch(`https://myannouncement-be.onrender.com/announce/suggest/accept/${_id}`, {
         method: 'PUT',
       });
 
       if (response.ok) {
         // Handle successful response
-        const fetchedSuggestionData = await fetch('http://localhost:5001/announce/suggest/all');
+        const fetchedSuggestionData = await fetch('https://myannouncement-be.onrender.com/announce/suggest/all');
         const suggestionData = await fetchedSuggestionData.json();
         await storeSuggestionData(suggestionData.data);
       } else {
