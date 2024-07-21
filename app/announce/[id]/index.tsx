@@ -1,15 +1,16 @@
-import { useLocalSearchParams, Link } from 'expo-router';
+import { useRouter, useLocalSearchParams, Link } from 'expo-router';
 import { SafeAreaView, ScrollView, Text, View, StyleSheet, Pressable } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import { getStoredDataById } from '../../../lib/storage';
+import { getStoredDataById, getAdmin, storeSuggestionData } from '../../../lib/storage';
 import { AnnounceProps } from '../../../types';
 import { DeleteButton } from '../../../components/DeleteButton';
 import { FavoriteButton } from '../../../components/FavoriteButton';
 
 export default function Announcement() {
+  const router = useRouter();
   const { cat, _id, customId } = useLocalSearchParams<{ cat: string; _id?: string; customId?: string }>();
   const [announcementData, setAnnouncementData] = useState<AnnounceProps | null>(null);
-
+  const [isAdmin, setIsAdmin] = useState<Boolean>(false);
   useEffect(() => {
     async function fetchAnnouncement() {
       try {
@@ -23,6 +24,10 @@ export default function Announcement() {
         if (storedData !== null) {
           setAnnouncementData(storedData);
         }
+        const admin = await getAdmin();
+        if (admin.isAdmin) {
+          setIsAdmin(true);
+        }
       } catch (error) {
         console.error('Error fetching announcement data:', error);
       }
@@ -32,7 +37,7 @@ export default function Announcement() {
     // console.log(customId);
 
     fetchAnnouncement();
-    // console.log(announcementData);
+    console.log(announcementData);
   }, [cat, _id]); // Include cat and id in the dependency array of useEffect
 
   if (!announcementData) {
@@ -43,6 +48,28 @@ export default function Announcement() {
     );
   }
   // console.log(announcementData);
+
+  const handlePress = async () => {
+    if (_id) {
+      const response = await fetch(`http://localhost:5001/announce/suggest/accept/${_id}`, {
+        method: 'PUT',
+      });
+
+      if (response.ok) {
+        // Handle successful response
+        const fetchedSuggestionData = await fetch('http://localhost:5001/announce/suggest/all');
+        const suggestionData = await fetchedSuggestionData.json();
+        await storeSuggestionData(suggestionData.data);
+      } else {
+        // Handle error response
+        const errorData = await response.json();
+        console.error('Failed to accept announcement:', errorData.message);
+      }
+    } else {
+      console.log('No _id provided');
+      router.push('(tabs)');
+    }
+  };
 
   return (
     <SafeAreaView>
@@ -62,34 +89,41 @@ export default function Announcement() {
         <Text style={styles.text}>{announcementData.german}</Text>
         <Text style={styles.language}>English</Text>
         <Text style={styles.text}>{announcementData.english}</Text>
-        <View style={styles.CTAbuttonContainer}>
-          <Link
-            href={{
-              pathname: `/editPage/${announcementData.id}`,
-              params: { customId, cat },
-            }}
-            asChild
-            style={styles.link}
-          >
-            <Pressable style={styles.CTAbutton}>
-              <Text style={styles.buttonText}>Edit</Text>
-            </Pressable>
-          </Link>
-          {!announcementData.suggested && (
+        {announcementData.id && (
+          <View style={styles.CTAbuttonContainer}>
             <Link
               href={{
-                pathname: '/suggestPage',
-                params: { _id: announcementData._id, customId, cat: cat },
+                pathname: `/editPage/${announcementData.id}`,
+                params: { customId, cat },
               }}
               asChild
               style={styles.link}
             >
               <Pressable style={styles.CTAbutton}>
-                <Text style={styles.buttonText}>Suggest</Text>
+                <Text style={styles.buttonText}>Edit</Text>
               </Pressable>
             </Link>
-          )}
-        </View>
+            {isAdmin && (
+              <Pressable onPress={handlePress} style={styles.CTAbutton}>
+                <Text style={styles.buttonText}>Accept</Text>
+              </Pressable>
+            )}
+            {!announcementData.suggested && (
+              <Link
+                href={{
+                  pathname: '/suggestPage',
+                  params: { _id: announcementData._id, customId, cat: cat },
+                }}
+                asChild
+                style={styles.link}
+              >
+                <Pressable style={styles.CTAbutton}>
+                  <Text style={styles.buttonText}>Suggest</Text>
+                </Pressable>
+              </Link>
+            )}
+          </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
