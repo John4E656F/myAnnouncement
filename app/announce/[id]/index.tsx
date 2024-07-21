@@ -82,7 +82,7 @@ export default function Announcement() {
           <Text style={styles.title}>{announcementData.title}</Text>
           <View style={styles.buttonContainer}>
             <FavoriteButton data={announcementData} />
-            {customId || (isAdmin && <DeleteButton id={announcementData.id!} _id={announcementData._id} isAdmin={isAdmin} code={code} />)}
+            {(customId || isAdmin) && <DeleteButton id={announcementData.id!} _id={announcementData._id} isAdmin={isAdmin} code={code} />}
           </View>
         </View>
         <Text style={styles.language}>Francais</Text>
@@ -104,12 +104,12 @@ export default function Announcement() {
               style={styles.link}
             >
               <Pressable style={styles.CTAbutton}>
-                <Text style={styles.buttonText}>Edit</Text>
+                <Text style={styles.buttonText}>Modifier</Text>
               </Pressable>
             </Link>
             {isAdmin && (
               <Pressable onPress={handlePress} style={styles.CTAbutton}>
-                <Text style={styles.buttonText}>Accept</Text>
+                <Text style={styles.buttonText}>Accepter</Text>
               </Pressable>
             )}
             {!announcementData.suggested && (
@@ -122,7 +122,7 @@ export default function Announcement() {
                 style={styles.link}
               >
                 <Pressable style={styles.CTAbutton}>
-                  <Text style={styles.buttonText}>Suggest</Text>
+                  <Text style={styles.buttonText}>Suggérer</Text>
                 </Pressable>
               </Link>
             )}
