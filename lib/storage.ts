@@ -298,6 +298,41 @@ export async function storeAllData(params: any) {
   }
 }
 
+export async function storeSuggestionData(data: any) {
+  try {
+    // Fetch existing data from storage
+    const existingDataStr = await AsyncStorage.getItem('@suggestions');
+    let existingData: any[] = [];
+
+    // Parse existing data if available
+    if (existingDataStr) {
+      existingData = JSON.parse(existingDataStr);
+      if (!Array.isArray(existingData)) {
+        existingData = [existingData]; // Convert object to array if necessary
+      }
+    }
+
+    // Ensure newData is an array
+    const newDataArray = Array.isArray(data) ? data : [data];
+
+    // Filter out new data that already exists in existing data based on _id
+    const existingIds = new Set(existingData.map((item) => item._id));
+    const filteredNewData = newDataArray.filter((item) => item._id && !existingIds.has(item._id));
+
+    // Combine existing data with the filtered new data
+    const updatedData = [...existingData, ...filteredNewData];
+
+    // Stringify and store the updated data
+    const updatedDataString = JSON.stringify(updatedData);
+    await AsyncStorage.setItem('@suggestions', updatedDataString);
+
+    return { type: 'Success', message: 'Data updated successfully' };
+  } catch (e) {
+    console.error('Error storing suggestion data:', e);
+    return { type: 'Error', message: e instanceof Error ? e.message : 'Unknown error' };
+  }
+}
+
 export async function clearAll() {
   try {
     await AsyncStorage.clear();

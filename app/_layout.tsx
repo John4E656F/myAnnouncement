@@ -3,7 +3,7 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Image, Text, View, StyleSheet, Easing, TouchableOpacity, Animated, Dimensions } from 'react-native';
-import { storeAllData, clearAll } from '../lib/storage';
+import { storeAllData, clearAll, getAdmin, storeSuggestionData } from '../lib/storage';
 
 export const unstable_settings = {
   initialRouteName: '/home',
@@ -100,9 +100,16 @@ function RootLayoutNav() {
       ]).start();
       // Fetch data from the server
       const response = await fetch('https://myannouncement-be.onrender.com/announce/all');
+      const { isAdmin } = await getAdmin();
 
       if (!response) {
         throw new Error('Failed to fetch data');
+      }
+
+      if (isAdmin) {
+        const fetchedSuggestionData = await fetch('http://localhost:5001/announce/suggest/all');
+        const suggestionData = await fetchedSuggestionData.json();
+        await storeSuggestionData(suggestionData.data);
       }
 
       const newData = await response.json();

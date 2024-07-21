@@ -14,7 +14,7 @@ export default function Page({ navigation }: any) {
     try {
       setIsFetchingData(true);
       // Attempt to retrieve data from AsyncStorage
-      const storedData = await getStoredData('general');
+      const storedData = await getStoredData('suggestions');
       // console.log(storedData);
       if (storedData.length === 0) {
         // If no data found, use default data
@@ -48,7 +48,14 @@ export default function Page({ navigation }: any) {
           </View>
         ) : (
           generalData.map((item, index) => (
-            <ListItem key={`general-${index}`} title={item.title} link={`announce/${index}`} category='general' icon={item.icon} _id={item._id} />
+            <ListItem
+              key={`suggestions-${index}`}
+              title={item.title}
+              link={`announce/${index}`}
+              category='suggestions'
+              icon={item.icon}
+              _id={item._id}
+            />
           ))
         )}
       </ScrollView>
