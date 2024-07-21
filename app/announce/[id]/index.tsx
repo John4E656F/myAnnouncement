@@ -11,6 +11,7 @@ export default function Announcement() {
   const { cat, _id, customId } = useLocalSearchParams<{ cat: string; _id?: string; customId?: string }>();
   const [announcementData, setAnnouncementData] = useState<AnnounceProps | null>(null);
   const [isAdmin, setIsAdmin] = useState<Boolean>(false);
+  const [code, setCode] = useState<Number>();
   useEffect(() => {
     async function fetchAnnouncement() {
       try {
@@ -25,8 +26,11 @@ export default function Announcement() {
           setAnnouncementData(storedData);
         }
         const admin = await getAdmin();
+        // console.log(admin);
+
         if (admin.isAdmin) {
           setIsAdmin(true);
+          setCode(admin.secretCode);
         }
       } catch (error) {
         console.error('Error fetching announcement data:', error);
@@ -37,7 +41,7 @@ export default function Announcement() {
     // console.log(customId);
 
     fetchAnnouncement();
-    console.log(announcementData);
+    // console.log(announcementData);
   }, [cat, _id]); // Include cat and id in the dependency array of useEffect
 
   if (!announcementData) {
@@ -78,7 +82,7 @@ export default function Announcement() {
           <Text style={styles.title}>{announcementData.title}</Text>
           <View style={styles.buttonContainer}>
             <FavoriteButton data={announcementData} />
-            {customId && <DeleteButton id={announcementData.id!} _id={announcementData._id} />}
+            {customId || (isAdmin && <DeleteButton id={announcementData.id!} _id={announcementData._id} isAdmin={isAdmin} code={code} />)}
           </View>
         </View>
         <Text style={styles.language}>Francais</Text>
