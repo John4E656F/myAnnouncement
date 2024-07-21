@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, Pressable, TouchableOpacity, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import Checkbox from 'expo-checkbox';
-import { storeCustomData, storeFavoriteData } from '../../lib/storage';
+import { storeCustomData, storeFavoriteData, getStoredDataById, removeCustomData, removeFavoriteData } from '../../lib/storage';
 import { icons } from '../../constants/iconMapping';
 import { randomUUID } from 'expo-crypto';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import { suggestAnnouncement } from '../../lib/suggest';
 import type { AnnounceProps } from '../../types';
 
 export default function Page() {
   const router = useRouter();
+  const { cat, _id, customId } = useLocalSearchParams<{ cat: string; _id?: string; customId?: string }>();
   const [inputs, setInputs] = useState<AnnounceProps>({
     id: randomUUID(),
     category: 'general',
@@ -27,8 +28,61 @@ export default function Page() {
     email: '',
     phone: '',
   });
-  const toggleCheckbox = () => {
+  const [existingData, setExistingData] = useState<Boolean>(false);
+  const [alreadyFav, setAlreadyFav] = useState<Boolean>(false);
+
+  useEffect(() => {
+    // console.log(cat);
+    // console.log(_id);
+    // console.log(customId);
+
+    const fetchData = async () => {
+      if (_id || customId) {
+        try {
+          const storedData = await getStoredDataById(cat!, _id!, customId!);
+          // console.log(storedData);
+
+          if (storedData) {
+            // Ensure that all fields are defined
+            setInputs({
+              id: storedData.id || randomUUID(),
+              category: storedData.category || 'general',
+              title: storedData.title || '',
+              french: storedData.french || '',
+              dutch: storedData.dutch || '',
+              german: storedData.german || '',
+              english: storedData.english || '',
+              icon: storedData.icon || '',
+              isFavorite: storedData.isFavorite || false,
+              suggested: storedData.suggested || true,
+              suggestedBy: storedData.suggestedBy || '',
+              addName: storedData.addName || false,
+              email: storedData.email || '',
+              phone: storedData.phone || '',
+              _id: storedData._id || undefined,
+            });
+
+            setExistingData(true);
+
+            if (storedData.isFavorite) {
+              setAlreadyFav(true);
+            }
+          }
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      }
+    };
+
+    fetchData();
+  }, [_id, customId, cat]);
+
+  const toggleFavoriteCheckbox = () => {
     setInputs({ ...inputs, isFavorite: !inputs.isFavorite });
+  };
+
+  const toggleAddNameCheckbox = () => {
+    setInputs({ ...inputs, addName: !inputs.addName });
   };
 
   const handleIconSelect = (iconName: string) => {
@@ -45,15 +99,23 @@ export default function Page() {
 
   const handlePress = async () => {
     try {
-      // Save data locally
+      // Send data to the backend
+      const databaseData = await suggestAnnouncement(inputs);
+
+      if (existingData && inputs.id) {
+        await removeCustomData(inputs.id);
+        if (alreadyFav) {
+          await removeFavoriteData(inputs.id);
+        }
+      }
+
       if (inputs.isFavorite) {
         storeFavoriteData(inputs);
       }
 
-      // Send data to the backend
-      const databaseData = await suggestAnnouncement(inputs);
-
       if (databaseData.data) {
+        // console.log(databaseData.data);
+
         // Update the state with the new _id from the database
         setInputs((prevInputs) => ({
           ...prevInputs,
@@ -150,7 +212,7 @@ export default function Page() {
                 // style={}
                 color='#005BB8'
                 value={inputs.isFavorite}
-                onValueChange={toggleCheckbox}
+                onValueChange={toggleFavoriteCheckbox}
                 accessibilityLabel='Add to favorite'
               />
               <Text style={styles.inputTitle}>Ajouter aux favoris</Text>
@@ -184,7 +246,7 @@ export default function Page() {
                   // style={}
                   color='#005BB8'
                   value={inputs.addName}
-                  onValueChange={toggleCheckbox}
+                  onValueChange={toggleAddNameCheckbox}
                   accessibilityLabel='Show your name'
                 />
                 <Text style={styles.inputTitle}>Affiché mon nom</Text>

@@ -18,7 +18,7 @@ export default function Announcement() {
         // console.log(customId);
 
         const storedData = await getStoredDataById(cat!, _id!, customId!);
-        console.log(storedData);
+        // console.log(storedData);
 
         if (storedData !== null) {
           setAnnouncementData(storedData);
@@ -42,7 +42,7 @@ export default function Announcement() {
       </View>
     );
   }
-  console.log(announcementData);
+  // console.log(announcementData);
 
   return (
     <SafeAreaView>
@@ -51,7 +51,7 @@ export default function Announcement() {
           <Text style={styles.title}>{announcementData.title}</Text>
           <View style={styles.buttonContainer}>
             <FavoriteButton data={announcementData} />
-            {customId && <DeleteButton id={announcementData.id!} />}
+            {customId && <DeleteButton id={announcementData.id!} _id={announcementData._id} />}
           </View>
         </View>
         <Text style={styles.language}>Francais</Text>
@@ -79,7 +79,7 @@ export default function Announcement() {
             <Link
               href={{
                 pathname: '/suggestPage',
-                params: { _id: announcementData.id, customId, cat: cat },
+                params: { _id: announcementData._id, customId, cat: cat },
               }}
               asChild
               style={styles.link}

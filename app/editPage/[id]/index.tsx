@@ -36,7 +36,7 @@ export default function Page() {
       if (_id || customId) {
         try {
           const storedData = await getStoredDataById(cat!, _id!, customId!);
-          console.log(storedData);
+          // console.log(storedData);
 
           if (storedData) {
             // Ensure that all fields are defined
@@ -66,7 +66,7 @@ export default function Page() {
 
     fetchData();
   }, [_id, customId, cat]);
-  console.log(inputs);
+  // console.log(inputs);
 
   const toggleCheckbox = () => {
     setInputs({ ...inputs, isFavorite: !inputs.isFavorite });

@@ -12,7 +12,7 @@ export default function Page() {
   const { cat, _id, customId } = useLocalSearchParams<{ cat: string; _id?: string; customId?: string }>();
   const [inputs, setInputs] = useState({
     id: customId || randomUUID(),
-    category: '',
+    category: 'general',
     title: '',
     french: '',
     dutch: '',
@@ -31,7 +31,7 @@ export default function Page() {
 
           const storedData = await getStoredDataById(cat!, _id!, customId!);
           if (storedData) {
-            console.log(storedData);
+            // console.log(storedData);
 
             setInputs(storedData);
           }

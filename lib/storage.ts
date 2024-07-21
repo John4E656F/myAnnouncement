@@ -305,7 +305,7 @@ export async function clearAll() {
     // clear error
   }
 
-  console.log('Done.');
+  // console.log('Done.');
 }
 
 export async function removeValue() {
@@ -315,10 +315,10 @@ export async function removeValue() {
     // remove error
   }
 
-  console.log('Done.');
+  // console.log('Done.');
 }
 
-export async function removeFavoriteData(_id: string) {
+export async function removeFavoriteData(id: string) {
   try {
     let existingData = await AsyncStorage.getItem('@favorite');
 
@@ -327,7 +327,7 @@ export async function removeFavoriteData(_id: string) {
       // console.log(parsedExistingData);
 
       // Find the index of the item with the specified _id
-      const indexToRemove = parsedExistingData.findIndex((item: any) => item._id === _id);
+      const indexToRemove = parsedExistingData.findIndex((item: any) => item.id === id);
 
       if (indexToRemove !== -1) {
         // If the item exists, remove it from the array
@@ -355,10 +355,12 @@ export async function removeCustomData(id: string) {
 
       // Find the index of the item with the specified _id
       const indexToRemove = parsedExistingData.findIndex((item: any) => item.id === id);
+      // console.log(indexToRemove);
 
       if (indexToRemove !== -1) {
         // If the item exists, remove it from the array
         parsedExistingData.splice(indexToRemove, 1);
+        // console.log(parsedExistingData);
 
         // const newData = JSON.stringify(parsedExistingData);
         // Save the modified data back to AsyncStorage

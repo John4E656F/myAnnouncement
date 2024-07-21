@@ -5,6 +5,11 @@ interface SuggestAnnouncementResponse {
   data: AnnounceProps;
 }
 
+interface DeleteAnnouncementResponse {
+  success: boolean;
+  msg?: string;
+}
+
 export async function suggestAnnouncement(data: AnnounceProps): Promise<SuggestAnnouncementResponse> {
   try {
     const response = await fetch('http://localhost:5001/announce/suggest', {
@@ -24,6 +29,31 @@ export async function suggestAnnouncement(data: AnnounceProps): Promise<SuggestA
   } catch (error) {
     console.error('Error suggesting announcement:', error);
     throw error;
+  }
+}
+
+export async function deleteSuggestAnnouncement(_id: string): Promise<DeleteAnnouncementResponse> {
+  try {
+    const response = await fetch(`http://localhost:5001/announce/suggest/delete/${_id}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      return {
+        success: false,
+        msg: 'Failed to delete announcement',
+      };
+    }
+
+    return {
+      success: true,
+      msg: 'Announcement deleted successfully',
+    };
+  } catch (error) {
+    return {
+      success: false,
+      msg: `Error deleting announcement: ${(error as Error).message}`,
+    };
   }
 }
 
