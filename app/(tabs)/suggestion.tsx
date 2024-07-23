@@ -1,31 +1,34 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import { ListItem } from '../../components/List';
-import { getStoredFavoriteData } from '../../lib/storage';
+import DefaultData from '../../constants/DefaultData.json';
+import { getStoredData } from '../../lib/storage';
 import { useFocusEffect } from '@react-navigation/native';
 import { Loading } from '../../components/Loading';
 
 export default function Page({ navigation }: any) {
-  const [favoriteData, setFavoriteData] = useState<any[]>([]); // Explicitly specify the type as an array
+  const [generalData, setGeneralData] = useState<any[]>([]); // Explicitly specify the type as an array
+  const [isFetchingData, setIsFetchingData] = useState(false);
 
   const fetchData = async () => {
     try {
+      setIsFetchingData(true);
       // Attempt to retrieve data from AsyncStorage
-      const storedData = await getStoredFavoriteData();
+      const storedData = await getStoredData('suggestions');
       // console.log(storedData);
       if (storedData.length === 0) {
         // If no data found, use default data
         // setGeneralData(DefaultData.categories.general);
       } else {
+        setIsFetchingData(false);
         // Set the retrieved data to state
-        setFavoriteData(storedData);
+        setGeneralData(storedData);
       }
     } catch (error) {
       console.error('Error fetching or storing data:', error);
     }
   };
 
-  // Use useFocusEffect to run the fetchData function whenever the screen gains focus
   useFocusEffect(
     useCallback(() => {
       fetchData();
@@ -35,23 +38,25 @@ export default function Page({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        {favoriteData.length > 0 ? (
-          favoriteData.map((item, index) => (
+        {isFetchingData ? (
+          <View style={styles.noDataContainer}>
+            <View>
+              <Text style={styles.text}>La recherche de données peut prendre un certain temps.</Text>
+              <Text style={styles.text}>Faites un don pour que je puisse payer un serveur digne de ce nom.</Text>
+            </View>
+            <Loading />
+          </View>
+        ) : (
+          generalData.map((item, index) => (
             <ListItem
-              key={`favorites-${index}`}
+              key={`suggestions-${index}`}
               title={item.title}
               link={`announce/${index}`}
-              category='favorite'
+              category='suggestions'
               icon={item.icon}
               _id={item._id}
-              customId={item.id}
             />
           ))
-        ) : (
-          <View style={styles.noDataContainer}>
-            <Text style={styles.text}>Vous n'avez pas encore de favoris </Text>
-            {/* <Loading /> */}
-          </View>
         )}
       </ScrollView>
     </SafeAreaView>
@@ -69,7 +74,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontSize: 25,
+    textAlign: 'center',
+    fontSize: 20,
     fontWeight: 'bold',
   },
 });

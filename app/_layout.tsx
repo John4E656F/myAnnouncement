@@ -2,12 +2,14 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Image, Text, View, StyleSheet, Easing, TouchableOpacity, Animated } from 'react-native';
-import { storeAllData, clearAll } from '../lib/storage';
+import { Image, Text, View, StyleSheet, Easing, TouchableOpacity, Animated, Dimensions } from 'react-native';
+import { storeAllData, clearAll, getAdmin, storeSuggestionData } from '../lib/storage';
 
 export const unstable_settings = {
   initialRouteName: '/home',
 };
+
+const { width, height } = Dimensions.get('window');
 
 SplashScreen.preventAutoHideAsync();
 
@@ -38,6 +40,47 @@ function RootLayoutNav() {
   const [syncAnimationInfo] = useState(new Animated.Value(1));
   const [syncAnimationDelete] = useState(new Animated.Value(1));
   const router = useRouter();
+
+  const [size, setSize] = useState({
+    icon: 70,
+  });
+
+  useEffect(() => {
+    if (width <= 580) {
+      setSize({
+        icon: 30,
+      });
+    } else if (width <= 590) {
+      setSize({
+        icon: 28,
+      });
+    } else if (height <= 650) {
+      setSize({
+        icon: 34,
+      });
+    } else if (width <= 720) {
+      setSize({
+        icon: 42,
+      });
+    } else if (width <= 750) {
+      setSize({
+        icon: 46,
+      });
+    } else if (width <= 780) {
+      setSize({
+        icon: 50,
+      });
+    } else if (width <= 860) {
+      setSize({
+        icon: 56,
+      });
+    } else {
+      setSize({
+        icon: 55,
+      });
+    }
+  }, [width]);
+
   async function handlePress() {
     try {
       // Trigger the sync animation
@@ -57,9 +100,16 @@ function RootLayoutNav() {
       ]).start();
       // Fetch data from the server
       const response = await fetch('https://myannouncement-be.onrender.com/announce/all');
+      const { isAdmin } = await getAdmin();
 
       if (!response) {
         throw new Error('Failed to fetch data');
+      }
+
+      if (isAdmin) {
+        const fetchedSuggestionData = await fetch('https://myannouncement-be.onrender.com/announce/suggest/all');
+        const suggestionData = await fetchedSuggestionData.json();
+        await storeSuggestionData(suggestionData.data);
       }
 
       const newData = await response.json();
@@ -92,29 +142,33 @@ function RootLayoutNav() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
+          headerLeft: () => (
+            <View style={styles.logo}>
+              <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+            </View>
+          ),
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
-              <View style={styles.logo}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
-              </View>
-              <View style={styles.utility}>
-                <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
-                    <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
-                  </Animated.View>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.sync} onPress={() => handleInfo()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimationInfo }] }]}>
-                    <FontAwesome name='info-circle' size={30} color='gray' />
-                  </Animated.View>
-                </TouchableOpacity>
-                {/* <TouchableOpacity style={styles.sync} onPress={() => clear()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimationDelete }] }]}>
-                    <FontAwesome name='trash' size={24} color='black' />
-                  </Animated.View>
-                </TouchableOpacity> */}
-              </View>
+              <Text style={styles.navbarTitle}>Announcements</Text>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.sync} onPress={() => handleInfo()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimationInfo }] }]}>
+                  <FontAwesome name='info-circle' size={30} color='gray' />
+                </Animated.View>
+              </TouchableOpacity>
+              {/* <TouchableOpacity style={styles.sync} onPress={() => clear()} activeOpacity={0.8}>
+              <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimationDelete }] }]}>
+                <FontAwesome name='trash' size={24} color='black' />
+              </Animated.View>
+            </TouchableOpacity> */}
             </View>
           ),
         }}
@@ -128,18 +182,20 @@ function RootLayoutNav() {
             fontWeight: 'bold',
           },
           headerTitle: (props) => (
-            <View style={[styles.navbarContainer, styles.secondary]}>
+            <View style={styles.navbarContainer}>
               <View style={styles.logo}>
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
+                <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
-              <View style={styles.utility}>
-                <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
-                    <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
-                  </Animated.View>
-                </TouchableOpacity>
-              </View>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
             </View>
           ),
         }}
@@ -153,18 +209,101 @@ function RootLayoutNav() {
             fontWeight: 'bold',
           },
           headerTitle: (props) => (
-            <View style={[styles.navbarContainer, styles.secondary]}>
+            <View style={styles.navbarContainer}>
               <View style={styles.logo}>
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
+                <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
-              <View style={styles.utility}>
-                <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
-                  <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
-                    <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
-                  </Animated.View>
-                </TouchableOpacity>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
+            </View>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name='suggestPage'
+        options={{
+          headerStyle: { backgroundColor: '#005BB8' },
+          headerTintColor: '#FFFFFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitle: (props) => (
+            <View style={styles.navbarContainer}>
+              <View style={styles.logo}>
+                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
+            </View>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name='editPage'
+        options={{
+          headerStyle: { backgroundColor: '#005BB8' },
+          headerTintColor: '#FFFFFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitle: (props) => (
+            <View style={styles.navbarContainer}>
+              <View style={styles.logo}>
+                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Text style={styles.navbarTitle}>Announcements</Text>
+              </View>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
+            </View>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name='adminPage'
+        options={{
+          headerStyle: { backgroundColor: '#005BB8' },
+          headerTintColor: '#FFFFFF',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerTitle: (props) => (
+            <View style={styles.navbarContainer}>
+              <View style={styles.logo}>
+                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Text style={styles.navbarTitle}>Announcements</Text>
+              </View>
+            </View>
+          ),
+          headerRight: () => (
+            <View style={styles.utility}>
+              <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
+                <Animated.View style={[styles.sync, { transform: [{ scale: syncAnimation }] }]}>
+                  <FontAwesome name='cloud-download' size={30} color='#38B6FF' />
+                </Animated.View>
+              </TouchableOpacity>
             </View>
           ),
         }}
@@ -179,10 +318,10 @@ function RootLayoutNav() {
           },
           presentation: 'modal',
           headerTitle: (props) => (
-            <View style={[styles.navbarContainer, styles.secondary]}>
+            <View style={styles.navbarContainer}>
               <View style={styles.logo}>
                 <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
-                <Text style={styles.navbarTitle}>My Announcements</Text>
+                <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
               {/* <View style={styles.utility}>
                 <TouchableOpacity style={styles.sync} onPress={() => handlePress()} activeOpacity={0.8}>
@@ -203,19 +342,17 @@ const styles = StyleSheet.create({
   navbarContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
-    width: '96%',
+    // gap: 10,
+    width: '100%',
     justifyContent: 'space-between',
   },
-  secondary: {
-    width: '80%',
-  },
   navbarTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#fff',
   },
   logo: {
+    paddingLeft: 5,
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
@@ -223,14 +360,15 @@ const styles = StyleSheet.create({
   sync: {
     // backgroundColor: 'red',
     marginLeft: 'auto',
-    width: 48,
-    height: 48,
+    // width: 44,
+    // height: 44,
     justifyContent: 'center',
     alignItems: 'center',
   },
   utility: {
     flexDirection: 'row',
-    gap: 10,
+    paddingRight: 5,
+    gap: 5,
     justifyContent: 'center',
   },
 });

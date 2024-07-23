@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, Pressable, Text, View, StyleSheet, Dimensions } from 'react-native';
 import { Link } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { getAllStoredData, storeAllData, clearAll } from '../../lib/storage';
+import { getAllStoredData, storeAllData, clearAll, getAdmin } from '../../lib/storage';
 import { FetchingModal } from '../../components/FetchingModal';
 
 const { width, height } = Dimensions.get('window');
@@ -13,6 +13,7 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['nam
 
 export default function Page() {
   const [isFetchingData, setIsFetchingData] = useState<boolean>(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [size, setSize] = useState({
     icon: 70,
     font: 35,
@@ -20,45 +21,67 @@ export default function Page() {
   });
 
   useEffect(() => {
-    if (height <= 720) {
+    if (height <= 580) {
       setSize({
-        icon: 50,
-        font: 22,
+        icon: isAdmin ? 26 : 30,
+        font: isAdmin ? 18 : 18,
+        AddBTNFont: 14,
+      });
+    } else if (height <= 590) {
+      setSize({
+        icon: isAdmin ? 28 : 28,
+        font: isAdmin ? 20 : 20,
+        AddBTNFont: 16,
+      });
+    } else if (height <= 650) {
+      setSize({
+        icon: isAdmin ? 34 : 34,
+        font: isAdmin ? 22 : 22,
         AddBTNFont: 22,
+      });
+    } else if (height <= 720) {
+      setSize({
+        icon: isAdmin ? 42 : 42,
+        font: isAdmin ? 24 : 22,
+        AddBTNFont: 24,
       });
     } else if (height <= 750) {
       setSize({
-        icon: 55,
-        font: 26,
-        AddBTNFont: 26,
+        icon: isAdmin ? 46 : 46,
+        font: isAdmin ? 24 : 26,
+        AddBTNFont: isAdmin ? 22 : 24,
       });
     } else if (height <= 780) {
       setSize({
-        icon: 60,
-        font: 30,
-        AddBTNFont: 30,
+        icon: isAdmin ? 50 : 50,
+        font: isAdmin ? 28 : 30,
+        AddBTNFont: isAdmin ? 22 : 24,
       });
     } else if (height <= 860) {
       setSize({
-        icon: 65,
-        font: 30,
-        AddBTNFont: 40,
+        icon: isAdmin ? 52 : 56,
+        font: isAdmin ? 28 : 30,
+        AddBTNFont: isAdmin ? 22 : 26,
       });
     } else {
       setSize({
-        icon: 70,
-        font: 40,
-        AddBTNFont: 24,
+        icon: isAdmin ? 50 : 55,
+        font: isAdmin ? 38 : 40,
+        AddBTNFont: isAdmin ? 38 : 38,
       });
     }
-  }, [height]);
+  }, [height, isAdmin]);
 
   useEffect(() => {
     async function fetchData() {
       try {
         // Attempt to retrieve data from AsyncStorage
         const storedData = await getAllStoredData();
+        const storedIsAdmin = await getAdmin();
 
+        if (storedIsAdmin.isAdmin) {
+          setIsAdmin(true);
+        }
         // Check if data exists for any category
         if (Object.values(storedData.categories).some((data) => data.length > 0)) {
           // Data exists, do not fetch from API
@@ -122,6 +145,14 @@ export default function Page() {
           <Text style={[styles.customText, { fontSize: size.font }]}>Custom</Text>
         </Pressable>
       </Link>
+      {isAdmin && (
+        <Link href='/suggestion' asChild style={styles.suggestLink}>
+          <Pressable style={styles.buttonItemContainer}>
+            <TabBarIcon name='lightbulb-o' color='orange' size={size.icon} />
+            <Text style={[styles.suggestText, { fontSize: size.font }]}>Suggestions</Text>
+          </Pressable>
+        </Link>
+      )}
       <View style={styles.lastLinkContainer}>
         <Link href='/customPage' asChild style={styles.lastLink}>
           <Pressable style={styles.buttonItemContainer}>
@@ -129,6 +160,14 @@ export default function Page() {
             <Text style={[{ fontSize: size.AddBTNFont, color: 'gray' }]}>Ajouté une annonce</Text>
           </Pressable>
         </Link>
+        {!isAdmin && (
+          <Link href='/suggestPage' asChild style={styles.lastLink}>
+            <Pressable style={styles.buttonItemContainer}>
+              <TabBarIcon name='plus-circle' color='gray' size={size.icon} />
+              <Text style={[{ fontSize: size.AddBTNFont, color: 'gray' }]}>Proposer une annonce</Text>
+            </Pressable>
+          </Link>
+        )}
       </View>
     </View>
   );
@@ -157,10 +196,11 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: 'black',
     paddingTop: 20,
-    marginTop: 20,
+    marginTop: 10,
     alignSelf: 'stretch',
     justifyContent: 'center',
     alignItems: 'center',
+    gap: 20,
   },
   lastLink: {
     width: '100%',
@@ -200,5 +240,15 @@ const styles = StyleSheet.create({
   },
   customText: {
     color: 'gray',
+  },
+  suggestLink: {
+    borderColor: 'orange',
+    marginVertical: 5,
+    paddingVertical: 5,
+    borderWidth: 2,
+    borderRadius: 5,
+  },
+  suggestText: {
+    color: 'orange',
   },
 });

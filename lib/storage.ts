@@ -103,26 +103,38 @@ export async function getStoredDataById(categoryKey: string, _id: string, custom
     const key = `@${categoryKey}`;
     const data = await AsyncStorage.getItem(key);
 
+    // console.log('Retrieved data:', data); // Log the raw data retrieved from AsyncStorage
+
     if (data === null) {
       return null; // Return null if no data found for the category
     }
 
     const parsedData = JSON.parse(data);
-    // console.log(parsedData);
+    // console.log('Parsed data:', parsedData); // Log the parsed data
 
     if (!Array.isArray(parsedData)) {
-      return parsedData;
+      console.error('Parsed data is not an array:', parsedData);
+      return null; // Return null if parsed data is not an array
     }
+
+    // Debug the item search logic
+    // console.log('_id:', _id);
+    // console.log('customId:', customId);
 
     let announcement;
     if (_id) {
+      // console.log('Searching for item with _id:', _id);
       announcement = parsedData.find((item: any) => item._id === _id);
     } else {
+      // console.log('Searching for item with customId:', customId);
       announcement = parsedData.find((item: any) => item.id === customId);
     }
 
+    // console.log('Found announcement:', announcement); // Log the result of the search
+
     return announcement || null; // Return null if no data found for the specified ID
   } catch (error: any) {
+    console.error('Error retrieving data:', error.message);
     throw new Error(`Error retrieving ${categoryKey} data: ${error.message}`);
   }
 }
@@ -231,7 +243,7 @@ export async function storeCustomData(data: any) {
       // console.log('no data');
 
       // If no existing data, just use our data as an array
-      newData = data;
+      newData = [data];
     }
     // console.log('new data');
     // console.log(newData);
@@ -286,6 +298,41 @@ export async function storeAllData(params: any) {
   }
 }
 
+export async function storeSuggestionData(data: any) {
+  try {
+    // Fetch existing data from storage
+    const existingDataStr = await AsyncStorage.getItem('@suggestions');
+    let existingData: any[] = [];
+
+    // Parse existing data if available
+    if (existingDataStr) {
+      existingData = JSON.parse(existingDataStr);
+      if (!Array.isArray(existingData)) {
+        existingData = [existingData]; // Convert object to array if necessary
+      }
+    }
+
+    // Ensure newData is an array
+    const newDataArray = Array.isArray(data) ? data : [data];
+
+    // Filter out new data that already exists in existing data based on _id
+    const existingIds = new Set(existingData.map((item) => item._id));
+    const filteredNewData = newDataArray.filter((item) => item._id && !existingIds.has(item._id));
+
+    // Combine existing data with the filtered new data
+    const updatedData = [...existingData, ...filteredNewData];
+
+    // Stringify and store the updated data
+    const updatedDataString = JSON.stringify(updatedData);
+    await AsyncStorage.setItem('@suggestions', updatedDataString);
+
+    return { type: 'Success', message: 'Data updated successfully' };
+  } catch (e) {
+    console.error('Error storing suggestion data:', e);
+    return { type: 'Error', message: e instanceof Error ? e.message : 'Unknown error' };
+  }
+}
+
 export async function clearAll() {
   try {
     await AsyncStorage.clear();
@@ -293,7 +340,7 @@ export async function clearAll() {
     // clear error
   }
 
-  console.log('Done.');
+  // console.log('Done.');
 }
 
 export async function removeValue() {
@@ -303,10 +350,10 @@ export async function removeValue() {
     // remove error
   }
 
-  console.log('Done.');
+  // console.log('Done.');
 }
 
-export async function removeFavoriteData(_id: string) {
+export async function removeFavoriteData(id: string) {
   try {
     let existingData = await AsyncStorage.getItem('@favorite');
 
@@ -315,7 +362,7 @@ export async function removeFavoriteData(_id: string) {
       // console.log(parsedExistingData);
 
       // Find the index of the item with the specified _id
-      const indexToRemove = parsedExistingData.findIndex((item: any) => item._id === _id);
+      const indexToRemove = parsedExistingData.findIndex((item: any) => item.id === id);
 
       if (indexToRemove !== -1) {
         // If the item exists, remove it from the array
@@ -343,10 +390,12 @@ export async function removeCustomData(id: string) {
 
       // Find the index of the item with the specified _id
       const indexToRemove = parsedExistingData.findIndex((item: any) => item.id === id);
+      // console.log(indexToRemove);
 
       if (indexToRemove !== -1) {
         // If the item exists, remove it from the array
         parsedExistingData.splice(indexToRemove, 1);
+        // console.log(parsedExistingData);
 
         // const newData = JSON.stringify(parsedExistingData);
         // Save the modified data back to AsyncStorage
@@ -357,5 +406,46 @@ export async function removeCustomData(id: string) {
     return { type: 'Success', message: 'Data removed successfully' };
   } catch (e) {
     return { type: 'Error', message: e };
+  }
+}
+
+export async function adminLogin(code: string) {
+  try {
+    const jsonValue = JSON.stringify({
+      isAdmin: true,
+      secretCode: code,
+    });
+    await AsyncStorage.setItem('@isAdmin', jsonValue);
+    return { type: 'Success', message: 'Successful login' };
+  } catch (e) {
+    return { type: 'Error', message: e };
+  }
+}
+
+export async function getAdmin(): Promise<any> {
+  try {
+    const data = await AsyncStorage.getItem('@isAdmin');
+
+    if (data === null) {
+      return { type: 'Error', message: 'Not Admin' };
+    }
+
+    const parsedData = JSON.parse(data);
+
+    return parsedData;
+  } catch (error: any) {
+    throw new Error(`Error retrieving favorites data: ${error.message}`);
+  }
+}
+
+export async function editCustomData(id: string, newData: any) {
+  try {
+    // Remove the existing data with the specified ID
+    await removeCustomData(id);
+    // Store the new data
+    await storeCustomData(newData);
+    return { type: 'Success', message: 'Data edited successfully' };
+  } catch (error: any) {
+    return { type: 'Error', message: `Error editing custom data: ${error.message}` };
   }
 }

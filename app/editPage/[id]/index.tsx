@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, Text, TextInput, View, StyleSheet, Pressable, TouchableOpacity, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import Checkbox from 'expo-checkbox';
-import { storeCustomData, storeFavoriteData, getStoredDataById } from '../../lib/storage';
-import { icons } from '../../constants/iconMapping';
+import { editCustomData, storeCustomData, storeFavoriteData, getStoredDataById } from '../../../lib/storage';
+import { updateAnnouncement } from '../../../lib/suggest';
+import type { AnnounceProps } from '../../../types/AnnounceProps';
+import { icons } from '../../../constants/iconMapping';
 import { randomUUID } from 'expo-crypto';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 
 export default function Page() {
   const router = useRouter();
   const { cat, _id, customId } = useLocalSearchParams<{ cat: string; _id?: string; customId?: string }>();
-  const [inputs, setInputs] = useState({
+  const [inputs, setInputs] = useState<AnnounceProps>({
     id: customId || randomUUID(),
     category: 'general',
     title: '',
@@ -20,29 +22,51 @@ export default function Page() {
     english: '',
     icon: '',
     isFavorite: false,
+    suggested: false,
+    suggestedBy: '',
+    addName: false,
+    email: '',
+    phone: '',
   });
 
+  const [willSuggest, setWillSuggest] = useState<boolean>(false);
+
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       if (_id || customId) {
         try {
-          // console.log(_id);
-          // console.log(cat);
-
           const storedData = await getStoredDataById(cat!, _id!, customId!);
-          if (storedData) {
-            // console.log(storedData);
+          // console.log(storedData);
 
-            setInputs(storedData);
+          if (storedData) {
+            // Ensure that all fields are defined
+            setInputs({
+              id: storedData.id || randomUUID(),
+              category: storedData.category || 'general',
+              title: storedData.title || '',
+              french: storedData.french || '',
+              dutch: storedData.dutch || '',
+              german: storedData.german || '',
+              english: storedData.english || '',
+              icon: storedData.icon || '',
+              isFavorite: storedData.isFavorite || false,
+              suggested: storedData.suggested || false,
+              suggestedBy: storedData.suggestedBy || '',
+              addName: storedData.addName || false,
+              email: storedData.email || '',
+              phone: storedData.phone || '',
+              _id: storedData._id || undefined,
+            });
           }
         } catch (error) {
           console.error('Error fetching data:', error);
         }
       }
-    }
+    };
+
     fetchData();
-    // console.log(inputs);
   }, [_id, customId, cat]);
+  // console.log(inputs);
 
   const toggleCheckbox = () => {
     setInputs({ ...inputs, isFavorite: !inputs.isFavorite });
@@ -52,14 +76,28 @@ export default function Page() {
     setInputs({ ...inputs, icon: iconName });
   };
 
-  // console.log(inputs);
+  const handlePhoneChange = (value: string) => {
+    if (/^\d*$/.test(value)) {
+      setInputs({ ...inputs, phone: value });
+    }
+  };
 
-  const handlePress = () => {
-    storeCustomData(inputs);
+  const handlePress = async () => {
+    editCustomData(inputs.id!, inputs);
+    // storeCustomData(inputs);
 
     if (inputs.isFavorite) {
       storeFavoriteData(inputs);
     }
+
+    if (inputs._id) {
+      try {
+        await updateAnnouncement(inputs._id, inputs);
+      } catch (error) {
+        console.error('Error updating announcement:', error);
+      }
+    }
+
     router.push('(tabs)');
   };
 
@@ -67,7 +105,7 @@ export default function Page() {
     <SafeAreaView style={styles.pageContainer}>
       <ScrollView style={styles.container}>
         <View>
-          <Text style={styles.title}>Ajouté une annonce</Text>
+          <Text style={styles.title}>Modifier votre annonce</Text>
           <View style={styles.inputsContainer}>
             <View style={styles.inputContainer}>
               <Text style={styles.inputTitle}>Sélectionnez une catégorie:</Text>
@@ -76,7 +114,6 @@ export default function Page() {
                   style={styles.picker}
                   selectedValue={inputs.category}
                   onValueChange={(itemValue, itemIndex) => setInputs({ ...inputs, category: itemValue })}
-                  // mode='dropdown'
                   accessibilityLabel='Category picker'
                 >
                   <Picker.Item label='General' value='general' />
@@ -135,13 +172,7 @@ export default function Page() {
               />
             </View>
             <View style={styles.checkboxInput}>
-              <Checkbox
-                // style={}
-                color='#005BB8'
-                value={inputs.isFavorite}
-                onValueChange={toggleCheckbox}
-                accessibilityLabel='Add to favorite'
-              />
+              <Checkbox color='#005BB8' value={inputs.isFavorite} onValueChange={toggleCheckbox} accessibilityLabel='Add to favorite' />
               <Text style={styles.inputTitle}>Ajouter aux favoris</Text>
             </View>
             <View style={styles.inputContainer}>
@@ -160,6 +191,60 @@ export default function Page() {
                 </View>
               </ScrollView>
             </View>
+            {!inputs.suggested && (
+              <View style={styles.checkboxInput}>
+                <Checkbox
+                  color='#005BB8'
+                  value={willSuggest}
+                  onValueChange={() => setWillSuggest(!willSuggest)} // Toggle willSuggest state
+                  accessibilityLabel='Suggest this ad'
+                />
+                <Text style={styles.inputTitle}>Voulez-vous suggérer cette annonce?</Text>
+              </View>
+            )}
+            {(inputs.suggested || willSuggest) && (
+              <>
+                <View style={styles.inputContainer}>
+                  <Text style={styles.inputTitle}>Nom:</Text>
+                  <TextInput
+                    style={styles.input}
+                    onChangeText={(value) => setInputs({ ...inputs, suggestedBy: value })}
+                    value={inputs.suggestedBy}
+                    accessibilityLabel='Name input'
+                  />
+                  <View style={styles.checkboxInput}>
+                    <Checkbox
+                      color='#005BB8'
+                      value={inputs.addName}
+                      onValueChange={() => setInputs({ ...inputs, addName: !inputs.addName })}
+                      accessibilityLabel='Show your name'
+                    />
+                    <Text style={styles.inputTitle}>Affiché mon nom</Text>
+                  </View>
+                </View>
+                <View style={styles.inputContainer}>
+                  <Text style={styles.inputTitle}>Email:</Text>
+                  <TextInput
+                    style={styles.input}
+                    onChangeText={(value) => setInputs({ ...inputs, email: value })}
+                    value={inputs.email}
+                    accessibilityLabel='Email input'
+                  />
+                  <Text style={styles.tips}>Votre e-mail ne sera pas affiché</Text>
+                </View>
+                <View style={styles.inputContainer}>
+                  <Text style={styles.inputTitle}>Numéro de téléphone:</Text>
+                  <TextInput
+                    style={styles.input}
+                    keyboardType='numeric'
+                    onChangeText={handlePhoneChange}
+                    value={inputs.phone}
+                    accessibilityLabel='Phone input'
+                  />
+                  <Text style={styles.tips}>Votre numéro de téléphone ne sera pas affiché</Text>
+                </View>
+              </>
+            )}
           </View>
           <Pressable style={styles.button} onPress={handlePress}>
             <Text style={styles.text}>Sauvegarder</Text>
@@ -189,7 +274,6 @@ const styles = StyleSheet.create({
   picker: {
     borderWidth: 2,
     borderColor: 'black',
-    // backgroundColor: 'cyan',
   },
   inputsContainer: {
     padding: 20,
@@ -216,8 +300,6 @@ const styles = StyleSheet.create({
   multiLineInput: {
     textAlignVertical: 'top',
     height: 150,
-    // alignItems: 'center',
-    // margin: 12,
     borderWidth: 1,
     padding: 10,
     borderRadius: 2,
@@ -255,5 +337,9 @@ const styles = StyleSheet.create({
   selectedIcon: {
     borderWidth: 1,
     borderColor: '#005BB8',
+  },
+  tips: {
+    fontSize: 12,
+    color: 'gray',
   },
 });

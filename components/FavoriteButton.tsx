@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Pressable, Text, StyleSheet, View } from 'react-native';
-import type { AnnounceProps } from '../types/AnnounceProps';
+import type { AnnounceProps } from '../types';
 import { storeFavoriteData, getStoredFavoriteDataById, removeFavoriteData, removeValue, clearAll } from '../lib/storage';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
-function addOrRemove(isFavorite: boolean, data: AnnounceProps) {
+async function addOrRemove(isFavorite: boolean, data: AnnounceProps) {
   // If it's already a favorite, remove it
   // removeValue()
   // clearAll();
   if (isFavorite) {
-    removeFavoriteData(data._id!);
+    await removeFavoriteData(data.id!);
     return false;
   } else {
-    storeFavoriteData(data);
+    await storeFavoriteData(data);
     return true;
   }
 }
 
 export function FavoriteButton({ data }: { data: AnnounceProps }) {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
   useEffect(() => {
     async function fetchAnnouncement() {
@@ -38,8 +38,8 @@ export function FavoriteButton({ data }: { data: AnnounceProps }) {
     fetchAnnouncement();
   }, []);
 
-  const handlePress = () => {
-    const favoriteState = addOrRemove(isFavorite, data);
+  const handlePress = async () => {
+    const favoriteState = await addOrRemove(isFavorite, data);
     setIsFavorite(favoriteState);
   };
 
