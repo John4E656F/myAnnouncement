@@ -2,7 +2,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Image, Text, View, StyleSheet, Easing, TouchableOpacity, Animated, Dimensions } from 'react-native';
+import { Image, Text, View, StyleSheet, Easing, TouchableOpacity, Animated, Dimensions, Pressable } from 'react-native';
 import { storeAllData, clearAll, getAdmin, storeSuggestionData } from '../lib/storage';
 
 export const unstable_settings = {
@@ -132,6 +132,10 @@ function RootLayoutNav() {
     router.push('modal');
   }
 
+  async function handleHome() {
+    router.push('(tabs)');
+  }
+
   return (
     <Stack>
       <Stack.Screen
@@ -143,8 +147,10 @@ function RootLayoutNav() {
             fontWeight: 'bold',
           },
           headerLeft: () => (
-            <View style={styles.logo}>
-              <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+            <View style={styles.tabs}>
+              <Pressable onPress={handleHome}>
+                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+              </Pressable>
             </View>
           ),
           headerTitle: (props) => (
@@ -184,7 +190,9 @@ function RootLayoutNav() {
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
               <View style={styles.logo}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Pressable onPress={handleHome}>
+                  <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                </Pressable>
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
             </View>
@@ -211,7 +219,9 @@ function RootLayoutNav() {
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
               <View style={styles.logo}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Pressable onPress={handleHome}>
+                  <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                </Pressable>
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
             </View>
@@ -238,7 +248,9 @@ function RootLayoutNav() {
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
               <View style={styles.logo}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Pressable onPress={handleHome}>
+                  <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                </Pressable>
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
             </View>
@@ -265,7 +277,9 @@ function RootLayoutNav() {
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
               <View style={styles.logo}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Pressable onPress={handleHome}>
+                  <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                </Pressable>
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
             </View>
@@ -292,7 +306,9 @@ function RootLayoutNav() {
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
               <View style={styles.logo}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Pressable onPress={handleHome}>
+                  <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                </Pressable>
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
             </View>
@@ -320,7 +336,9 @@ function RootLayoutNav() {
           headerTitle: (props) => (
             <View style={styles.navbarContainer}>
               <View style={styles.logo}>
-                <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                <Pressable onPress={handleHome}>
+                  <Image style={{ width: 46, height: 30 }} source={require('../assets/image.png')} />
+                </Pressable>
                 <Text style={styles.navbarTitle}>Announcements</Text>
               </View>
               {/* <View style={styles.utility}>
@@ -352,7 +370,13 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   logo: {
-    paddingLeft: 5,
+    // paddingLeft: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+  },
+  tabs: {
+    paddingLeft: 10,
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
