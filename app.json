@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Announcement",
-    "slug": "announcement",
+    "slug": "my-announcement",
     "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",

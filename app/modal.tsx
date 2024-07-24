@@ -1,9 +1,36 @@
+import { useState, useEffect } from 'react';
 import { Link, router } from 'expo-router';
 import { Image, Pressable, Text, View, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import { MaterialIcons, AntDesign } from '@expo/vector-icons/';
 import { Linking } from 'react-native';
+import { getAdmin } from '../lib/storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Modal() {
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const storedIsAdmin = await getAdmin();
+
+        if (storedIsAdmin.isAdmin) {
+          setIsAdmin(true);
+        }
+      } catch (error) {
+        console.error('Error fetching data from server:', error);
+        setTimeout(fetchData, 10000);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  const handlePress = async () => {
+    await AsyncStorage.removeItem('@isAdmin');
+    router.push('(tabs)');
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -67,11 +94,17 @@ export default function Modal() {
             </View>
           </View>
           <View style={styles.contentContainer}>
-            <Link href='/adminPage' asChild>
-              <Pressable>
-                <Text>Admin Login</Text>
+            {isAdmin ? (
+              <Pressable onPress={handlePress}>
+                <Text>Logout</Text>
               </Pressable>
-            </Link>
+            ) : (
+              <Link href='/adminPage' asChild>
+                <Pressable>
+                  <Text>Admin Login</Text>
+                </Pressable>
+              </Link>
+            )}
           </View>
         </View>
       </ScrollView>
